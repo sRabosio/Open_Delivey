@@ -5,7 +5,7 @@
     padding-right: 3rem;
     background-color: $purple;
     color: $white;
-    border-radius: 10px;
+    border-radius: $std_border_radius;
     border: none;
     transition: 0.2s ease-out;
     &:hover{
