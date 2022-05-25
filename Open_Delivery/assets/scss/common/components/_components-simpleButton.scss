@@ -1,0 +1,17 @@
+.simpleButton{
+    margin: 0;
+    padding: 0.7rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: $purple;
+    color: $white;
+    border-radius: 10px;
+    border: none;
+    transition: 0.2s ease-out;
+    &:hover{
+        color: $normal_grey;
+        cursor: pointer;
+        background-color: lighten($purple, 10);
+        transition: 0.2s ease-out;
+    }
+}
