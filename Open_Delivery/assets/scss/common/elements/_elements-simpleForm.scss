@@ -1,0 +1,12 @@
+.simpleForm{
+    a{        
+        //max-width: fit-content;
+        text-align: right;
+        color: $black;
+        &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+            transition: 3s ;
+        }
+    }
+}
