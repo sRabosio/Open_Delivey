@@ -9,5 +9,7 @@
         padding: $std_padding;
         border-radius: $std_border_radius;
         border: solid $purple 1px;
+        align-self: center;
+        min-width: 80%;
     }
 }
