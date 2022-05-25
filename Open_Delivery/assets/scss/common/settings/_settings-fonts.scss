@@ -4,6 +4,7 @@ $small_phone_size: 10px;
 
 
 html{
+    color: $black;
     @media screen and (max-width: 400px) {
         font-size: $normal_phone_size;
     }
