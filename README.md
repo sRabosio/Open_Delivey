@@ -3,7 +3,7 @@ Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-
 
 link css docs: https://docs.google.com/document/d/1157MOufLhzwuIpcUTnkwKqjT2dUM1TXO5zptQcFEAZo/edit?usp=sharing
 
-
+Link progsvi roba: https://docs.google.com/document/d/1qjRz_Yo_5eiMilV1LtuzGv1kbRKKqq6V/edit?usp=sharing&ouid=116032799368802732008&rtpof=true&sd=true
 
 Link descrizione use case: https://docs.google.com/document/d/1dNM41o6MOM6fmBsKPm7tGhKlIP3wMRAEet2Vgabx3Qg/edit
 
