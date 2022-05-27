@@ -111,6 +111,17 @@ body {
   max-width: min-content;
 }
 
+.textcontainer {
+  margin: 0;
+  padding: 0.7rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: #BF0DCE;
+  border-radius: 10px;
+  display: flex;
+  align-content: center;
+}
+
 .simpleForm a {
   text-align: right;
   color: #333333;
@@ -138,6 +149,12 @@ body {
 .iconcontainer img {
   width: 2rem;
   height: 2rem;
+}
+
+body img {
+  background-color: #EBEBEB;
+  padding: 1.5rem;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
