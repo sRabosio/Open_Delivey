@@ -1,5 +1,12 @@
 .titlecontainer{
     p{
         color: $dark_grey;
+        padding: 0;
+        margin: $min_margin;
+    }
+    h1{
+        color: $black;
+        padding: 0;
+        margin: $min_margin;
     }
 }
