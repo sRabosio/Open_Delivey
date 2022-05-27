@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"registrazione.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/settings/_settings-fonts.scss","../scss/settings/_settings-colors.scss","../scss/registrazione/components/_components-body.scss","../scss/registrazione/components/_components-container.scss"],"names":[],"mappings":"AAKA;EACI,OCHI;EDOJ,WAVU;;AAOV;EAFJ;IAGQ,WAPY;;;AAWhB;EACI;;AAGJ;EACI;;AAGJ;EACI;;AAGJ;EACI;;AAGJ;EACI;;;AE7BR;EACI,kBDKS;;;AENb;EACI","file":"registrazione.css"}

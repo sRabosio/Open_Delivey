@@ -4,17 +4,28 @@
     flex-wrap: nowrap;
     margin: 0.5rem;
     gap: 1.5rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: max-content;
 
     &__textbar{
                
         align-self: center;
-        min-width: 100%;
+        min-width: 90%;
     }
 
     &__addresscontainer{
         position: relative;
-        display: flex;
-        width: 100%;
+        left: -$std_padding;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: min-content, min-content;
+        place-items: center;
+        max-width: 90%;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
         &__type{
             //grid-column: 1;
             max-width: min-content;
@@ -26,5 +37,9 @@
             //grid-column: 3;
             max-width: min-content;
         }
+    }
+
+    .simpleButton{
+        min-width: 50%;
     }
 }
