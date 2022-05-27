@@ -99,6 +99,8 @@ body {
   width: 100%;
   height: 100%;
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .iconcontainer {
@@ -132,7 +134,7 @@ body {
   transition: 3s;
 }
 .simpleForm input {
-  border: solid #BF0DCE 1px;
+  border: solid #BF0DCE 2px;
 }
 
 .titlecontainer p {
