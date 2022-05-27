@@ -60,10 +60,19 @@ body {
   gap: 1.5rem;
 }
 .simpleForm__textbar {
-  padding: 0.7rem;
-  border-radius: 10px;
   align-self: center;
   min-width: 100%;
+}
+.simpleForm__addresscontainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.simpleForm__addresscontainer__type {
+  max-width: min-content;
+}
+.simpleForm__addresscontainer__number {
+  max-width: min-content;
 }
 
 .textbox {
@@ -135,6 +144,11 @@ body {
 }
 .simpleForm input {
   border: solid #BF0DCE 2px;
+  padding: 0.7rem;
+  border-radius: 10px;
+}
+.simpleForm__addresscontainer input {
+  min-width: 60%;
 }
 
 .titlecontainer p {

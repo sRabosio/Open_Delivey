@@ -6,9 +6,25 @@
     gap: 1.5rem;
 
     &__textbar{
-        padding: $std_padding;
-        border-radius: $std_border_radius;        
+               
         align-self: center;
         min-width: 100%;
+    }
+
+    &__addresscontainer{
+        position: relative;
+        display: flex;
+        width: 100%;
+        &__type{
+            //grid-column: 1;
+            max-width: min-content;
+            //margin-right: 2rem;
+            
+        }
+
+        &__number{
+            //grid-column: 3;
+            max-width: min-content;
+        }
     }
 }
