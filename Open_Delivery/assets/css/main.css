@@ -61,7 +61,8 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  max-width: max-content;
+  min-width: 50%;
+  max-width: 100%;
 }
 .simpleForm__textbar {
   align-self: center;
