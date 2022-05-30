@@ -10,6 +10,14 @@
     }
 
     input{
-        border: solid $purple 1px;
+        border: solid $purple $form_input_border;
+        padding: $std_padding;
+        border-radius: $std_border_radius; 
+    }
+
+    &__addresscontainer{
+        input{
+            min-width: 60%;
+        }
     }
 }

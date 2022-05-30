@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrati</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/registrazione.css">
 </head>
 <body>
-    <content class="content" id="content">
-        <div class="content__title__container" id="content__title__container">
-            <h1 class="content__title" id="content__title">REGISTRATI</h1>
-            <p class="content__title__description" id="content__title__description">Inserisci i dati richiesti per <br> completare la registrazione</p>
+    <div class="container">
+        <div class="titlecontainer">
+            <h1>REGISTRATI</h1>
+            <p>Inserisci i dati richiesti per 
+                completare la registrazione</p>
         </div>
-        <div class="form__container" id="form__container">
-            <form class="form" id="form">
-                <input type="text" placeholder="nome" required name="name" id="name">
-                <input type="text" placeholder="cognome" required name="cognome" id="cognome"> 
-                <input type="email" placeholder="email" required name="email" id="email"> 
-                <input type="text" placeholder="indirizzo" required name="indirizzo" id="indirizzo"> 
-                <input type="password" placeholder="password" required name="pass" id="pass"> 
-                <input type="password" placeholder="conferma password" required name="pass_conf" id="pass_conf"> 
-                <button type="submit" >Registrati</button>
-            </form>
-        </div>
-        <div class="login__container" id="login__container">
-            <span >Oppure</span>
-            <button class="login" id="login">Accedi</button>
-        </div>
-    </content>
+        <form action="" class="simpleForm">
+            <input class="simpleForm__textbar" type="text" name="nome" class="simpleForm__textbar" id="nome" placeholder="nome" required>
+            <input class="simpleForm__textbar" type="text" name="cognome" id="cognome" placeholder="cognome" required>
+            <input class="simpleForm__textbar" type="email" name="email" id="email" placeholder="email" required>
+            <div class="simpleForm__addresscontainer">
+                <input class="simpleForm__addresscontainer__type" type="" name="type" required>
+                <input class="" type="text" placeholder="nome via" required>
+                <input class="simpleForm__addresscontainer__number" type="number" placeholder="N° civico" required>
+            </div>
+            <input type="password" name="password" id="password" class="simpleForm__textbar" placeholder="password" required>
+            <input type="password" name="conferma_password" id="conferma_password" class="simpleForm__textbar" placeholder="Conferma passoword" required>
+            <input type="submit" value="Registrati" class="simpleButton">
+            <div class="notform" id="notform">
+                <p>Sei già registrato?<br>effettua il login </p>
+                <button class="simpleButton">Login</button>
+            </div>
+        </form>
+        
+    </div>
+    
 </body>
 </html>
