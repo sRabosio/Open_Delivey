@@ -24,11 +24,14 @@ html h5 {
 }
 
 body {
-  background-color: #EBEBEB;
+  background-image: url("../images/background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
   align-items: center;
+  background-color: rgba(238, 238, 238, 0.5);
 }
 
 .notform {
@@ -42,6 +45,10 @@ body {
 }
 .notform .simpleButton {
   max-width: 50%;
+}
+
+.simpleform {
+  background-color: black;
 }
 
 /*# sourceMappingURL=registrazione.css.map */
