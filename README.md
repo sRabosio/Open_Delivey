@@ -19,4 +19,6 @@ Link use case diagram: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff
 Lista comuni: https://github.com/matteocontrini/comuni-json
 
 
+credenziali account test: test@tmail.com, password
+
 
