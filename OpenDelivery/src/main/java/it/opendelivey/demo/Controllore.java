@@ -3,25 +3,23 @@ package it.opendelivey.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class Controllore {
-    @GetMapping("/index")
+    @RequestMapping("/index")
     public String Index() {
-        return "registrazione";
+        return "redirect registrazione";
     }
-    /*@PostMapping("/login")
+    @RequestMapping("/login")
     public String Login() {
         return "registrazione";
     }
-    @PostMapping("/registrazione")
+    @RequestMapping("/registrazione")
     public String Registrazione() {
         return "registrazione";
     }
-    @PostMapping("/carello")
+    /*@PostMapping("/carello")
     public String Carrello() {
         return "registrazione";
     }
