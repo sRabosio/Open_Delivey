@@ -1,6 +1,8 @@
 # Open_Delivey
 Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-id=0%3A1
 
+Link Trello: https://trello.com/b/kCzvGyzE/open-delivery-backend
+
 link css docs: https://docs.google.com/document/d/1157MOufLhzwuIpcUTnkwKqjT2dUM1TXO5zptQcFEAZo/edit?usp=sharing
 
 Link srs: https://docs.google.com/document/d/1nrt91zghoYMdvW59_4LbjECgApzjB0CDsar_BRwfXks/edit#
@@ -16,5 +18,7 @@ Link use case diagram: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff
 
 Lista comuni: https://github.com/matteocontrini/comuni-json
 
+
+credenziali account test: test@tmail.com, password
 
 
