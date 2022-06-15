@@ -13,7 +13,7 @@ public class Controllore {
     public String Index() {
         return "registrazione";
     }
-    @PostMapping("/login")
+    /*@PostMapping("/login")
     public String Login() {
         return "registrazione";
     }
@@ -41,7 +41,7 @@ public class Controllore {
     public String Ristorante () {
         return "registrazione";
     }
-   /* @GetMapping("/homepage")
+    @GetMapping("/homepage")
     public String Homepage() {
         return "registrazione";
     }*/
