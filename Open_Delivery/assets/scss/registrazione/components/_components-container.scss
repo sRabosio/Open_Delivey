@@ -1,4 +1,6 @@
 .container {
     align-items: center;
-    background-color: transparentize($white, $amount: 0.5)
+    background-color: transparentize($white, $amount: 0.5);
+    height: 300px;
+    width: 300px;
 }
