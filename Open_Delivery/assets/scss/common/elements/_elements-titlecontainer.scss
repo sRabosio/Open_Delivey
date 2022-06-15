@@ -1,12 +1,13 @@
 .titlecontainer {
     p {
-        color: $black;
+        color: black;
+        font-weight: bold;
         padding: 0;
-        margin: $min_margin;
+        margin: 10px;
     }
     h1 {
-        color: $black;
+        color: black;
         padding: 0;
-        margin: $min_margin;
+        margin: 10px;
     }
 }
