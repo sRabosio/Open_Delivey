@@ -12,15 +12,12 @@ public class Indirizzo {
     @NotNull
     private String civico;
     @NotNull
-    private String città;
-    @NotNull
     private String paese;
 
     public Indirizzo(String via, int cap, String civico, String città, String paese) {
         this.via = via;
         this.cap = cap;
         this.civico = civico;
-        this.città = città;
         this.paese = paese;
     }
 
@@ -47,14 +44,6 @@ public class Indirizzo {
 
     public void setCivico(String civico) {
         this.civico = civico;
-    }
-
-    public String getCittà() {
-        return città;
-    }
-
-    public void setCittà(String città) {
-        this.città = città;
     }
 
     public String getPaese() {
