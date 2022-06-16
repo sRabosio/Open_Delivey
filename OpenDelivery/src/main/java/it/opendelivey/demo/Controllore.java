@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class Controllore {
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String Index() {
-        return "redirect registrazione";
+        return "registrazione";
     }
     @RequestMapping("/login")
     public String Login() {
