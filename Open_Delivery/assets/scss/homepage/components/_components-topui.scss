@@ -1,0 +1,10 @@
+.topui{
+    position: relative;
+    height: 5%;
+    display: flex;
+    min-width: 100%;
+    &__chart{
+        position: absolute;
+        right: 0;
+    }
+}
