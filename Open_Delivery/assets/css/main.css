@@ -111,11 +111,13 @@ body {
 }
 
 .icon {
-    margin: 0;
-    padding: 0.3rem;
-    background-color: #EBEBEB;
-    color: #BF0DCE;
-    border-radius: 10px;
+  margin: 0;
+  padding: 0.3rem;
+  background-color: #EBEBEB;
+  color: #BF0DCE;
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .titlecontainer {
