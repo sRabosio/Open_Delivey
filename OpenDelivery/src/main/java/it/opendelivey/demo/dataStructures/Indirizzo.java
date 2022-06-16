@@ -20,7 +20,7 @@ public class Indirizzo {
     @NotBlank
     private String paese;
 
-    public Indirizzo(String via, int cap, String civico, String città, String paese) {
+    public Indirizzo(String via, int cap, String civico, String paese) {
         this.via = via;
         this.cap = cap;
         this.civico = civico;
