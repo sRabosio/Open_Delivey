@@ -11,14 +11,35 @@ public class Controllore {
     public String Index() {
         return "registrazione";
     }
+
     @RequestMapping("/login")
     public String Login() {
         return "registrazione";
     }
+
+    /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
+    * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
+    * solo quando uso la richiesta specificata con gli attributi specificati */
     @RequestMapping("/registrazione")
     public String Registrazione() {
         return "registrazione";
     }
+
+    //processo di registrazione
+    @PostMapping("/registrazione")
+    public String Registrazione(
+            @RequestParam("nome") String nome,
+            @RequestParam("cognome") String cognome,
+            @RequestParam("email") String email,
+            @RequestParam("via") String via,
+            @RequestParam("cap") int cap,
+            @RequestParam("civico") String civico
+    ){
+
+        return "registrazione";
+    }
+
+
     /*@PostMapping("/carello")
     public String Carrello() {
         return "registrazione";
