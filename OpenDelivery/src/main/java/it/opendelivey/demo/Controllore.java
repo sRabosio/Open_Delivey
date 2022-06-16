@@ -1,6 +1,8 @@
 package it.opendelivey.demo;
 
 
+import it.opendelivey.demo.dataStructures.Indirizzo;
+import it.opendelivey.demo.dataStructures.RegistrationForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -37,8 +39,19 @@ public class Controllore {
             @RequestParam("password") String password,
             @RequestParam("conferma_password") String passwordConf
     ){
+        //controllo conferma password
+        if(!password.equals(passwordConf)) return "registrazione";
 
-        return "registrazione";
+        Indirizzo indirizzo = new Indirizzo(
+                via, cap, civico, null
+        );
+
+        RegistrationForm form = new RegistrationForm(
+                nome, cognome, email, password, indirizzo
+        );
+
+        System.out.println(form);
+        return "login";
     }
 
 
