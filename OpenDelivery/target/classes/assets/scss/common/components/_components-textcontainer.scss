@@ -1,0 +1,10 @@
+.textcontainer{
+    margin: 0;
+    padding: $std_padding;
+    width: fit-content;
+    height: fit-content;
+    background-color: $purple;
+    border-radius: $std_border_radius;
+    display: flex;
+    align-content: center;
+}

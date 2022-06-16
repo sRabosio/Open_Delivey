@@ -3,44 +3,47 @@ package it.opendelivey.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Controllore {
-    @RequestMapping("/index")
+    @GetMapping("/index")
     public String Index() {
-        return "redirect registrazione";
+        return "registrazione";
     }
     @RequestMapping("/login")
     public String Login() {
-        return "registrazione";
+        return "login";
     }
     @RequestMapping("/registrazione")
     public String Registrazione() {
         return "registrazione";
     }
-    /*@PostMapping("/carello")
+    @RequestMapping("/carello")
     public String Carrello() {
         return "registrazione";
     }
-    @PostMapping("/account")
+    @RequestMapping("/account")
     public String Account () {
         return "registrazione";
     }
-    @GetMapping("/ricerca")
+    @RequestMapping("/ricerca")
     public String Ricarca () {
         return "registrazione";
     }
-    @PostMapping("/salvati")
+    @RequestMapping("/salvati")
     public String Salvati () {
         return "registrazione";
     }
-    @GetMapping("/ristorante")
+    @RequestMapping("/ristorante")
     public String Ristorante () {
         return "registrazione";
     }
-    @GetMapping("/homepage")
+    @RequestMapping("/home")
     public String Homepage() {
-        return "registrazione";
-    }*/
+        return "homepage";
+    }
 }
