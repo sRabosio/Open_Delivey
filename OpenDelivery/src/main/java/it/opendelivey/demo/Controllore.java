@@ -33,7 +33,9 @@ public class Controllore {
             @RequestParam("email") String email,
             @RequestParam("via") String via,
             @RequestParam("cap") int cap,
-            @RequestParam("civico") String civico
+            @RequestParam("civico") String civico,
+            @RequestParam("password") String password,
+            @RequestParam("conferma_password") String passwordConf
     ){
 
         return "registrazione";
