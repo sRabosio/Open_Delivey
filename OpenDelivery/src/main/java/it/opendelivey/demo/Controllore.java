@@ -2,6 +2,7 @@ package it.opendelivey.demo;
 
 
 import it.opendelivey.demo.dataStructures.Indirizzo;
+import it.opendelivey.demo.dataStructures.LoginForm;
 import it.opendelivey.demo.dataStructures.RegistrationForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,14 +10,36 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class Controllore {
+
+    //NB: i metodi non hanno la maiuscola iniziale
+
     @RequestMapping("/")
-    public String Index() {
+    public String index() {
         return "registrazione";
     }
 
     @RequestMapping("/login")
-    public String Login() {
-        return "registrazione";
+    public String login() {
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(
+            @RequestParam("email") String email,
+            @RequestParam("password") String password
+    ){
+        LoginForm dbLogin, userLogin;
+        dbLogin = LoginForm.testForm();
+        userLogin = new LoginForm(email, password);
+        System.out.println(userLogin);
+
+        //usare equals per comparare gli oggetti non mi funziona
+        //se qualcuno sa come farlo lo faccia, sta roba è cancerogena
+        if(!(userLogin.getMail().equals(dbLogin.getMail())
+                && userLogin.getPassword().equals(dbLogin.getPassword()))
+        )return "login";
+
+        return "homepage";
     }
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
@@ -50,6 +73,10 @@ public class Controllore {
                 nome, cognome, email, password, indirizzo
         );
 
+        //TODO: email confirmation
+
+        //se la richiesta è andata a buon fine manderò
+        //l'utente alla pagina di login per loggarsi
         System.out.println(form);
         return "login";
     }
