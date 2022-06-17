@@ -16,7 +16,7 @@ public class Controllore {
 
     @RequestMapping("/login")
     public String Login() {
-        return "registrazione";
+        return "login";
     }
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
@@ -50,6 +50,10 @@ public class Controllore {
                 nome, cognome, email, password, indirizzo
         );
 
+        //TODO: email confirmation
+
+        //se la richiesta è andata a buon fine manderò
+        //l'utente alla pagina di login per loggarsi
         System.out.println(form);
         return "login";
     }

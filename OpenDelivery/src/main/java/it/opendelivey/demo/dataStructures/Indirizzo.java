@@ -4,20 +4,20 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class Indirizzo {
-    @NotNull
-    @NotBlank
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
     private String tipo;
-    @NotNull
-    @NotBlank
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
     private String via;
-    @NotNull
-    @NotBlank
-    private int cap;
-    @NotNull
-    @NotBlank
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
+    private Integer cap;
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
     private String civico;
-    @NotNull
-    @NotBlank
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
     private String paese;
 
     public Indirizzo(String via, int cap, String civico, String paese) {
@@ -27,6 +27,16 @@ public class Indirizzo {
         this.paese = paese;
     }
 
+    @Override
+    public String toString() {
+        return "Indirizzo{" +
+                "tipo='" + tipo + '\'' +
+                ", via='" + via + '\'' +
+                ", cap=" + cap +
+                ", civico='" + civico + '\'' +
+                ", paese='" + paese + '\'' +
+                '}';
+    }
 
     public String getVia() {
         return via;

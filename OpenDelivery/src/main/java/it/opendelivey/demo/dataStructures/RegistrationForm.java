@@ -5,20 +5,20 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class RegistrationForm {
-    @NotNull
-    @NotBlank
-    @Size(min=2)
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
+    @Size(min=2, message = "il nome deve contenere almeno 2 caratteri")
     private String nome;
-    @NotNull
-    @NotBlank
-    @Size(min=2)
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
+    @Size(min=2, message = "il cognome deve mantenere almeno 2 caratteri")
     private String cognome;
-    @NotNull
-    @NotBlank
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
     private String mail;
-    @NotNull
-    @NotBlank
-    @Size(min=5)
+    @NotNull(message = "questo campo è obbligatorio")
+    @NotBlank(message = "questo campo è obbligatorio")
+    @Size(min=5, message = "la password deve contenere almeno 5 caratteri")
     private String password;
     private Indirizzo indirizzo;
 
