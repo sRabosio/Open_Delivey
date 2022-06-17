@@ -14,6 +14,13 @@ public class LoginForm {
     }
 
 
+    @Override
+    public String toString() {
+        return "LoginForm{" +
+                "mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
     public String getMail() {
         return mail;
@@ -30,4 +37,9 @@ public class LoginForm {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public static LoginForm testForm(){
+        return new LoginForm("test@tmail.com", "password");
+    }
+
 }
