@@ -1,4 +1,7 @@
 # Open_Delivey
+
+REMINDER: sass --watch NON funziona con la wsl, è necessario usare il terminale di windows
+
 Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-id=0%3A1
 
 Link Trello: https://trello.com/b/kCzvGyzE/open-delivery-backend
