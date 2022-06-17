@@ -1,49 +1,82 @@
 package it.opendelivey.demo;
 
 
+import it.opendelivey.demo.dataStructures.Indirizzo;
+import it.opendelivey.demo.dataStructures.RegistrationForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class Controllore {
-    @GetMapping("/index")
+    @RequestMapping("/")
     public String Index() {
         return "registrazione";
     }
+
     @RequestMapping("/login")
     public String Login() {
-        return "login";
+        return "registrazione";
     }
+
+    /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
+    * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
+    * solo quando uso la richiesta specificata con gli attributi specificati */
     @RequestMapping("/registrazione")
     public String Registrazione() {
         return "registrazione";
     }
-    @RequestMapping("/carello")
+
+    //processo di registrazione
+    @PostMapping("/registrazione")
+    public String Registrazione(
+            @RequestParam("nome") String nome,
+            @RequestParam("cognome") String cognome,
+            @RequestParam("email") String email,
+            @RequestParam("via") String via,
+            @RequestParam("cap") int cap,
+            @RequestParam("civico") String civico,
+            @RequestParam("password") String password,
+            @RequestParam("conferma_password") String passwordConf
+    ){
+        //controllo conferma password
+        if(!password.equals(passwordConf)) return "registrazione";
+
+        Indirizzo indirizzo = new Indirizzo(
+                via, cap, civico, null
+        );
+
+        RegistrationForm form = new RegistrationForm(
+                nome, cognome, email, password, indirizzo
+        );
+
+        System.out.println(form);
+        return "login";
+    }
+
+
+    /*@PostMapping("/carello")
     public String Carrello() {
         return "registrazione";
     }
-    @RequestMapping("/account")
+    @PostMapping("/account")
     public String Account () {
         return "registrazione";
     }
-    @RequestMapping("/ricerca")
+    @GetMapping("/ricerca")
     public String Ricarca () {
         return "registrazione";
     }
-    @RequestMapping("/salvati")
+    @PostMapping("/salvati")
     public String Salvati () {
         return "registrazione";
     }
-    @RequestMapping("/ristorante")
+    @GetMapping("/ristorante")
     public String Ristorante () {
         return "registrazione";
     }
-    @RequestMapping("/home")
+    @GetMapping("/homepage")
     public String Homepage() {
-        return "homepage";
-    }
+        return "registrazione";
+    }*/
 }
