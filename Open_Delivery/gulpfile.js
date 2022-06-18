@@ -11,6 +11,7 @@ const sassList = [
     "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
 ]
 
+//per ogni nuova sezione di scss andrà fatta una funzione che la gestisce e andrà aggiunta a "allStyle"
 
 function commonStyle(){
     //file da convertire
