@@ -45,7 +45,7 @@ function regStyle(){
 }
 
 function html(){
-    const localJavaDir = javaDir + "templates";
+    const localJavaDir = javaDir + "templates/";
 
     //da qua a java
     gulp.watch("*.html", ()=>{
@@ -53,10 +53,12 @@ function html(){
         .pipe(gulp.dest(localJavaDir));
     });
     //da java a qua
-    gulp.watch(localJavaDir, ()=>{
-        return gulp.src(localJavaDir)
+
+    //NOTA: ciclo infinto dio cane, i due watch si alimentano a vicenda
+    /*gulp.watch(localJavaDir + "*.html", ()=>{
+        return gulp.src(localJavaDir + "*.html")
         .pipe(gulp.dest("./"));
-    });
+    });*/
 }
 
 function watchStyle(){
