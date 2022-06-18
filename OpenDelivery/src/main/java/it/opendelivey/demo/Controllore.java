@@ -29,6 +29,8 @@ public class Controllore {
             @RequestParam("password") String password
     ){
         LoginForm dbLogin, userLogin;
+        //per ora usa delle informazioni codificate nella classe per testarne il funzionamento
+        //successivamente qua andranno i dati dal db
         dbLogin = LoginForm.testForm();
         userLogin = new LoginForm(email, password);
         System.out.println(userLogin);
