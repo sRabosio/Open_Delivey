@@ -1,6 +1,9 @@
+//importazzi vari da gulp
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const {src, series, parallel, dest, watch} = require("gulp");
+
+
 //lista delle directory di scss
 const sassList = [
     //common
@@ -42,10 +45,18 @@ function regStyle(){
 }
 
 function html(){
+    const localJavaDir = javaDir + "templates";
+
+    //da qua a java
     gulp.watch("*.html", ()=>{
         return gulp.src("*.html")
-        .pipe(gulp.dest(javaDir + "templates"));
-    })
+        .pipe(gulp.dest(localJavaDir));
+    });
+    //da java a qua
+    gulp.watch(localJavaDir, ()=>{
+        return gulp.src(localJavaDir)
+        .pipe(gulp.dest("./"));
+    });
 }
 
 function watchStyle(){
@@ -54,7 +65,7 @@ function watchStyle(){
         homeStyle();
         regStyle();
         return gulp.src("./assets/css/*.css")
-        .pipe(gulp.dest("../OpenDelivery/src/main/resources/static/assets/css"));
+        .pipe(gulp.dest(javaDir + "/static/assets/css"));
     });
 }
 
