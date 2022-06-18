@@ -6,11 +6,14 @@ import javax.validation.constraints.NotNull;
 public class LoginForm {
     @NotNull
     @NotBlank
-    private String mail, password;
+    private String mail;
+    @NotNull
+    @NotBlank
+    private String password;
 
     public LoginForm(String mail, String password) {
         this.mail = mail;
-        this.password = password;
+        this.password = null;
     }
 
 
