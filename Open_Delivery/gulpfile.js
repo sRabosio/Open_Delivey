@@ -9,7 +9,9 @@ const sassList = [
     "./assets/scss/homepage/*.scss", "./assets/scss/homepage/**/*.scss",
     //registrazione
     "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
-]
+];
+
+const javaDir = "../OpenDelivery/src/main/resources/";
 
 //per ogni nuova sezione di scss andrà fatta una funzione che la gestisce e andrà aggiunta a "allStyle"
 
@@ -39,17 +41,23 @@ function regStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function allStyle(){
-    commonStyle();
-    homeStyle();
-    regStyle();
-    return gulp.src("./assets/css/*.css")
-    .pipe(gulp.dest("../OpenDelivery/src/main/resources/static/assets/css"))
+function html(){
+    gulp.watch("*.html", ()=>{
+        return gulp.src("*.html")
+        .pipe(gulp.dest(javaDir + "templates"));
+    })
 }
 
 function watchStyle(){
-    gulp.watch(sassList,allStyle);
+    gulp.watch(sassList,() => {
+        commonStyle();
+        homeStyle();
+        regStyle();
+        return gulp.src("./assets/css/*.css")
+        .pipe(gulp.dest("../OpenDelivery/src/main/resources/static/assets/css"));
+    });
 }
 
 
 exports.style = watchStyle;
+exports.html = html;
