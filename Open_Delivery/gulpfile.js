@@ -54,7 +54,7 @@ function html(){
     });
     //da java a qua
 
-    //NOTA: ciclo infinto dio cane, i due watch si alimentano a vicenda
+    //NOTA: ciclo infinto [redacted], i due watch si alimentano a vicenda
     /*gulp.watch(localJavaDir + "*.html", ()=>{
         return gulp.src(localJavaDir + "*.html")
         .pipe(gulp.dest("./"));
