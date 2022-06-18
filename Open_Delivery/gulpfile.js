@@ -38,7 +38,7 @@ function regStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function moveStyle(){
+function allStyle(){
     commonStyle();
     homeStyle();
     regStyle();
@@ -46,9 +46,9 @@ function moveStyle(){
     .pipe(gulp.dest("../OpenDelivery/src/main/resources/static/assets/css"))
 }
 
-function style(){
-    gulp.watch(sassList,moveStyle);
+function watchStyle(){
+    gulp.watch(sassList,allStyle);
 }
 
 
-exports.style = style;
+exports.style = watchStyle;
