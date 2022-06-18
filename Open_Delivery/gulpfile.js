@@ -1,6 +1,15 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const {src, series, parallel, dest, watch} = require("gulp");
+//lista delle directory di scss
+const sassList = [
+    //common
+    "./assets/scss/common/*.scss","./assets/scss/common/**/*.scss",
+    //homepage
+    "./assets/scss/homepage/*.scss", "./assets/scss/homepage/**/*.scss",
+    //registrazione
+    "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
+]
 
 
 function commonStyle(){
@@ -29,11 +38,16 @@ function regStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function style(){
-    return commonStyle(),
-    homeStyle(),
-    regStyle()
+function moveStyle(){
+    commonStyle();
+    homeStyle();
+    regStyle();
+    return gulp.src("./assets/css/*.css")
+    .pipe(gulp.dest("../OpenDelivery/src/main/resources/static/assets/css"))
+}
 
+function style(){
+    gulp.watch(sassList,moveStyle);
 }
 
 
