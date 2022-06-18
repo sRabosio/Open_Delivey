@@ -61,3 +61,7 @@ function watchStyle(){
 
 exports.style = watchStyle;
 exports.html = html;
+exports.all = ()=>{
+    watchStyle();
+    html();
+};
