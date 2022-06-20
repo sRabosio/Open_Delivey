@@ -78,7 +78,7 @@ html h5 {
   scrollbar-width: none;
 }
 .categoriescontainer::-webkit-scrollbar {
-  display: o;
+  display: none;
 }
 .categoriescontainer__title {
   position: absolute;
