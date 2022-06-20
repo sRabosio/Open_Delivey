@@ -31,11 +31,10 @@ body {
 
 .container {
   align-items: center;
-  background-color: rgba(238, 238, 238, 0.5);
-  height: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
+  height: 70%;
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 .notform {
@@ -46,9 +45,10 @@ body {
   min-width: 100%;
   min-height: 100%;
   place-items: center;
+  color: whitesmoke;
 }
 .notform .simpleButton {
-  max-width: 50%;
+  max-width: 90%;
 }
 
 .simpleform {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,26 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/registrazione.css">
 </head>
+
 <body>
     <div class="container">
         <div class="titlecontainer">
-            <h1>LOGIN</h1>
+            <h1>ACCEDI</h1>
             <p>Inserisci i dati richiesti per completare il login</p>
         </div>
         <div>
-        <form action="/login" method="post" class="simpleForm">
-            <input class="simpleForm__textbar" type="email" name="email" id="email" placeholder="email" required>
-            <input type="password" name="password" id="password" class="simpleForm__textbar" placeholder="password" required>
-            <input type="submit" value="Login" class="simpleButton">
-            <div class="notform" id="notform">
-                <p>Non sei ancora registrato?<br> registrati</p>
-                <button class="simpleButton">Registrati</button>
-            </div>
-        </form>
+            <form action="/login" method="post" class="simpleForm">
+                <input class="simpleForm__textbar" type="email" name="email" id="email" placeholder="email" required>
+                <input type="password" name="password" id="password" class="simpleForm__textbar" placeholder="password" required>
+                <input type="submit" value="Login" class="simpleButton">
+                <div class="notform" id="notform">
+                    <p>Non sei ancora registrato?<br> registrati</p>
+                    <button class="simpleButton">Registrati</button>
+                </div>
+            </form>
         </div>
     </div>
-    
+
 </body>
+
 </html>

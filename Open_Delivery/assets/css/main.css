@@ -87,7 +87,7 @@ body {
   max-width: min-content;
 }
 .simpleForm .simpleButton {
-  min-width: 50%;
+  min-width: 90%;
 }
 
 .textbox {
@@ -169,15 +169,16 @@ body {
 }
 
 .titlecontainer p {
-  color: black;
-  font-weight: bold;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Times New Roman", Times, serif;
 }
 .titlecontainer h1 {
-  color: black;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .iconcontainer img {
