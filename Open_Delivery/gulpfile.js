@@ -62,6 +62,7 @@ function html(){
 }
 
 function watchStyle(){
+    console.log("watching sass...");
     gulp.watch(sassList,() => {
         commonStyle();
         homeStyle();
