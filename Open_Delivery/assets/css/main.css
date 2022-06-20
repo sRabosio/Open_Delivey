@@ -66,7 +66,7 @@ body {
 }
 .simpleForm__textbar {
   align-self: center;
-  min-width: 90%;
+  min-width: 80%;
 }
 .simpleForm__addresscontainer {
   position: relative;
