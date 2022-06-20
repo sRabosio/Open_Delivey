@@ -4,4 +4,8 @@
         height: 70%;
         width: 50%;
         margin: auto;
+        @media screen and (max-width: 1000px) {
+            height: 70%;
+            width: 70%;
+        }
     }
