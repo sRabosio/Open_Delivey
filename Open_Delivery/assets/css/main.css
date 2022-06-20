@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
 html {
   color: #333333;
   font-size: 15px;
@@ -173,15 +174,12 @@ body {
   padding: 0;
   margin: 10px;
   font-family: "Urbanist";
-  font-style: italic;
 }
 .titlecontainer h1 {
   color: whitesmoke;
   padding: 0;
   margin: 10px;
   font-family: "Urbanist";
-  font-style: normal;
-  font-weight: bolder;
 }
 
 .iconcontainer img {
