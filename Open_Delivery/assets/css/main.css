@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
 html {
   color: #333333;
   font-size: 15px;
@@ -66,7 +67,7 @@ body {
 }
 .simpleForm__textbar {
   align-self: center;
-  min-width: 90%;
+  min-width: 80%;
 }
 .simpleForm__addresscontainer {
   position: relative;
@@ -87,7 +88,7 @@ body {
   max-width: min-content;
 }
 .simpleForm .simpleButton {
-  min-width: 50%;
+  min-width: 90%;
 }
 
 .textbox {
@@ -169,15 +170,16 @@ body {
 }
 
 .titlecontainer p {
-  color: black;
-  font-weight: bold;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Urbanist";
 }
 .titlecontainer h1 {
-  color: black;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Urbanist";
 }
 
 .iconcontainer img {
