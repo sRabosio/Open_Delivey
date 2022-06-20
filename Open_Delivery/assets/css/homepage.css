@@ -40,3 +40,28 @@ html h5 {
 .container {
   top: 5%;
 }
+
+.carouselcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.carouselcontainer__carousel {
+  position: relative;
+}
+.carouselcontainer__carousel__card {
+  box-sizing: border-box;
+  min-height: 8rem;
+  min-width: 100%;
+  padding: 1.5rem;
+  background-color: #BF0DCE;
+  border-radius: 16px;
+  color: #EEE;
+}
+.carouselcontainer__allergies {
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselcontainer__allergies p {
+  text-align: center;
+}
