@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
 .simpleForm {
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
     overflow: hidden;
     min-width: 50%;
     max-width: 100%;
+    font-family: "Urbanist";
     &__textbar {
         align-self: center;
         min-width: 80%;
