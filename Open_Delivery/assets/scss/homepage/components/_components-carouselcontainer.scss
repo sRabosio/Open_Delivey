@@ -1,0 +1,9 @@
+.carouselcontaianer{
+    display: flex;
+    flex-direction: column;
+
+    &__carousel{
+        padding: 3rem;
+        background-color: $purple;
+    }
+}
