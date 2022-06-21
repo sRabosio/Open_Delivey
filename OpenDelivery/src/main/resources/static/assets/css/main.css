@@ -160,7 +160,7 @@ body {
   text-align: center;
   max-width: fit-content;
   max-height: fit-content;
-  border: solid #EBEBEB 0.5px;
+  border: solid rgba(0, 0, 0, 0.0588235294) 0.5px;
 }
 .fullcard__subtitle {
   color: #C4C4C4;
