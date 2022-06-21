@@ -98,10 +98,15 @@ html h5 {
 }
 .nearyoucontainer__titlecontainer {
   min-width: 100%;
+  display: inline-block;
+  flex-direction: row;
+  margin: 0;
+  place-items: center;
 }
 .nearyoucontainer__titlecontainer__more {
   color: #BF0DCE;
   opacity: 0.6;
+  float: right;
 }
 .nearyoucontainer__cards {
   display: flex;
@@ -113,4 +118,10 @@ html h5 {
 
 .carouselcontainer__allergies p {
   text-align: center;
+}
+
+.nearyoucontainer h5 {
+  margin: 0;
+  float: left;
+  margin-top: 0.3rem;
 }

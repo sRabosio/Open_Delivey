@@ -163,6 +163,7 @@ body {
   color: #EBEBEB;
 }
 .fullcard__price {
+  text-align: left;
   display: inline;
 }
 
