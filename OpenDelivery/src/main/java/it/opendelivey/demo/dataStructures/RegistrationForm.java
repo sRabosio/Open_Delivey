@@ -18,7 +18,7 @@ public class RegistrationForm {
     private String mail;
     @NotNull(message = "questo campo è obbligatorio")
     @NotBlank(message = "questo campo è obbligatorio")
-    @Size(min=5, message = "la password deve contenere almeno 5 caratteri")
+    @Size(min=5, message = "la password deve contenere almeno 5 caratteri") 
     private String password;
     private Indirizzo indirizzo;
 
