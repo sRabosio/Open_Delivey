@@ -157,7 +157,15 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 9px;
+  text-align: center;
 }
+.fullcard__subtitle {
+  color: #EBEBEB;
+}
+.fullcard__price {
+  display: inline;
+}
+
 .simpleForm a {
   text-align: right;
   color: #333333;
@@ -202,4 +210,5 @@ body img {
 .fullcard img {
   background-color: #EBEBEB;
   border-radius: 10px;
+  padding: 0.5rem;
 }
