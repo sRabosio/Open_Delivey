@@ -3,11 +3,9 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-width: 100%;
-    min-height: 100%;
     place-items: center;
 
     .simpleButton{
-        max-width: 50%;
+        align-self: center;
     }
 }

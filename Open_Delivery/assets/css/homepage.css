@@ -28,8 +28,40 @@ html h5 {
   height: 5%;
   display: flex;
   min-width: 100%;
+  display: inline-block;
 }
 .topui__chart {
-  position: absolute;
-  right: 0;
+  float: right;
+}
+.topui__menu {
+  float: left;
+}
+
+.container {
+  top: 5%;
+}
+
+.carouselcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.carouselcontainer__carousel {
+  position: relative;
+}
+.carouselcontainer__carousel__card {
+  box-sizing: border-box;
+  min-height: 8rem;
+  min-width: 100%;
+  padding: 1.5rem;
+  background-color: #BF0DCE;
+  border-radius: 16px;
+  color: #EEE;
+}
+.carouselcontainer__allergies {
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselcontainer__allergies p {
+  text-align: center;
 }
