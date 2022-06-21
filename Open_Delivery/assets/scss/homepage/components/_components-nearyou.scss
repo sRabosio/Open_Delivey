@@ -9,11 +9,13 @@
         flex-direction: row;
         margin: 0;
         place-items: center;
+        margin-bottom: 1rem;
 
         &__more{
             color: $purple;
             opacity: 0.6;
             float: right;
+            margin-bottom: 0;
         }
     }
     &__cards{

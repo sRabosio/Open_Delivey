@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    overflow-y: hidden;
+    min-height: max-content;
     position: relative;
     align-items: center;
     place-items: center;

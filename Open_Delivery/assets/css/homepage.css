@@ -67,6 +67,8 @@ html h5 {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: hidden;
+  min-height: max-content;
   position: relative;
   align-items: center;
   place-items: center;
@@ -102,11 +104,13 @@ html h5 {
   flex-direction: row;
   margin: 0;
   place-items: center;
+  margin-bottom: 1rem;
 }
 .nearyoucontainer__titlecontainer__more {
   color: #BF0DCE;
   opacity: 0.6;
   float: right;
+  margin-bottom: 0;
 }
 .nearyoucontainer__cards {
   display: flex;
