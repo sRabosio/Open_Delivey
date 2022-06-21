@@ -158,6 +158,8 @@ body {
   flex-direction: column;
   border-radius: 9px;
   text-align: center;
+  max-width: fit-content;
+  max-height: fit-content;
 }
 .fullcard__subtitle {
   color: #EBEBEB;

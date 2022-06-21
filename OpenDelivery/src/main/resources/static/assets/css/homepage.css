@@ -98,7 +98,7 @@ html h5 {
 }
 .nearyoucontainer__titlecontainer {
   min-width: 100%;
-  display: inline-flex;
+  display: inline-block;
   flex-direction: row;
   margin: 0;
   place-items: center;
