@@ -151,6 +151,13 @@ body {
   align-content: center;
 }
 
+.fullcard {
+  background-color: #EEE;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+}
 .simpleForm a {
   text-align: right;
   color: #333333;
@@ -189,5 +196,10 @@ body {
 body img {
   background-color: #EBEBEB;
   padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.fullcard img {
+  background-color: #EBEBEB;
   border-radius: 10px;
 }
