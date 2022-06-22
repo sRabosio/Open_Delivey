@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
-body {
+body{
     margin: 0;
     padding: 0;
     display: grid;
@@ -7,6 +6,5 @@ body {
     grid-template-rows: auto;
     min-height: 100vh;
     min-width: 100vw;
-    font-family: "Urbanist";
     overflow: hidden;
 }

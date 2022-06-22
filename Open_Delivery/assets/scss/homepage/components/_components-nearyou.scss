@@ -1,0 +1,28 @@
+.nearyoucontainer{
+    position: relative;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__titlecontainer{
+        min-width: 100%;
+        display: inline-block;
+        flex-direction: row;
+        margin: 0;
+        place-items: center;
+        margin-bottom: 1rem;
+
+        &__more{
+            color: $purple;
+            opacity: 0.6;
+            float: right;
+            margin-bottom: 0;
+        }
+    }
+    &__cards{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 2rem;
+        place-items: center;
+    }
+}
