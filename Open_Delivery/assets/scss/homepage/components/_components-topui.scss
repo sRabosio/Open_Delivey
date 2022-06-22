@@ -3,8 +3,13 @@
     height: 5%;
     display: flex;
     min-width: 100%;
+    display: inline-block;
+
     &__chart{
-        position: absolute;
-        right: 0;
+        float: right;
+    }
+
+    &__menu{
+        float: left;
     }
 }

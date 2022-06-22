@@ -1,0 +1,30 @@
+.carouselcontainer{
+    display: flex;
+    flex-direction: column;
+
+    &__carousel{
+        position: relative;
+        &__card{
+            //per mantere le dimensioni intese senza che il padding vada a influenzare 
+            box-sizing: border-box;
+            min-height: 8rem;
+            min-width: 100%;
+            padding: 1.5rem;
+            background-color: $purple;
+            border-radius: 16px;
+            color: $white;
+
+        }
+
+        &__nav{
+            //TODO: navigazione del carosello
+        }
+    }
+
+    &__allergies{
+        display: flex;
+        flex-direction: column;
+
+        
+    }
+}
