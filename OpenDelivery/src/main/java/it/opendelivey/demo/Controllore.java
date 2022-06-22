@@ -15,7 +15,7 @@ public class Controllore {
 
     @RequestMapping("/")
     public String index() {
-        return "registrazione";
+        return "index";
     }
 
     @RequestMapping("/login")
@@ -104,8 +104,9 @@ public class Controllore {
     public String Ristorante () {
         return "registrazione";
     }
-    @GetMapping("/homepage")
+    */
+    @RequestMapping("/homepage")
     public String Homepage() {
-        return "registrazione";
-    }*/
+        return "homepage";
+    }
 }
