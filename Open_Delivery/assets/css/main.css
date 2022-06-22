@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap");
 html {
   color: #333333;
   font-size: 15px;
@@ -23,17 +27,6 @@ html h5 {
   font-size: 1.5rem;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  grid-template-rows: auto;
-  min-height: 100vh;
-  min-width: 100vw;
-  overflow: hidden;
-}
-
 .simpleButton {
   margin: 0;
   padding: 0.7rem;
@@ -44,6 +37,7 @@ body {
   border-radius: 10px;
   border: none;
   transition: 0.2s ease-out;
+  font-family: "Urbanist";
 }
 .simpleButton:hover {
   color: #E5E5E5;
@@ -63,10 +57,11 @@ body {
   overflow: hidden;
   min-width: 50%;
   max-width: 100%;
+  font-family: "Urbanist";
 }
 .simpleForm__textbar {
   align-self: center;
-  min-width: 90%;
+  min-width: 80%;
 }
 .simpleForm__addresscontainer {
   position: relative;
@@ -87,7 +82,7 @@ body {
   max-width: min-content;
 }
 .simpleForm .simpleButton {
-  min-width: 50%;
+  min-width: 90%;
 }
 
 .textbox {
@@ -170,15 +165,16 @@ body {
 }
 
 .titlecontainer p {
-  color: black;
-  font-weight: bold;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Urbanist";
 }
 .titlecontainer h1 {
-  color: black;
+  color: whitesmoke;
   padding: 0;
   margin: 10px;
+  font-family: "Urbanist";
 }
 
 .iconcontainer img {
