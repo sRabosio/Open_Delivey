@@ -12,14 +12,14 @@
 <body>
     <div class="container">
         <div class="topui">
-            <img src="" alt="" class="icon topui__menu" id="topui__icon__left" alt="menu">
-            <img src="assets/icons/chart.svg" alt="" class="icon topui__chart" id="topui__icon__right" alt="carrello">
+            <img src="" class="icon topui__menu" id="topui__icon__left" alt="menu">
+            <img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello">
         </div>
 
         <div class="carouselcontainer">
             <div class="carouselcontaianer__carousel">
                 <div class="carouselcontainer__carousel__card">
-                    <th:p>test</p>
+                    <p>test</p>
                 </div>
             </div>
             <div class="carouselcontainer__allergies">
@@ -87,5 +87,24 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        async function request(operation){
+            let response = await fetch("/homepage?id=0&op="+operation);
+            let json = await response.json();
+            console.log("|"+operation+"|");
+            console.log(json)
+        }
+
+        function testRequests(){
+            request("piatto");
+            request("ristorante");
+            request("offerte");
+            request("categorie");
+            request("errore");
+        }
+
+        testRequests();
+    </script>
 </body>
 </html>

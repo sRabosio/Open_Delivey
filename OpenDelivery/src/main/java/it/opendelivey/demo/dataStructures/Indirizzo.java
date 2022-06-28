@@ -27,6 +27,15 @@ public class Indirizzo {
         this.paese = paese;
     }
 
+    public static Indirizzo indirizzo(){
+        return new Indirizzo(
+                "via magenta",
+                20099,
+                "180",
+                "italia"
+        );
+    }
+
     @Override
     public String toString() {
         return "Indirizzo{" +
