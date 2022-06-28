@@ -89,31 +89,19 @@
     </div>
 
     <script>
-        async function piattoRequest(){
-            let response = await fetch("/homepage?id=0&op=piatto");
+        async function request(operation){
+            let response = await fetch("/homepage?id=0&op="+operation);
             let json = await response.json();
-            console.log("PIATTOREQ" + json);
-            console.log(json)
-        }
-
-        async function ristoranteRequest(){
-            let response = await fetch("/homepage?id=0&op=ristorante ");
-            let json = await response.json();
-            console.log( "RISTORANTEREQ" + json);
-            console.log(json)
-        }
-
-        async function errorRequest(){
-            let response = await fetch("/homepage?id=0&op=stocazzo");
-            let json = await response.json();
-            console.log("ERRORREQ");
+            console.log("|"+operation+"|");
             console.log(json)
         }
 
         function testRequests(){
-            piattoRequest();
-            ristoranteRequest();
-            errorRequest();
+            request("piatto");
+            request("ristorante");
+            request("offerte");
+            request("categorie");
+            request("errore");
         }
 
         testRequests();

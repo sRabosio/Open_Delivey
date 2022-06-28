@@ -8,29 +8,23 @@ import it.opendelivey.demo.dataStructures.Utente;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class HomepageHandler {
-    @NotNull(message = "no operation error")
-    @NotBlank(message = "no operation error")
-    private String operation;
+public class HomepageHandler extends  Handler{
 
-    @NotNull(message = "utente non trovato")
-    private Utente utente;
 
     public HomepageHandler(String operation, Utente utente) {
-        this.operation = operation;
-        this.utente = utente;
+        super(operation, utente);
     }
 
     //seleziono l'operazione e la eseguo
     public Object exec(){
-        switch (operation){
+        switch (getOperation()){
             case "piatto":
                 return piattoConsigliato();
 
             case "ristorante":
                 return ristoranteConsigliato();
 
-            case "categories":
+            case "categorie":
                 return categories();
 
             case "offerte":

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControlloreRest {
 
     @GetMapping("homepage")
-    public Object getConsigliato(
+    public Object getHomepage(
             @RequestParam("id") int id,
             @RequestParam("op") String operation
     ){
@@ -23,6 +23,12 @@ public class ControlloreRest {
         return new HomepageHandler(operation, Utente.utenteSample()).exec();
     }
 
+    @GetMapping("favorites")
+    public Object getFavorites(
+            @RequestParam("id") int id,
+            @RequestParam("op") String operation
+    ){
 
+    }
 
 }
