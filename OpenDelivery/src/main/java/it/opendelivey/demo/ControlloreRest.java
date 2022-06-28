@@ -1,6 +1,8 @@
 package it.opendelivey.demo;
 
 import it.opendelivey.demo.dataStructures.Piatto;
+import it.opendelivey.demo.dataStructures.Utente;
+import it.opendelivey.demo.handlers.HomepageHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +19,8 @@ public class ControlloreRest {
         //TODO: gestire le operazioni
         //NB: usare solo l'id dell'utente è un problema di sicurezza, mettere anche la password come conferma?
 
-        return Piatto.piattoSample();
+
+        return new HomepageHandler(operation, Utente.utenteSample()).exec();
     }
 
 

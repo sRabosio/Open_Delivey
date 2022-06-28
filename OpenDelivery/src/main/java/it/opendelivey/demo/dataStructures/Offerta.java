@@ -24,9 +24,12 @@ public class Offerta {
         this.piatti = piatti;
     }
 
-    public static void offertaSample(){
+    public static Offerta offertaSample(){
         Offerta off = new Offerta(0, 15,
                 new Piatto[]{Piatto.piattoSample()});
+        off.setNome("offertona");
+        off.setDescrizione("non perdertela");
+        return off;
     }
 
     public int getId() {
