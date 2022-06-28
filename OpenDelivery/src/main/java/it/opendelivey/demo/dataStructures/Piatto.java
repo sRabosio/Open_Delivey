@@ -31,6 +31,16 @@ public class Piatto {
         this.id = id;
     }
 
+    public static Piatto piattoSample(){
+        return new Piatto(
+                0,
+                "piattone",
+                "l'originale",
+                15,
+                new String[]{"lattosio", "arachidi"}
+        );
+    }
+
     public int getId() {
         return id;
     }

@@ -23,6 +23,21 @@ public class Utente {
         this.id = id;
     }
 
+    public static Utente utenteSample(){
+        Utente u = new Utente(0);
+        u.setAllergie(
+                new String[]{"albania"}
+        );
+        u.setEta(19);
+        u.setCognome("castoro");
+        u.setNome("pollo");
+        u.setMail("testmail@tmail.com");
+        u.setIndirizzo(Indirizzo.indirizzo());
+        u.setPassword("password");
+
+        return u;
+    }
+
     public int getId() {
         return id;
     }
