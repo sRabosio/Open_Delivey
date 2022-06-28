@@ -10,7 +10,7 @@ public class ControlloreRest {
 
     @GetMapping("homepage")
     public Object getConsigliato(
-            @RequestParam("idUtente") int id,
+            @RequestParam("id") int id,
             @RequestParam("op") String operation
     ){
         //TODO: algoritmo per scegliere il piatto da visualizzare
