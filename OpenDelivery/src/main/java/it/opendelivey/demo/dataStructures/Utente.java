@@ -14,6 +14,11 @@ public class Utente {
     @NotNull @Positive
     private int id;
 
+    private Piatto[] preferiti,
+        carrello, recentPlates;
+
+    private String recentSearches;
+
     public Utente(int id) {
         this.id = id;
     }

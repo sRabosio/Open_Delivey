@@ -19,6 +19,8 @@ public class Ristorante {
     @NotNull @Positive
     private int id;
 
+    private Piatto[] menu;
+
     public Ristorante(String nome, int id) {
         this.nome = nome;
         this.id = id;
