@@ -25,9 +25,7 @@ public class ControlloreRest {
             @RequestParam("passowrd") String password,
             @RequestParam("op") String operation
     ){
-        //TODO: algoritmo per scegliere il piatto da visualizzare
-        //TODO: gestire le operazioni
-        //NB: usare solo l'id dell'utente è un problema di sicurezza, mettere anche la password come conferma?
+        //TODO: algoritmo per scegliere il piatto da visualizzare (da fare nell'apposita classe, aka: non qua)
 
 
         return new HomepageHandler(operation, id, password);
