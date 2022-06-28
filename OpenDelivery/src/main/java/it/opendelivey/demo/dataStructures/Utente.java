@@ -1,6 +1,7 @@
 package it.opendelivey.demo.dataStructures;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 public class Utente {
     private String nome,
@@ -10,7 +11,7 @@ public class Utente {
     private String[] allergie;
     private int eta;
     private Indirizzo indirizzo;
-    @NotNull
+    @NotNull @Positive
     private int id;
 
     public Utente(int id) {

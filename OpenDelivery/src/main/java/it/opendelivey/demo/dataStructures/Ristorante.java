@@ -2,6 +2,7 @@ package it.opendelivey.demo.dataStructures;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 public class Ristorante {
@@ -15,7 +16,7 @@ public class Ristorante {
     @NotNull
     private String categorie;
 
-    @NotNull
+    @NotNull @Positive
     private int id;
 
     public Ristorante(String nome, int id) {
