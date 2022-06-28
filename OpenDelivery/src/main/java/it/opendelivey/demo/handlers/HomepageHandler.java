@@ -11,8 +11,8 @@ import javax.validation.constraints.NotNull;
 public class HomepageHandler extends  Handler{
 
 
-    public HomepageHandler(String operation, Utente utente) {
-        super(operation, utente);
+    public HomepageHandler(String operation, int id, String password) {
+        super(operation, id, password);
     }
 
     //seleziono l'operazione e la eseguo

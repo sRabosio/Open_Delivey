@@ -16,9 +16,18 @@ public class Handler {
     @NotNull(message = "utente non trovato")
     private Utente utente;
 
-    public Handler(String operation, Utente utente) {
+    public Handler(String operation, int id, String password) {
         this.operation = operation;
-        this.utente = utente;
+        this.utente = verify(id, password);
+    }
+    
+    private Utente verify(int id, String password){
+        Utente dbUtente = Utente.utenteSample();
+        
+        if(id == dbUtente.getId() && password.equals(dbUtente.getpassword()))
+            return dbUtente;
+        else
+            return null;
     }
 
     public Object exec(){
