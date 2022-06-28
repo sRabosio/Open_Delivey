@@ -7,13 +7,12 @@ public class LoginForm {
     @NotNull
     @NotBlank
     private String mail;
-    @NotNull
-    @NotBlank
+    @NotNull @NotBlank
     private String password;
 
     public LoginForm(String mail, String password) {
         this.mail = mail;
-        this.password = null;
+        this.password = password;
     }
 
 
