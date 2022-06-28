@@ -43,6 +43,7 @@ public class Controllore {
                 && userLogin.getPassword().equals(dbLogin.getPassword()))
         ) return "login";
 
+        //TODO: fare in modo di passare l'id dell'utente all'homepage
         return "homepage";
     }
 
