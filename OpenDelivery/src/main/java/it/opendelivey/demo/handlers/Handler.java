@@ -5,6 +5,9 @@ import it.opendelivey.demo.dataStructures.Utente;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+//Superclasse per incapsulare i campi comuni degli handler
+//che andremo a fare
+
 public class Handler {
     @NotNull(message = "no operation error")
     @NotBlank(message = "no operation error")

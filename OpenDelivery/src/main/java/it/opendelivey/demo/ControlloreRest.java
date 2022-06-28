@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControlloreRest {
 
+    //PPTX 4 di SpringBoot
+
     @GetMapping("homepage")
     public Object getHomepage(
             @RequestParam("id") int id,
@@ -23,6 +25,8 @@ public class ControlloreRest {
 
         return new HomepageHandler(operation, Utente.utenteSample()).exec();
     }
+
+
 
     @GetMapping("/favorites")
     public Object favorites(

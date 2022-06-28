@@ -23,6 +23,7 @@ public class FavoritesHandler extends Handler{
         }
     }
 
+    //ritorna la lista dei piatti preferiti da un utente
     private Piatto[] favorites() {
         return new Piatto[]{
             Piatto.piattoSample(),
