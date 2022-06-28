@@ -2,6 +2,7 @@ package it.opendelivey.demo;
 
 import it.opendelivey.demo.dataStructures.Piatto;
 import it.opendelivey.demo.dataStructures.Utente;
+import it.opendelivey.demo.handlers.FavoritesHandler;
 import it.opendelivey.demo.handlers.HomepageHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,12 +24,12 @@ public class ControlloreRest {
         return new HomepageHandler(operation, Utente.utenteSample()).exec();
     }
 
-    @GetMapping("favorites")
-    public Object getFavorites(
+    @GetMapping("/favorites")
+    public Object favorites(
             @RequestParam("id") int id,
             @RequestParam("op") String operation
     ){
-
+        return new FavoritesHandler(operation, Utente.utenteSample()).exec();
     }
 
 }

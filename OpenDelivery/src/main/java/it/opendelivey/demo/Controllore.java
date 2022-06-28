@@ -86,4 +86,20 @@ public class Controllore {
         System.out.println(form);
         return "login";
     }
+
+    @RequestMapping("fav")
+    public String favorites(){
+        return "favorites";
+    }
+
+    @GetMapping("pro")
+    public String profile(){
+        return "profile";
+    }
+
+    @GetMapping("ch")
+    public String chart(){
+        return "chart";
+    }
 }
+
