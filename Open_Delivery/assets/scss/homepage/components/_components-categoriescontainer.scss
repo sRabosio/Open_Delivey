@@ -10,6 +10,13 @@
     place-items: center;
     gap: 1rem;
     padding-top: 2rem;
+
+    //scroll bar remover
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
     
     &__title{
         position: absolute;
