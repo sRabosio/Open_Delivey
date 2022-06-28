@@ -18,13 +18,17 @@ public class Piatto {
     int prezzo;
 
     @NotNull
+    int id;
+
+    @NotNull
     String[] allergeni;
 
-    public Piatto(String nome, String descrizione, int prezzo, @NotNull String[] allergeni) {
+    public Piatto(int id, String nome, String descrizione, int prezzo, @NotNull String[] allergeni) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.allergeni = allergeni;
+        this.id = id;
     }
 
     public String getNome() {
