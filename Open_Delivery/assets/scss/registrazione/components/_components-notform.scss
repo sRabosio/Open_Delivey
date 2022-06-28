@@ -1,11 +1,12 @@
-.notform{
+.notform {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     place-items: center;
-
-    .simpleButton{
-        align-self: center;
+    color: whitesmoke;
+    font-family: "Urbanist";
+    .simpleButton {
+        max-width: 90%;
     }
 }
