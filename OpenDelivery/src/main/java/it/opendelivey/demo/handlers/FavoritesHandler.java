@@ -7,8 +7,8 @@ import javax.validation.constraints.NotNull;
 
 public class FavoritesHandler extends Handler{
 
-    public FavoritesHandler(String operation, Utente utente) {
-        super(operation, utente);
+    public FavoritesHandler(String operation, int id, String password) {
+        super(operation, id, password);
     }
 
     @Override
