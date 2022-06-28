@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: $body_sides_space auto $body_sides_space;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: none;
+    font-family: "Urbanist";
+}
