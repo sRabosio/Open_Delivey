@@ -28,8 +28,115 @@ html h5 {
   height: 5%;
   display: flex;
   min-width: 100%;
+  display: inline-block;
 }
 .topui__chart {
+  float: right;
+}
+.topui__menu {
+  float: left;
+}
+
+.container {
+  top: 5%;
+}
+
+.carouselcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.carouselcontainer__carousel {
+  position: relative;
+}
+.carouselcontainer__carousel__card {
+  box-sizing: border-box;
+  min-height: 8rem;
+  min-width: 100%;
+  padding: 1.5rem;
+  background-color: #BF0DCE;
+  border-radius: 16px;
+  color: #EEE;
+}
+.carouselcontainer__allergies {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriescontainer {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  min-height: max-content;
+  position: relative;
+  align-items: center;
+  place-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+.categoriescontainer::-webkit-scrollbar {
+  display: none;
+}
+.categoriescontainer__title {
   position: absolute;
-  right: 0;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.categoriescontainer__category {
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #BF0DCE;
+  margin: 0;
+  border-radius: 11px;
+  color: #EEE;
+}
+
+.nearyoucontainer {
+  position: relative;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+.nearyoucontainer__titlecontainer {
+  min-width: 100%;
+  display: inline-block;
+  flex-direction: row;
+  margin: 0;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+.nearyoucontainer__titlecontainer__more {
+  color: #BF0DCE;
+  opacity: 0.6;
+  float: right;
+  margin-bottom: 0;
+}
+.nearyoucontainer__cards {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 2rem;
+  place-items: center;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.carouselcontainer__allergies p {
+  text-align: center;
+}
+
+.nearyoucontainer h5 {
+  margin: 0;
+  float: left;
+  margin-top: 0.3rem;
 }
