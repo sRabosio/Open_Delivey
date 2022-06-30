@@ -14,42 +14,42 @@ const sassList = [
     "./src/assets/scss/registrazione/*.scss", "./src/assets/scss/registrazione/**/*.scss",
 ];
 
-const javaDir = "../OpenDelivery/src/main/resources/";
+const javaDir = "../main/resources/";
 
 //per ogni nuova sezione di scss andrà fatta una funzione che la gestisce e andrà aggiunta a "allStyle"
 
 function commonStyle(){
     //file da convertire
-    return gulp.src("./src/assets/scss/common/main.scss")
+    return gulp.src("./assets/scss/common/main.scss")
 
     .pipe(sass())
 
-    .pipe(gulp.dest("./src/assets/css"))
+    .pipe(gulp.dest("./assets/css"))
 }
 function homeStyle(){
     //file da convertire
-    return gulp.src("./src/assets/scss/homepage/homepage.scss")
+    return gulp.src("./assets/scss/homepage/homepage.scss")
 
     .pipe(sass())
 
-    .pipe(gulp.dest("./src/assets/css"))
+    .pipe(gulp.dest("./assets/css"))
 }
 
 function regStyle(){
     //file da convertire
-    return gulp.src("./src/assets/scss/registrazione/registrazione.scss")
+    return gulp.src("./assets/scss/registrazione/registrazione.scss")
 
     .pipe(sass())
 
-    .pipe(gulp.dest("./src/assets/css"))
+    .pipe(gulp.dest("./assets/css"))
 }
 
 function html(){
     const localJavaDir = javaDir + "templates/";
 
     //da qua a java
-    gulp.watch("public/*.html", ()=>{
-        return gulp.src("public/*.html")
+    gulp.watch("*.html", ()=>{
+        return gulp.src("*.html")
         .pipe(gulp.dest(localJavaDir));
     });
     //da java a qua
