@@ -69,12 +69,16 @@ html h5 {
   overflow-x: scroll;
   overflow-y: hidden;
   min-height: max-content;
-  height: max-content;
   position: relative;
   align-items: center;
   place-items: center;
   gap: 1rem;
   padding-top: 2rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+.categoriescontainer::-webkit-scrollbar {
+  display: none;
 }
 .categoriescontainer__title {
   position: absolute;
@@ -98,6 +102,8 @@ html h5 {
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 .nearyoucontainer__titlecontainer {
   min-width: 100%;

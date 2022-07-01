@@ -1,83 +1,79 @@
 package it.opendelivey.demo.dataStructures;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 
 public class Piatto {
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private String Nome;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private Double Prezzo;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private Integer Quantità;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private ArrayList<String> Ingredienti;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private ArrayList<String> Intolleranze;
+    @NotNull
+    @NotBlank
+    String nome;
 
+    @NotNull
+    @NotBlank
+    String descrizione;
 
-    public Piatto(String nome, Double prezzo, Integer quantità, ArrayList<String> ingredienti, ArrayList<String> intolleranze) {
-        Nome = nome;
-        Prezzo = prezzo;
-        Quantità = quantità;
-        Ingredienti = ingredienti;
-        Intolleranze = intolleranze;
+    @NotNull
+    @Min(1)
+    int prezzo;
+
+    @NotNull
+    int id;
+
+    @NotNull
+    String[] allergeni;
+
+    public Piatto(int id, String nome, String descrizione, int prezzo, @NotNull String[] allergeni) {
+        this.nome = nome;
+        this.descrizione = descrizione;
+        this.prezzo = prezzo;
+        this.allergeni = allergeni;
+        this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Piatto{" +
-                "Nome='" + Nome + '\'' +
-                ", Prezzo=" + Prezzo +
-                ", Quantità=" + Quantità +
-                ", Ingredienti=" + Ingredienti +
-                ", Intolleranze=" + Intolleranze +
-                '}';
+    public static Piatto piattoSample(){
+        return new Piatto(
+                0,
+                "piattone",
+                "l'originale",
+                15,
+                new String[]{"lattosio", "arachidi"}
+        );
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
 
-    public Double getPrezzo() {
-        return Prezzo;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void setPrezzo(Double prezzo) {
-        Prezzo = prezzo;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
-    public Integer getQuantità() {
-        return Quantità;
+    public int getPrezzo() {
+        return prezzo;
     }
 
-    public void setQuantità(Integer quantità) {
-        Quantità = quantità;
+    public void setPrezzo(int prezzo) {
+        this.prezzo = prezzo;
     }
 
-    public ArrayList<String> getIngredienti() {
-        return Ingredienti;
+    public String[] getAllergeni() {
+        return allergeni;
     }
 
-    public void setIngredienti(ArrayList<String> ingredienti) {
-        Ingredienti = ingredienti;
-    }
-
-    public ArrayList<String> getIntolleranze() {
-        return Intolleranze;
-    }
-
-    public void setIntolleranze(ArrayList<String> intolleranze) {
-        Intolleranze = intolleranze;
+    public void setAllergeni(String[] allergeni) {
+        this.allergeni = allergeni;
     }
 }

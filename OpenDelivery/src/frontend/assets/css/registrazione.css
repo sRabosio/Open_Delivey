@@ -1,0 +1,58 @@
+html {
+  color: #333333;
+  font-size: 15px;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+html h1 {
+  font-size: 3.5rem;
+}
+html h2 {
+  font-size: 3rem;
+}
+html h3 {
+  font-size: 2.5rem;
+}
+html h4 {
+  font-size: 2rem;
+}
+html h5 {
+  font-size: 1.5rem;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+}
+
+.container {
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.8);
+  height: 70%;
+  width: 50%;
+  margin: auto;
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 70%;
+    width: 70%;
+  }
+}
+
+.notform {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: whitesmoke;
+  font-family: "Urbanist";
+}
+.notform .simpleButton {
+  max-width: 90%;
+}

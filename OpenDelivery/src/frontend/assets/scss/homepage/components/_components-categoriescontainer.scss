@@ -1,0 +1,38 @@
+.categoriescontainer{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    min-height: max-content;
+    position: relative;
+    align-items: center;
+    place-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+
+    //scroll bar remover
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    
+    &__title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__category{
+        padding: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: $purple;
+        margin: 0;
+        border-radius: 11px;
+        color: $white;
+    }
+}
