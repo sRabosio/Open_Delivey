@@ -99,8 +99,4 @@ public class Utente {
     public void setIndirizzo(Indirizzo indirizzo) {
         this.indirizzo = indirizzo;
     }
-
-    public String getpassword() {
-        return password;
-    }
 }
