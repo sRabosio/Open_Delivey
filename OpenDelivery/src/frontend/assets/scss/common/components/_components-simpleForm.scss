@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
-.simpleForm {
+.simpleForm{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -10,12 +9,15 @@
     overflow: hidden;
     min-width: 50%;
     max-width: 100%;
-    font-family: "Urbanist";
-    &__textbar {
+
+
+    &__textbar{
+               
         align-self: center;
-        min-width: 80%;
+        min-width: 90%;
     }
-    &__addresscontainer {
+
+    &__addresscontainer{
         position: relative;
         left: -$std_padding;
         display: grid;
@@ -26,17 +28,20 @@
         margin: 0;
         padding: 0;
         gap: 1rem;
-        &__type {
+        &__type{
             //grid-column: 1;
             max-width: min-content;
             //margin-right: 2rem;
+            
         }
-        &__number {
+
+        &__number{
             //grid-column: 3;
             max-width: min-content;
         }
     }
-    .simpleButton {
-        min-width: 90%;
+
+    .simpleButton{
+        min-width: 50%;
     }
 }

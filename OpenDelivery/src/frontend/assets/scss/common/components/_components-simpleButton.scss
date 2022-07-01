@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
-.simpleButton {
+.simpleButton{
     margin: 0;
     padding: $std_padding;
     padding-left: 3rem;
@@ -9,8 +8,7 @@
     border-radius: $std_border_radius;
     border: none;
     transition: 0.2s ease-out;
-    font-family: "Urbanist";
-    &:hover {
+    &:hover{
         color: $normal_grey;
         cursor: pointer;
         background-color: lighten($purple, 10);
