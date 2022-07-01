@@ -1,9 +1,6 @@
 package it.opendelivey.demo.handlers;
 
-import it.opendelivey.demo.dataStructures.Piatto;
-import it.opendelivey.demo.dataStructures.Utente;
-
-import javax.validation.constraints.NotNull;
+import it.opendelivey.demo.model.Piatto;
 
 public class FavoritesHandler extends Handler{
 

@@ -1,12 +1,8 @@
 package it.opendelivey.demo.handlers;
 
-import it.opendelivey.demo.dataStructures.Offerta;
-import it.opendelivey.demo.dataStructures.Piatto;
-import it.opendelivey.demo.dataStructures.Ristorante;
-import it.opendelivey.demo.dataStructures.Utente;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import it.opendelivey.demo.model.Offerta;
+import it.opendelivey.demo.model.Piatto;
+import it.opendelivey.demo.model.Ristorante;
 
 public class HomepageHandler extends  Handler{
 

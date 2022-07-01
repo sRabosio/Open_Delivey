@@ -1,6 +1,6 @@
 package it.opendelivey.demo.handlers;
 
-import it.opendelivey.demo.dataStructures.Utente;
+import it.opendelivey.demo.model.Utente;
 
 public class ProfileHandler extends Handler{
 

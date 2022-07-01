@@ -1,11 +1,10 @@
 package it.opendelivey.demo;
 
 
-import it.opendelivey.demo.dataStructures.Indirizzo;
-import it.opendelivey.demo.dataStructures.LoginForm;
-import it.opendelivey.demo.dataStructures.RegistrationForm;
+import it.opendelivey.demo.model.Indirizzo;
+import it.opendelivey.demo.model.LoginForm;
+import it.opendelivey.demo.model.RegistrationForm;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller

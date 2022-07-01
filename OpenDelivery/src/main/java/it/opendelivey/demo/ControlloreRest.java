@@ -1,12 +1,9 @@
 package it.opendelivey.demo;
 
-import it.opendelivey.demo.dataStructures.Piatto;
-import it.opendelivey.demo.dataStructures.Utente;
 import it.opendelivey.demo.handlers.FavoritesHandler;
 import it.opendelivey.demo.handlers.HomepageHandler;
 import it.opendelivey.demo.handlers.ProfileHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
