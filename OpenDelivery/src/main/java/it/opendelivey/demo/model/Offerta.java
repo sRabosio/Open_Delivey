@@ -1,6 +1,4 @@
-package it.opendelivey.demo.dataStructures;
-
-import it.opendelivey.demo.dataStructures.Piatto;
+package it.opendelivey.demo.model;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

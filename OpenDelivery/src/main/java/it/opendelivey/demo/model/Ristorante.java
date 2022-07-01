@@ -1,4 +1,4 @@
-package it.opendelivey.demo.dataStructures;
+package it.opendelivey.demo.model;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

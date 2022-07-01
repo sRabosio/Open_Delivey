@@ -1,7 +1,9 @@
-package it.opendelivey.demo.dataStructures;
+package it.opendelivey.demo.model;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+
+//TODO: implementare annotazione ibernate
 
 public class Utente {
     private String nome,
@@ -9,17 +11,17 @@ public class Utente {
         password,
         mail;
     private String[] allergie;
-    private int eta;
+    private Integer eta;
     private Indirizzo indirizzo;
     @NotNull @Positive
-    private int id;
+    private Integer id;
 
     private Piatto[] preferiti,
         carrello, recentPlates;
 
     private String recentSearches;
 
-    public Utente(int id) {
+    public Utente(Integer id) {
         this.id = id;
     }
 
@@ -38,7 +40,7 @@ public class Utente {
         return u;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -82,11 +84,11 @@ public class Utente {
         this.allergie = allergie;
     }
 
-    public int getEta() {
+    public Integer getEta() {
         return eta;
     }
 
-    public void setEta(int eta) {
+    public void setEta(Integer eta) {
         this.eta = eta;
     }
 
