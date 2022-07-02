@@ -127,6 +127,10 @@ html h5 {
   place-items: center;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 .carouselcontainer__allergies p {
   text-align: center;
 }
