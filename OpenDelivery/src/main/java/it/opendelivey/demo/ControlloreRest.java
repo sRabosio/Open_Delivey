@@ -33,7 +33,7 @@ public class ControlloreRest {
     @GetMapping("/favorites")
     public Object favorites(
             @RequestParam("id") int id,
-            @RequestParam("passowrd") String password,
+            @RequestParam("password") String password,
             @RequestParam("op") String operation
     ){
         return new FavoritesHandler(operation, id, password);
