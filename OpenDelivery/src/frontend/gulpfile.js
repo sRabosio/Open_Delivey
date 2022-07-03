@@ -88,3 +88,9 @@ exports.all = ()=>{
     watchStyle();
     html();
 };
+exports.reverse = ()=>{
+    gulp.watch(javaDir + "templates/*.html", ()=>{
+        return gulp.src(javaDir + "templates/*.html")
+        .pipe(gulp.dest("./"));
+    })
+};

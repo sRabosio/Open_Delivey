@@ -82,10 +82,10 @@
                 <img src="assets/icons/bookmark.svg" alt="salvati" class="icon" id="bookmark">
                 <p></p>
             </div>
-            <div class="uielement">
+            <a class="uielement" th:href="@{profile(email=${utente.getMail()}, password=${utente.getPassword()})}">
                 <img src="assets/icons/user.svg" alt="profilo" class="icon" id="profile">
                 <p></p>
-            </div>
+            </a>
         </footer>
     </div>
 </body>

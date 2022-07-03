@@ -12,10 +12,13 @@ public class ProfileController {
 
     @GetMapping("/profile")
     public String profile(
-            @RequestParam("id") int id,
+            @RequestParam("email") String email,
             @RequestParam("password") String password,
             Model model
     ){
+
+        //TODO: controllare se i parametri sono corretti
+
         Utente utente = Utente.utenteSample();
         model.addAttribute(utente);
 
