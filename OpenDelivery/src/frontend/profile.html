@@ -16,7 +16,14 @@
 
             </div>
             <div class="profile__about">
-                
+                <table>
+                    <tr>
+                        <td th:text="${utente.getNome()} + ' ' + ${utente.getCognome()}"></td>
+                        <td th:text="${utente.getMail()}"></td>
+                        <td>cambia password</td>
+                        <td>vedi allergie</td>
+                    </tr>
+                </table>
             </div>
         </content>
     </div>

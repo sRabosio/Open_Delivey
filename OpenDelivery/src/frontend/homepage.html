@@ -45,15 +45,15 @@
                 </div>
                 <div class="fullcard">
                     <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title">pizzeria sugodipollo</h5>
-                    <p class="fullcard__subtitle">pollone sugone</p>
+                    <h5 class="fullcard__title"></h5>
+                    <p class="fullcard__subtitle"></p>
                     <span class="currency">$$</span>
                 </div>
                 <div class="fullcard">
                     <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title" th:text="pizzeria sugodipollo"></h5>
-                    <p class="fullcard__subtitle" th:text="pollone sugone"></p>
-                    <span class="currency" th="$$"></span>
+                    <h5 class="fullcard__title"></h5>
+                    <p class="fullcard__subtitle"></p>
+                    <span class="currency"></span>
                 </div>
             </div>
             <div class="nearyoucontainer" id="piattiConsigliati">
@@ -88,24 +88,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        async function request(operation){
-            let response = await fetch("/homepage?id=0&op="+operation);
-            let json = await response.json();
-            console.log("|"+operation+"|");
-            console.log(json)
-        }
-
-        function testRequests(){
-            request("piatto");
-            request("ristorante");
-            request("offerte");
-            request("categorie");
-            request("errore");
-        }
-
-        testRequests();
-    </script>
 </body>
 </html>

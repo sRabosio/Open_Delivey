@@ -18,22 +18,5 @@ public class IndexController {
         //TODO: controllare se i dati di login sono salvati nel browser e agire di conseguenza
         return "registrazione";
     }
-
-
-    //DEBUG REQUESTS
-    @RequestMapping("fav")
-    public String favorites(){
-        return "favorites";
-    }
-
-    @GetMapping("pro")
-    public String profile(){
-        return "profile";
-    }
-
-    @GetMapping("ch")
-    public String chart(){
-        return "chart";
-    }
 }
 
