@@ -37,6 +37,15 @@ public class Utente {
         u.setMail("testmail@tmail.com");
         u.setIndirizzo(Indirizzo.indirizzo());
         u.setPassword("password");
+        u.setCarrello(
+                new Piatto[]{
+                        Piatto.piattoSample(),
+                        Piatto.piattoSample(),
+                        Piatto.piattoSample(),
+                        Piatto.piattoSample(),
+                        Piatto.piattoSample(),
+                }
+        );
 
         return u;
     }
