@@ -13,7 +13,7 @@
     <div class="container">
         <div class="topui">
             <img src="" class="icon topui__menu" id="topui__icon__left" alt="menu">
-            <img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello">
+            <a href="@{chart(email=${utente.getMail()}, password=${utente.getPassword()})}"><img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello"></a>
         </div>
 
         <div class="carouselcontainer">
