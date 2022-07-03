@@ -179,6 +179,10 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+.uicontainer #user {
+  fill: purple;
+  stroke: purple;
+}
 
 .currency {
   color: #BF0DCE;
