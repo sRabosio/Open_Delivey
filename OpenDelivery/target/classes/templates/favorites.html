@@ -25,20 +25,5 @@
             <img src="" alt="">
         </div>
     </div>
-
-    <script>
-        async function request(operation){
-            let response = await fetch("/favorites?id=0&op="+operation);
-            let json = await response.json();
-            console.log("|"+operation+"|");
-            console.log(json)
-        }
-
-        function testRequests(){
-            request("favorites");
-        }
-
-        testRequests();
-    </script>
 </body>
 </html>
