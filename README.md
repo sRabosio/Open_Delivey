@@ -2,7 +2,7 @@
 
 REMINDER: sass --watch NON funziona con la wsl, è necessario usare il terminale di windows
 
-Link ER: https://app.diagrams.net/#G1TD_Z6_8DH2anEVHbnCSla8DRdOGw46
+Link ER: https://drive.google.com/file/d/1TD_Z6_8DH2anEVHbnCSla8DRdOGw46qE/view?usp=sharing
 
 Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-id=0%3A1
 
