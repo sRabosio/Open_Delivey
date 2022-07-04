@@ -65,8 +65,9 @@ function processStyle(){
     commonStyle();
     homeStyle();
     regStyle();
+
     return gulp.src("./assets/css/*.css")
-        .pipe(gulp.dest(javaDir + "/static/assets/css/"));
+        .pipe(gulp.dest(javaDir + "/static/assets/css"));
 }
 
 
@@ -76,8 +77,9 @@ function watchStyle(){
 
     console.log("watching sass...");
     gulp.watch(sassList,() => {
-        return processStyle();
-        
+        processStyle();     
+        return gulp.src("./assets/css/*.css")
+        .pipe(gulp.dest(javaDir + "/static/assets/css"));   
     });
 }
 
