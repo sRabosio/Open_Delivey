@@ -65,12 +65,12 @@
                     <h5>Altro per te:</h5>
                 </div>
                 <div class="nearyoucontainer__cards">
-                   <div class="fullcard" th:each="consigliato:${consigliati}" th:id="'consigliato'+${consigliato.getId()}">
+                   <a class="fullcard" th:each="consigliato:${consigliati}" th:id="'consigliato'+${consigliato.getId()}" th:href="@{plate(id=${consigliato.getId()})}">
                         <img src="assets/images/pizza brutta.jpg" alt="">
                         <h5 class="fullcard__title" th:text="${consigliato.getNome()}"></h5>
                         <p class="fullcard__subtitle" th:text="${consigliato.getDescrizione()}"></p>
                         <span class="fullcard__price" th:text="${consigliato.getPrezzo()}"><span class="currency">$</span></span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </content>
