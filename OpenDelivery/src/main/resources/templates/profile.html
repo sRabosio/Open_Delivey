@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:img="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,18 @@
 
             </div>
             <div class="profile__about">
-                
+                <table>
+                    <tr>
+                        <td th:text="${utente.getNome()} + ' ' + ${utente.getCognome()}"></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${utente.getMail()}"></td>
+                    </tr>
+                    <tr>
+                        <td><a th:text="'cambia password'"></a></td>
+                    </tr>
+                </table>
+
             </div>
         </content>
     </div>

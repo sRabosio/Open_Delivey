@@ -24,7 +24,7 @@ public class Handler {
     private Utente verify(int id, String password){
         Utente dbUtente = Utente.utenteSample();
         
-        if(id == dbUtente.getId() && password.equals(dbUtente.getpassword()))
+        if(id == dbUtente.getId() && password.equals(dbUtente.getPassword()))
             return dbUtente;
         else
             return null;
