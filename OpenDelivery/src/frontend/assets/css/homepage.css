@@ -124,7 +124,7 @@ html h5 {
   flex-direction: row;
   overflow-x: scroll;
   gap: 2rem;
-  place-items: center;
+  position: relative;
 }
 
 body {
