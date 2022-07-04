@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" xmlns:img="http://www.w3.org/1999/xhtml">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,10 @@
     <div class="container">
         <div class="topui">
             <img src="" class="icon topui__menu" id="topui__icon__left" alt="menu">
-            <img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello">
+            <a th:href="@{chart(email=${utente.getMail()}, password=${utente.getPassword()})}"><img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello"></a>
         </div>
 
-        <div class="carouselcontainer">
+        <div class="carouselcontainer"  >
             <div class="carouselcontaianer__carousel">
                 <div class="carouselcontainer__carousel__card">
                     <p>test</p>
@@ -25,8 +25,6 @@
             <div class="carouselcontainer__allergies">
                 <p> a cosa sei intollerante?</p>
                 <form>
-                    <!-- possibile integrazione col database passando da js?
-                    creaiamo gli elementi da javascript usando una lista di intolleranze meno quelle già selezionate -->
                     <input type="checkbox" name="lattosio" id="lattosio">
                     <label for="lattosio">lattosio</label>
                 </form>
@@ -37,10 +35,7 @@
 
         <div class="categoriescontainer">
             <h5 class="categoriescontainer__title">Categorie</h5>
-            <div class="categoriescontainer__category">Pizza</div>
-            <div class="categoriescontainer__category"></div>
-            <div class="categoriescontainer__category"></div>
-            <div class="categoriescontainer__category"></div>
+            <button class="categoriescontainer__category">pizza</button>
         </div>
         <content class="contentcontainer">
             <div class="nearyoucontainer" id="ristorantiConsigliati">
@@ -48,63 +43,46 @@
                     <h5>I ristoranti più vicini a te:</h5>
                     <p class="nearyoucontainer__titlecontainer__more">Vedi altro ></p>
                 </div>
-                <div class="fullcard">
-                    <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title">pizzeria sugodipollo</h5>
-                    <p class="fullcard__subtitle">pollone sugone</p>
+                <div class="fullcard" th:each="ristorante:${ristoranti}" th:id="'ristorante'+${ristorante.getId()}">
+                    <img src="assets/images/pizza brutta.jpg" alt="" >
+                    <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
+                    <!-- TODO: add restaurant description ??? -->
+                    <p class="fullcard__subtitle"></p>
+                    <!-- TODO: add price range for restaurant -->
                     <span class="currency">$$</span>
                 </div>
             </div>
-            <div class="nearyoucontainer" id="piattiConsigliati">
+            <div class="nearyoucontainer" id="piattiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>Altro per te:</h5>
                 </div>
-                <div class="fullcard">
+                <div class="fullcard" th:each="piatto:${consigliati}" th:id="'consigliato'+${piatto.getId()}">
                     <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title">pizzona</h5>
-                    <p class="fullcard__subtitle">pollone sugone</p>
-                    <span class="fullcard__price"><span class="currency">$</span>5</span>
+                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
+                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
+                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
                 </div>
             </div>
         </content>
 
         <footer class="uicontainer">
             <div class="uielement">
-                <img src="" alt="" class="icon">
+                <img src="assets/icons/menu.svg" alt="homepage" class="icon" id="homepage">
                 <p></p>
             </div>
             <div class="uielement">
-                <img src="" alt="" class="icon">
+                <img src="assets/icons/search.svg" alt="cerca" class="icon" id="search">
                 <p></p>
             </div>
             <div class="uielement">
-                <img src="" alt="" class="icon">
+                <img src="assets/icons/bookmark.svg" alt="salvati" class="icon" id="bookmark">
                 <p></p>
             </div>
-            <div class="uielement">
-                <img src="" alt="" class="icon">
+            <a class="uielement" th:href="@{profile(email=${utente.getMail()}, password=${utente.getPassword()})}">
+                <img src="assets/icons/user.svg" alt="profilo" class="icon" id="profile">
                 <p></p>
-            </div>
+            </a>
         </footer>
     </div>
-
-    <script>
-        async function request(operation){
-            let response = await fetch("/homepage?id=0&op="+operation);
-            let json = await response.json();
-            console.log("|"+operation+"|");
-            console.log(json)
-        }
-
-        function testRequests(){
-            request("piatto");
-            request("ristorante");
-            request("offerte");
-            request("categorie");
-            request("errore");
-        }
-
-        testRequests();
-    </script>
 </body>
 </html>

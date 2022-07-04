@@ -7,11 +7,11 @@ const {src, series, parallel, dest, watch} = require("gulp");
 //lista delle directory di scss
 const sassList = [
     //common
-    "./src/assets/scss/common/*.scss","./src/assets/scss/common/**/*.scss",
+    "./assets/scss/common/*.scss","./assets/scss/common/**/*.scss",
     //homepage
-    "./src/assets/scss/homepage/*.scss", "./src/assets/scss/homepage/**/*.scss",
+    "./assets/scss/homepage/*.scss", "./assets/scss/homepage/**/*.scss",
     //registrazione
-    "./src/assets/scss/registrazione/*.scss", "./src/assets/scss/registrazione/**/*.scss",
+    "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
 ];
 
 const javaDir = "../main/resources/";
@@ -61,17 +61,25 @@ function html(){
     });*/
 }
 
-function watchStyle(){
+function processStyle(){
     commonStyle();
     homeStyle();
     regStyle();
+
+    return gulp.src("./assets/css/*.css")
+        .pipe(gulp.dest(javaDir + "/static/assets/css"));
+}
+
+
+function watchStyle(){
+    
+    processStyle();
+
     console.log("watching sass...");
     gulp.watch(sassList,() => {
-        commonStyle();
-        homeStyle();
-        regStyle();
+        processStyle();     
         return gulp.src("./assets/css/*.css")
-        .pipe(gulp.dest(javaDir + "/static/assets/css"));
+        .pipe(gulp.dest(javaDir + "/static/assets/css"));   
     });
 }
 
@@ -81,4 +89,10 @@ exports.html = html;
 exports.all = ()=>{
     watchStyle();
     html();
+};
+exports.reverse = ()=>{
+    gulp.watch(javaDir + "templates/*.html", ()=>{
+        return gulp.src(javaDir + "templates/*.html")
+        .pipe(gulp.dest("./"));
+    })
 };
