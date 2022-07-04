@@ -19,11 +19,15 @@
                 <table>
                     <tr>
                         <td th:text="${utente.getNome()} + ' ' + ${utente.getCognome()}"></td>
+                    </tr>
+                    <tr>
                         <td th:text="${utente.getMail()}"></td>
-                        <td>cambia password</td>
-                        <td>vedi allergie</td>
+                    </tr>
+                    <tr>
+                        <td><a th:text="'cambia password'"></a></td>
                     </tr>
                 </table>
+
             </div>
         </content>
     </div>

@@ -2,6 +2,7 @@ package it.opendelivey.demo.controllers;
 
 import it.opendelivey.demo.handlers.HomepageHandler;
 import it.opendelivey.demo.model.LoginForm;
+import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,14 @@ public class HomepageController {
         userLogin = new LoginForm(email, password);
         System.out.println(userLogin);
         System.out.println(utente);
+        Piatto[] consigliati = {
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample()
+        };
 
         //usare equals per comparare gli oggetti non mi funziona
         //se qualcuno sa come farlo lo faccia, sta roba è cancerogena
@@ -34,7 +43,8 @@ public class HomepageController {
                 && userLogin.getPassword().equals(utente.getPassword()))
         ) return "login";
 
-        model.addAttribute(utente);
+        model.addAttribute("utente", utente);
+        model.addAttribute("consigliati", consigliati);
 
         return "homepage";
     }
