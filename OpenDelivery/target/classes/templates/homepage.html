@@ -38,33 +38,29 @@
             <button class="categoriescontainer__category">pizza</button>
         </div>
         <content class="contentcontainer">
-            <div class="nearyoucontainer" id="ristorantiConsigliati" >
+            <div class="nearyoucontainer" id="ristorantiConsigliati">
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>I ristoranti più vicini a te:</h5>
                     <p class="nearyoucontainer__titlecontainer__more">Vedi altro ></p>
                 </div>
-                <div class="fullcard">
-                    <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title"></h5>
+                <div class="fullcard" th:each="ristorante:${ristoranti}" th:id="'ristorante'+${ristorante.getId()}">
+                    <img src="assets/images/pizza brutta.jpg" alt="" >
+                    <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
+                    <!-- TODO: add restaurant description ??? -->
                     <p class="fullcard__subtitle"></p>
+                    <!-- TODO: add price range for restaurant -->
                     <span class="currency">$$</span>
-                </div>
-                <div class="fullcard">
-                    <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title"></h5>
-                    <p class="fullcard__subtitle"></p>
-                    <span class="currency"></span>
                 </div>
             </div>
             <div class="nearyoucontainer" id="piattiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>Altro per te:</h5>
                 </div>
-                <div class="fullcard" th:each="consigliato:${consigliati}" th:id="'consigliato'+${consigliato.getId()}">
+                <div class="fullcard" th:each="piatto:${consigliati}" th:id="'consigliato'+${piatto.getId()}">
                     <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title" th:text="${consigliato.getNome()}"></h5>
-                    <p class="fullcard__subtitle" th:text="${consigliato.getDescrizione()}"></p>
-                    <span class="fullcard__price" th:text="${consigliato.getPrezzo()}"><span class="currency">$</span></span>
+                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
+                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
+                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
                 </div>
             </div>
         </content>
