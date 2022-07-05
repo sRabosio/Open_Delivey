@@ -1,6 +1,8 @@
 package it.opendelivey.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -23,7 +25,7 @@ public class Piatto {
     double prezzo;
 
     @NotNull
-
+    @GeneratedValue(strategy=GenerationType.AUTO)
     Integer id;
 
 

@@ -1,6 +1,8 @@
 package it.opendelivey.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -20,6 +22,7 @@ public class Ristorante {
     private String[] categorie;
 
     @NotNull @Positive
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
 
