@@ -56,7 +56,6 @@ public class Ristorante {
         ri.setCategoria("pizzeria");
         ri.setIndirizzo("VIA ROMA 52");
         ri.setMenu("napoli , margherita");
-
         return ri;
 
     }
