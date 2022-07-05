@@ -4,29 +4,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 import java.util.Arrays;
 
 //TODO: implementare annotazione ibernate
 @Entity
 public class Utente {
+    @NotNull @Size(max = 45, min = 3)
     private String nome,
-        cognome,
-        password,
-        mail;
-    private String[] allergie;
+        cognome;
+    @NotNull @Size(max = 45, min = 8)
+    private String password;
+    @NotNull @Size(max = 64, min = 8)
+    private String mail;
+    /*@NotNull @Size(max = 45, min = 3)
+    private String[] allergie;*/
+    @NotNull @Min(3)
+    @Max(105)
     private Integer eta;
-    private Indirizzo indirizzo;
+    /*
+    @NotNull @Size(max = 45, min = 3)
+    private Indirizzo indirizzo;*/
     @NotNull @Positive
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-
+/*
     private Piatto[] preferiti,
         carrello, recentPlates;
-
-    private String recentSearches;
+*/
+    //private String recentSearches;
 
     public Utente() {
     }
@@ -37,16 +44,16 @@ public class Utente {
 
     public static Utente utenteSample(){
         Utente u = new Utente(0);
-        u.setAllergie(
+       /* u.setAllergie(
                 new String[]{"albania"}
-        );
+        );*/
         u.setEta(19);
         u.setCognome("castoro");
         u.setNome("pollo");
         u.setMail("testmail@tmail.com");
-        u.setIndirizzo(Indirizzo.indirizzo());
+        //u.setIndirizzo(Indirizzo.indirizzo());
         u.setPassword("password");
-        u.setCarrello(
+        /*u.setCarrello(
                 new Piatto[]{
                         Piatto.piattoSample(),
                         Piatto.piattoSample(),
@@ -54,7 +61,7 @@ public class Utente {
                         Piatto.piattoSample(),
                         Piatto.piattoSample(),
                 }
-        );
+        );*/
 
         return u;
     }
@@ -67,14 +74,14 @@ public class Utente {
                 ", cognome='" + cognome + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +
-                ", allergie=" + Arrays.toString(allergie) +
+                //", allergie=" + Arrays.toString(allergie) +
                 ", eta=" + eta +
-                ", indirizzo=" + indirizzo +
+                //", indirizzo=" + indirizzo +
                 ", id=" + id +
-                ", preferiti=" + Arrays.toString(preferiti) +
+                /*", preferiti=" + Arrays.toString(preferiti) +
                 ", carrello=" + Arrays.toString(carrello) +
-                ", recentPlates=" + Arrays.toString(recentPlates) +
-                ", recentSearches='" + recentSearches + '\'' +
+                ", recentPlates=" + Arrays.toString(recentPlates) +*/
+                //", recentSearches='" + recentSearches + '\'' +
                 '}';
     }
 
@@ -113,14 +120,14 @@ public class Utente {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
+/*
     public String[] getAllergie() {
         return allergie;
     }
 
     public void setAllergie(String[] allergie) {
         this.allergie = allergie;
-    }
+    }*/
 
     public Integer getEta() {
         return eta;
@@ -129,19 +136,19 @@ public class Utente {
     public void setEta(Integer eta) {
         this.eta = eta;
     }
-
+/*
     public Indirizzo getIndirizzo() {
         return indirizzo;
     }
 
     public void setIndirizzo(Indirizzo indirizzo) {
         this.indirizzo = indirizzo;
-    }
+    }*/
 
     public void setId(Integer id) {
         this.id = id;
     }
-
+/*
     public Piatto[] getPreferiti() {
         return preferiti;
     }
@@ -172,5 +179,5 @@ public class Utente {
 
     public void setRecentSearches(String recentSearches) {
         this.recentSearches = recentSearches;
-    }
+    }*/
 }
