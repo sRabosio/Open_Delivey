@@ -21,10 +21,10 @@ public class ChartController {
         //TODO: aggiungi utente dal database
 
         Utente utente = Utente.utenteSample();
-        Piatto[] carrello = utente.getCarrello();
+        //Piatto[] carrello = utente.getCarrello();
 
         model.addAttribute("utente", utente);
-        model.addAttribute("carrello", carrello);
+        //model.addAttribute("carrello", carrello);
         model.addAttribute("items", 0);
 
         return "chart";

@@ -1,13 +1,24 @@
 package it.opendelivey.demo.controllers;
 
 
+import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.Indirizzo;
 import it.opendelivey.demo.model.RegistrationForm;
+import it.opendelivey.demo.model.Utente;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.management.AttributeNotFoundException;
+
+@Controller
 public class RegistrationController {
+    @Autowired
+    RepoUtente repoUtente;
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
      * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
@@ -20,25 +31,14 @@ public class RegistrationController {
     //processo di registrazione
     @PostMapping("/registrazione")
     public String Registrazione(
-            @RequestParam("nome") String nome,
-            @RequestParam("cognome") String cognome,
-            @RequestParam("email") String email,
-            @RequestParam("via") String via,
-            @RequestParam("cap") int cap,
-            @RequestParam("civico") String civico,
-            @RequestParam("password") String password,
-            @RequestParam("conferma_password") String passwordConf
+           RegistrationForm form
     ) {
+
+        int i = 0;
         //controllo conferma password
-        if (!password.equals(passwordConf)) return "registrazione";
 
-        Indirizzo indirizzo = new Indirizzo(
-                via, cap, civico, null
-        );
 
-        RegistrationForm form = new RegistrationForm(
-                nome, cognome, email, password, indirizzo
-        );
+
 
         //TODO: email confirmation
         //TODO: piantare i dati nel DB
@@ -46,6 +46,16 @@ public class RegistrationController {
         //se la richiesta è andata a buon fine manderò
         //l'utente alla pagina di login per loggarsi
         System.out.println(form);
+        Utente U= new Utente();
+        U.setNome(form.getNome());
+        U.setCognome(form.getCognome());
+        U.setMail(form.getMail());
+        //U.setIndirizzo(indirizzo);
+        U.setPassword(form.getPassword());
+        U.setEta(50);
+
+
+        repoUtente.save(U);
         return "login";
     }
 }

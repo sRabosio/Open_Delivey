@@ -21,6 +21,8 @@ public class RegistrationForm {
     @Size(min=5, message = "la password deve contenere almeno 5 caratteri") 
     private String password;
     private Indirizzo indirizzo;
+    private int eta;
+
 
     public RegistrationForm(String nome, String cognome, String mail, String password, Indirizzo indirizzo) {
         this.nome = nome;
