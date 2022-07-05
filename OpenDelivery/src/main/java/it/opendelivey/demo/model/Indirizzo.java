@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Indirizzo {
@@ -38,7 +37,7 @@ public class Indirizzo {
     @NotBlank(
             message = "questo campo è obbligatorio"
     )
-    @Length(
+    @Size(
             min = 5,
             max = 5
     )
