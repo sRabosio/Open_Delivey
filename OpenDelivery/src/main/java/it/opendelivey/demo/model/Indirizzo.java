@@ -1,81 +1,74 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package it.opendelivey.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
 
+@Entity
 public class Indirizzo {
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private String tipo;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.AUTO
+    )
+    private int id;
+    @NotNull(
+            message = "questo campo è obbligatorio"
+    )
+    @NotBlank(
+            message = "questo campo è obbligatorio"
+    )
+    @Size(
+            max = 64,
+            min = 6
+    )
     private String via;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private Integer cap;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
+    @NotNull(
+            message = "questo campo è obbligatorio"
+    )
+    @NotBlank(
+            message = "questo campo è obbligatorio"
+    )
+    @Length(
+            min = 5,
+            max = 5
+    )
+    private String cap;
+    @NotNull(
+            message = "questo campo è obbligatorio"
+    )
+    @NotBlank(
+            message = "questo campo è obbligatorio"
+    )
+    @Size(
+            min = 1,
+            max = 10
+    )
     private String civico;
-    @NotNull(message = "questo campo è obbligatorio")
-    @NotBlank(message = "questo campo è obbligatorio")
-    private String paese;
 
-    public Indirizzo(String via, int cap, String civico, String paese) {
+    public Indirizzo() {
+    }
+
+    public Indirizzo(String via, String cap, String civico) {
         this.via = via;
         this.cap = cap;
         this.civico = civico;
-        this.paese = paese;
     }
 
-    public static Indirizzo indirizzo(){
-        return new Indirizzo(
-                "via magenta",
-                20099,
-                "180",
-                "italia"
-        );
+    public static Indirizzo indirizzoSample() {
+        return new Indirizzo("via magenta", "20099", "180");
     }
 
-    @Override
     public String toString() {
-        return "Indirizzo{" +
-                "tipo='" + tipo + '\'' +
-                ", via='" + via + '\'' +
-                ", cap=" + cap +
-                ", civico='" + civico + '\'' +
-                ", paese='" + paese + '\'' +
-                '}';
-    }
-
-    public String getVia() {
-        return via;
-    }
-
-    public void setVia(String via) {
-        this.via = via;
-    }
-
-    public int getCap() {
-        return cap;
-    }
-
-    public void setCap(int cap) {
-        this.cap = cap;
-    }
-
-    public String getCivico() {
-        return civico;
-    }
-
-    public void setCivico(String civico) {
-        this.civico = civico;
-    }
-
-    public String getPaese() {
-        return paese;
-    }
-
-    public void setPaese(String paese) {
-        this.paese = paese;
+        return "Indirizzo{, via='" + this.via + "', cap=" + this.cap + ", civico='" + this.civico + "'}";
     }
 }
