@@ -4,6 +4,8 @@ REMINDER: sass --watch NON funziona con la wsl, è necessario usare il terminale
 
 Link ER: https://drive.google.com/file/d/1TD_Z6_8DH2anEVHbnCSla8DRdOGw46qE/view?usp=sharing
 
+Link schema logico: https://app.diagrams.net/#G1qdX8FVMUks1eFAgNJhhrWFquUdEvZzdT
+
 Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-id=0%3A1
 
 Link Trello: https://trello.com/b/kCzvGyzE/open-delivery-backend
@@ -27,6 +29,6 @@ Link use case diagram: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff
 Lista comuni: https://github.com/matteocontrini/comuni-json
 
 
-credenziali account test: test@tmail.com, password
+credenziali account test: testmail@tmail.com, password: password
 
 
