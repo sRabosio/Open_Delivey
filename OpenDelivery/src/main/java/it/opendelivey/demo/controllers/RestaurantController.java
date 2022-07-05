@@ -1,6 +1,9 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoRistorante;
+import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.Ristorante;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +18,7 @@ public class RestaurantController {
             Model model
     ){
 
-        model.addAttribute(Ristorante.ristoranteSample());
         return "restaurant";
     }
+
 }
