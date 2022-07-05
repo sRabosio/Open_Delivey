@@ -1,58 +1,48 @@
 package it.opendelivey.demo.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Id;
+import javax.validation.constraints.*;
 
 @Entity
 public class Piatto {
     @NotNull
     @NotBlank
     @Size(min = 3, max = 30)
-    String nome;
+    private String nome;
 
     @NotNull
     @NotBlank
-    @Size(min = 3, max = 50)
-    String descrizione;
+    @Size(min = 5, max = 50)
+    private String descrizione;
 
     @NotNull
-    @Min(1)
-    double prezzo;
+    @DecimalMin("1.0")
+    private Double prezzo;
 
-    @NotNull
+
+    @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Integer id;
+    private Integer id;
 
 
-    //TODO: relazione
-    @NotNull
-    String[] allergeni;
+    //TODO: relazione allergeni
 
-    public Piatto(int id, String nome, String descrizione, int prezzo, @NotNull String[] allergeni) {
+    public Piatto( String nome, String descrizione, Double prezzo) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
-        this.allergeni = allergeni;
-        this.id = id;
     }
 
     public static Piatto piattoSample(){
         return new Piatto(
-                0,
                 "piattone",
                 "l'originale",
-                15,
-                new String[]{"lattosio", "arachidi"}
+                15.0
         );
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getNome() {
@@ -75,15 +65,19 @@ public class Piatto {
         return prezzo;
     }
 
-    public void setPrezzo(int prezzo) {
+    public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
     }
 
-    public String[] getAllergeni() {
-        return allergeni;
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
     }
 
-    public void setAllergeni(String[] allergeni) {
-        this.allergeni = allergeni;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

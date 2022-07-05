@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
-@Entity
 public class Ristorante {
     @NotNull
     @NotBlank
@@ -21,8 +20,6 @@ public class Ristorante {
     @NotNull
     private String[] categorie;
 
-    @NotNull @Positive
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
 

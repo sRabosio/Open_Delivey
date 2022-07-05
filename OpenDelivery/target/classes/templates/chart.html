@@ -28,13 +28,16 @@
                 </form>
             </div>
         </content>
-        <div class="buy">
+        <form class="buy" method="post" action="/chart">
             <div class="buy__description">
 
             </div>
+            <input type="hidden" th:value="${utente.getMail()}" name="mail">
+            <input type="hidden" th:value="${utente.getPassword()}" name="password">
+            <input type="hidden" name="chartId">
             <span class="buy__price"></span>
             <button class="simpleButton"> PAY </button>
-        </div>
+        </form>
     </div>
 </body>
 </html>
