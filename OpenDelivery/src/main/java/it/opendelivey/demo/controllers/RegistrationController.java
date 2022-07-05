@@ -46,16 +46,16 @@ public class RegistrationController {
         //se la richiesta è andata a buon fine manderò
         //l'utente alla pagina di login per loggarsi
         System.out.println(form);
-        Utente U= new Utente();
-        U.setNome(form.getNome());
-        U.setCognome(form.getCognome());
-        U.setMail(form.getMail());
-        //U.setIndirizzo(indirizzo);
-        U.setPassword(form.getPassword());
-        U.setEta(50);
+        Utente u= new Utente();
+        u.setNome(form.getNome());
+        u.setCognome(form.getCognome());
+        u.setMail(form.getMail());
+        //u.setIndirizzo(indirizzo);
+        u.setPassword(form.getPassword());
+        u.setEta(50);
 
 
-        repoUtente.save(U);
+        repoUtente.save(u);
         return "login";
     }
 }
