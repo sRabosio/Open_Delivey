@@ -27,6 +27,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	RepoIndirizzo repoIndirizzoDao;
 	@Autowired
 	RepoAllergie repoAllergieDao;
+	@Autowired
+	RepoTipo repoTipoDao;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -35,6 +37,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		repoIndirizzoDao.save(Indirizzo.indirizzoSample());
 		repoPiattoDao.save(Piatto.piattoSample());
 		repoAllergieDao.save(Allergie.allergieSample());
+		repoTipoDao.save(Tipo.tipoSample());
 	}
 
 
