@@ -1,25 +1,33 @@
 package it.opendelivey.demo.model;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+@Entity
 public class Piatto {
     @NotNull
     @NotBlank
+    @Size(min = 3, max = 30)
     String nome;
 
     @NotNull
     @NotBlank
+    @Size(min = 3, max = 50)
     String descrizione;
 
     @NotNull
     @Min(1)
-    int prezzo;
+    double prezzo;
 
     @NotNull
-    int id;
 
+    Integer id;
+
+
+    //TODO: relazione
     @NotNull
     String[] allergeni;
 
@@ -61,7 +69,7 @@ public class Piatto {
         this.descrizione = descrizione;
     }
 
-    public int getPrezzo() {
+    public double getPrezzo() {
         return prezzo;
     }
 

@@ -20,15 +20,21 @@
                     <span th:text="${carrello.getNome()}"></span>
                     <span th:text="${carrello.getDescrizione()}"></span>
                     <span th:text="${carrello.getPrezzo()}"></span>
+                <form method="POST" action="/chart" class="chart__buttons">
+                    <input type="hidden" th:value="${carrello.getId()}" name="idPiatto">
+                    <input type="hidden" th:value="${utente.getMail()}" name="mail">
+                    <input type="hidden" th:value="${utente.getPassword()}" name="password">
+                    <button class="icon">X</button>
+                </form>
             </div>
         </content>
-        <div class="buy">
+        <form class="buy">
             <div class="buy__description">
 
             </div>
             <span class="buy__price"></span>
             <button class="simpleButton"> PAY </button>
-        </div>
+        </form>
     </div>
 </body>
 </html>

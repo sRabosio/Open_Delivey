@@ -1,16 +1,19 @@
 package it.opendelivey.demo.model;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Ristorante {
     @NotNull
     @NotBlank
-    @Size(min = 3)
+    @Size(min = 3, max = 50)
     private String nome;
 
+    @NotNull
     private Indirizzo indirizzo;
 
     @NotNull
@@ -18,6 +21,7 @@ public class Ristorante {
 
     @NotNull @Positive
     private int id;
+
 
     private Piatto[] menu;
 

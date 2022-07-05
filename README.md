@@ -2,7 +2,9 @@
 
 REMINDER: sass --watch NON funziona con la wsl, è necessario usare il terminale di windows
 
-Link ER: https://app.diagrams.net/#G1TD_Z6_8DH2anEVHbnCSla8DRdOGw46
+Link ER: https://drive.google.com/file/d/1TD_Z6_8DH2anEVHbnCSla8DRdOGw46qE/view?usp=sharing
+
+Link schema logico: https://app.diagrams.net/#G1qdX8FVMUks1eFAgNJhhrWFquUdEvZzdT
 
 Link Figma: https://www.figma.com/file/4LFcUZn8sMYU2LOrvEeLOx/Open-Delivey?node-id=0%3A1
 
@@ -14,6 +16,7 @@ Link srs: https://docs.google.com/document/d/1nrt91zghoYMdvW59_4LbjECgApzjB0CDsa
 
 Vuejs: https://docs.google.com/document/d/10XC_kc-UtA1caf6Fqwv6PBmhEUlIcfC1Un8iGtluHc8/edit?usp=sharing
 
+Link maps api: https://dinotraining.it/google-api-key/
 
 Link prog&svil roba: https://docs.google.com/document/d/1qjRz_Yo_5eiMilV1LtuzGv1kbRKKqq6V/edit?usp=sharing&ouid=116032799368802732008&rtpof=true&sd=true
 
@@ -26,6 +29,6 @@ Link use case diagram: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff
 Lista comuni: https://github.com/matteocontrini/comuni-json
 
 
-credenziali account test: test@tmail.com, password
+credenziali account test: testmail@tmail.com, password: password
 
 
