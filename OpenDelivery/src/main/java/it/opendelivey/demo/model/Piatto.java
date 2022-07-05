@@ -31,7 +31,10 @@ public class Piatto {
 
     //TODO: relazione allergeni
 
-    public Piatto( String nome, String descrizione, Double prezzo) {
+    public Piatto() {
+    }
+
+    public Piatto(String nome, String descrizione, Double prezzo) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
