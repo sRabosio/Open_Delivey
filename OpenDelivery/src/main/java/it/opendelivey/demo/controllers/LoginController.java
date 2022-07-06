@@ -8,12 +8,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 
     @RequestMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(
+            @RequestParam("mail") String mail,
+            @RequestParam("password") String password,
+            HttpSession session
+    ){
+        session.setAttribute("loggedUser", Utente.utenteSample());
+        return "redirect:homepage";
     }
 
 

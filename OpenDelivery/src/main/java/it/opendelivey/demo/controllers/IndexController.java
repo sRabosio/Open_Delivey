@@ -27,17 +27,7 @@ IndexController {
             @RequestParam("password") String password
     ){
 
-        Utente utente = Utente.utenteSample();
-        LoginForm userLogin;
-        //per ora usa delle informazioni codificate nella classe per testarne il funzionamento
-        //successivamente qua andranno i dati dal db
-        userLogin = new LoginForm(email, password);
-        System.out.println(userLogin);
-        System.out.println(utente);
 
-        if (!(userLogin.getMail().equals(utente.getMail())
-                && userLogin.getPassword().equals(utente.getPassword()))
-        ) return "login";
 
         return "forward:/homepage";
     }

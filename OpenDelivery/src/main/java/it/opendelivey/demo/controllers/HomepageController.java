@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class HomepageController {
 
@@ -18,13 +20,14 @@ public class HomepageController {
      *  i dati possano essere visti da qualcuno senza autorizzazione */
     @RequestMapping("/homepage")
     public String getHomepage(
-            @RequestParam("email") String email,
-            @RequestParam("password") String password,
-            Model model
+            Model model,
+            HttpSession session
     ){
         //TODO: algoritmo per scegliere il piatto da visualizzare (da fare nell'apposita classe, ovvero: non qua)
 
-        Utente utente = Utente.utenteSample();
+        Utente utente = (Utente)session.getAttribute("loggedUser");
+
+        System.out.println(utente);
 
         Piatto[] consigliati = {
                 Piatto.piattoSample(),
