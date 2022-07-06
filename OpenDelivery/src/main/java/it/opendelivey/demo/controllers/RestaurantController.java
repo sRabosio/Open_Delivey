@@ -17,7 +17,7 @@ public class RestaurantController {
             @RequestParam("id") int id,
             Model model
     ){
-
+        model.addAttribute("risorante",Ristorante.ristoranteSample());
         return "restaurant";
     }
 

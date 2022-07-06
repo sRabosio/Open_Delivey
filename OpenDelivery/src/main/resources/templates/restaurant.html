@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Open delivery resturant</title>
 </head>
 <body>
+<div class="container">
+    <div>
+        <a href="fotoristorante"></a>
+    </div>
+    <content class="contentcontainer">
+        <div class="nearyoucontainer" id="piattiConsigliati" >
+            <div class="nearyoucontainer__titlecontainer">
+                <h5>Menù:</h5>
+            </div>
+            <div class="nearyoucontainer__cards">
+                <a class="fullcard" th:each="consigliato:${consigliati}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${consigliato.getId()})}">
+                    <img src="assets/images/pizza brutta.jpg" alt="">
+                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
+                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
+                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
+                </a>
+            </div>
+        </div>
+    </content>
 
+    <footer class="uicontainer">
+        <div class="uielement">
+            <img src="assets/icons/menu.svg" alt="homepage" class="icon" id="homepage">
+            <p></p>
+        </div>
+        <div class="uielement">
+            <img src="assets/icons/search.svg" alt="cerca" class="icon" id="search">
+            <p></p>
+        </div>
+        <div class="uielement">
+            <img src="assets/icons/bookmark.svg" alt="salvati" class="icon" id="bookmark">
+            <p></p>
+        </div>
+        <a class="uielement" th:href="@{profile(email=${utente.getMail()}, password=${utente.getPassword()})}">
+            <img src="assets/icons/user.svg" alt="profilo" class="icon" id="profile">
+            <p></p>
+        </a>
+    </footer>
+</div>
 </body>
 </html>
