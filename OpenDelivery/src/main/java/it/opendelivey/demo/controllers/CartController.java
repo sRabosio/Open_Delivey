@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
-public class ChartController {
+import javax.servlet.http.HttpSession;
 
-    @GetMapping("/chart")
-    public String getChart(
-            @RequestParam("email") String email,
-            @RequestParam("password") String password,
-            Model model
+@Controller
+public class CartController {
+
+    @GetMapping("/cart")
+    public String getCart(
+            Model model,
+            HttpSession session
     ){
         //TODO: aggiungi utente dal database
 
@@ -27,10 +28,10 @@ public class ChartController {
         //model.addAttribute("carrello", carrello);
         model.addAttribute("items", 0);
 
-        return "chart";
+        return "cart";
     }
 
-    @PostMapping("/chart")
+    @PostMapping("/cart")
     public String deleteFromChart(
             @RequestParam("idPiatto") int idPiatto,
             @RequestParam("mail") String mail,
@@ -38,6 +39,6 @@ public class ChartController {
     ){
         //TODO: delete from user chart
 
-        return "chart";
+        return "cart";
     }
 }
