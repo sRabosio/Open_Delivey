@@ -37,6 +37,9 @@ public class Utente {
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private Set<Ordine> ordini = new HashSet<>();
 
+    @ManyToMany @JoinColumn
+    private Set<Allergie> allergie = new HashSet<>();
+
     public Utente() {
     }
 

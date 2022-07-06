@@ -1,11 +1,10 @@
 package it.opendelivey.demo.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Allergie {
@@ -16,6 +15,12 @@ public class Allergie {
     @NotBlank
     @Size(min = 3, max = 30)
     private String nome;
+
+    @ManyToMany(mappedBy = "allergie")
+    private Set<Utente> utenti = new HashSet<>();
+
+    @ManyToMany(mappedBy = "allergiePiatto")
+    private Set<Piatto> prodotti = new HashSet<>();
 
     public Allergie() {
     }

@@ -30,6 +30,14 @@ public class Piatto {
     @ManyToMany(mappedBy = "piatti", cascade = CascadeType.ALL)
     private Set<Ordine> ordini = new HashSet<>();
 
+    @ManyToMany(mappedBy = "prodotti")
+    private Set<Ristorante> ristoranti = new HashSet<>();
+
+    @ManyToMany @JoinColumn
+    private Set<Allergie> allergiePiatto = new HashSet<>();
+
+
+
     //TODO: relazione allergeni
 
     public Piatto() {
