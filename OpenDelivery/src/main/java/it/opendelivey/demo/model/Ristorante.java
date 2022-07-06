@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 public class Ristorante {
     @NotNull
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     @NotNull
     @NotBlank

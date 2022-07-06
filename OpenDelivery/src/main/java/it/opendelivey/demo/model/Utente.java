@@ -27,7 +27,7 @@ public class Utente {
     private Indirizzo indirizzo;*/
     @NotNull @Positive
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 /*
     private Piatto[] preferiti,

@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 public class Indirizzo {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.AUTO
+            strategy = GenerationType.IDENTITY
     )
     private Integer id;
     @NotNull(
