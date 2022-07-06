@@ -1,11 +1,10 @@
 package it.opendelivey.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 //TODO: implementare annotazione ibernate
 @Entity
@@ -34,6 +33,9 @@ public class Utente {
         carrello, recentPlates;
 */
     //private String recentSearches;
+
+    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
+    private Set<Ordine> ordini = new HashSet<Ordine>();
 
     public Utente() {
     }
