@@ -1,13 +1,7 @@
 package it.opendelivey.demo;
 
-import it.opendelivey.demo.Repo.RepoIndirizzo;
-import it.opendelivey.demo.Repo.RepoRistorante;
-import it.opendelivey.demo.Repo.RepoPiatto;
-import it.opendelivey.demo.Repo.RepoUtente;
-import it.opendelivey.demo.model.Indirizzo;
-import it.opendelivey.demo.model.Ristorante;
-import it.opendelivey.demo.model.Piatto;
-import it.opendelivey.demo.model.Utente;
+import it.opendelivey.demo.Repo.*;
+import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -31,13 +25,13 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	RepoRistorante repoRistorante;
 	@Autowired
 	RepoIndirizzo repoIndirizzoDao;
+	@Autowired
+	RepoAllergie repoAllergieDao;
+	@Autowired
+	RepoTipo repoTipoDao;
 
 	@Override
 	public void run(String... args) throws Exception {
-		repoUtenteDao.save(Utente.utenteSample());
-		repoRistorante.save(Ristorante.ristoranteSample());
-		repoIndirizzoDao.save(Indirizzo.indirizzoSample());
-		repoPiattoDao.save(Piatto.piattoSample());
 	}
 
 

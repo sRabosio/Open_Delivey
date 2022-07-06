@@ -17,9 +17,9 @@ import javax.validation.constraints.Size;
 public class Indirizzo {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.AUTO
+            strategy = GenerationType.IDENTITY
     )
-    private int id;
+    private Integer id;
     @NotNull(
             message = "questo campo è obbligatorio"
     )
@@ -69,5 +69,37 @@ public class Indirizzo {
 
     public String toString() {
         return "Indirizzo{, via='" + this.via + "', cap=" + this.cap + ", civico='" + this.civico + "'}";
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getVia() {
+        return via;
+    }
+
+    public void setVia(String via) {
+        this.via = via;
+    }
+
+    public String getCap() {
+        return cap;
+    }
+
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
+
+    public String getCivico() {
+        return civico;
+    }
+
+    public void setCivico(String civico) {
+        this.civico = civico;
     }
 }

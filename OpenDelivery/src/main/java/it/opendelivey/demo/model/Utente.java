@@ -2,6 +2,7 @@ package it.opendelivey.demo.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import javax.xml.crypto.Data;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,15 +19,14 @@ public class Utente {
     private String mail;
     /*@NotNull @Size(max = 45, min = 3)
     private String[] allergie;*/
-    @NotNull @Min(3)
-    @Max(105)
+    @NotNull
     private Integer eta;
     /*
     @NotNull @Size(max = 45, min = 3)
     private Indirizzo indirizzo;*/
     @NotNull @Positive
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 /*
     private Piatto[] preferiti,
@@ -35,7 +35,10 @@ public class Utente {
     //private String recentSearches;
 
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
-    private Set<Ordine> ordini = new HashSet<Ordine>();
+    private Set<Ordine> ordini = new HashSet<>();
+
+    @ManyToMany @JoinColumn
+    private Set<Allergie> allergie = new HashSet<>();
 
     public Utente() {
     }

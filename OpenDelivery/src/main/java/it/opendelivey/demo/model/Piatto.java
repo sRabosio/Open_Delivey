@@ -1,13 +1,12 @@
 package it.opendelivey.demo.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.HashSet;
+import java.util.Set;
 
-@Entity
+@Entity @Table(name = "prodotti")
 public class Piatto {
     @NotNull
     @NotBlank
@@ -25,13 +24,26 @@ public class Piatto {
 
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToMany(mappedBy = "piatti", cascade = CascadeType.ALL)
+    private Set<Ordine> ordini = new HashSet<>();
+
+    @ManyToMany(mappedBy = "prodotti")
+    private Set<Ristorante> ristoranti = new HashSet<>();
+
+    @ManyToMany @JoinColumn
+    private Set<Allergene> allergeni = new HashSet<>();
+
 
 
     //TODO: relazione allergeni
 
-    public Piatto( String nome, String descrizione, Double prezzo) {
+    public Piatto() {
+    }
+
+    public Piatto(String nome, String descrizione, Double prezzo) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
