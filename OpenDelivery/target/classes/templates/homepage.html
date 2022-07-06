@@ -16,26 +16,18 @@
             <a th:href="@{chart(email=${utente.getMail()}, password=${utente.getPassword()})}"><img src="assets/icons/chart.svg" class="icon topui__chart" id="topui__icon__right" alt="carrello"></a>
         </div>
 
-        <div class="carouselcontainer"  >
+        <div class="carouselcontainer" >
             <div class="carouselcontaianer__carousel">
                 <div class="carouselcontainer__carousel__card">
                     <p>test</p>
                 </div>
             </div>
-            <div class="carouselcontainer__allergies">
-                <p> a cosa sei intollerante?</p>
-                <form>
-                    <input type="checkbox" name="lattosio" id="lattosio">
-                    <label for="lattosio">lattosio</label>
-                </form>
-            </div>
-            
 
         </div>
 
-        <div class="categoriescontainer">
+        <div class="categoriescontainer" >
             <h5 class="categoriescontainer__title">Categorie</h5>
-            <button class="categoriescontainer__category">pizza</button>
+            <button class="categoriescontainer__category" th:each="category:${categories}" th:text="${category.getNome()}"></button>
         </div>
         <content class="contentcontainer">
             <div class="nearyoucontainer" id="ristorantiConsigliati" >
