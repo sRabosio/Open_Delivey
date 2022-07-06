@@ -1,0 +1,133 @@
+Index: OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package it.opendelivey.demo.model;\r\n\r\nimport javax.validation.constraints.NotBlank;\r\nimport javax.validation.constraints.NotNull;\r\nimport javax.validation.constraints.Size;\r\n\r\npublic class RegistrationForm {\r\n    @NotNull(message = \"questo campo è obbligatorio\")\r\n    @NotBlank(message = \"questo campo è obbligatorio\")\r\n    @Size(min=2, message = \"il nome deve contenere almeno 2 caratteri\")\r\n    private String nome;\r\n    @NotNull(message = \"questo campo è obbligatorio\")\r\n    @NotBlank(message = \"questo campo è obbligatorio\")\r\n    @Size(min=2, message = \"il cognome deve mantenere almeno 2 caratteri\")\r\n    private String cognome;\r\n    @NotNull(message = \"questo campo è obbligatorio\")\r\n    @NotBlank(message = \"questo campo è obbligatorio\")\r\n    private String mail;\r\n    @NotNull(message = \"questo campo è obbligatorio\")\r\n    @NotBlank(message = \"questo campo è obbligatorio\")\r\n    @Size(min=5, message = \"la password deve contenere almeno 5 caratteri\") \r\n    private String password;\r\n    private Indirizzo indirizzo;\r\n    private int eta;\r\n\r\n\r\n    public RegistrationForm(String nome, String cognome, String mail, String password, Indirizzo indirizzo) {\r\n        this.nome = nome;\r\n        this.cognome = cognome;\r\n        this.mail = mail;\r\n        this.password = password;\r\n        this.indirizzo = indirizzo;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"RegistrationForm{\" +\r\n                \"nome='\" + nome + '\\'' +\r\n                \", cognome='\" + cognome + '\\'' +\r\n                \", mail='\" + mail + '\\'' +\r\n                \", password='\" + password + '\\'' +\r\n                \", indirizzo=\" + indirizzo +\r\n                '}';\r\n    }\r\n\r\n    public String getNome() {\r\n        return nome;\r\n    }\r\n\r\n    public void setNome(String nome) {\r\n        this.nome = nome;\r\n    }\r\n\r\n    public String getCognome() {\r\n        return cognome;\r\n    }\r\n\r\n    public void setCognome(String cognome) {\r\n        this.cognome = cognome;\r\n    }\r\n\r\n    public String getMail() {\r\n        return mail;\r\n    }\r\n\r\n    public void setMail(String mail) {\r\n        this.mail = mail;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n\r\n    public Indirizzo getIndirizzo() {\r\n        return indirizzo;\r\n    }\r\n\r\n    public void setIndirizzo(Indirizzo indirizzo) {\r\n        this.indirizzo = indirizzo;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java b/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java
+--- a/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java	(revision 56ed5882cdd8af969ed0562bd56c6ada4ab64fa5)
++++ b/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java	(date 1657110739349)
+@@ -3,6 +3,7 @@
+ import javax.validation.constraints.NotBlank;
+ import javax.validation.constraints.NotNull;
+ import javax.validation.constraints.Size;
++import javax.xml.crypto.Data;
+ 
+ public class RegistrationForm {
+     @NotNull(message = "questo campo è obbligatorio")
+@@ -21,7 +22,9 @@
+     @Size(min=5, message = "la password deve contenere almeno 5 caratteri") 
+     private String password;
+     private Indirizzo indirizzo;
+-    private int eta;
++    @NotNull(message = "questo campo è obbligatorio")
++    @NotBlank(message = "questo campo è obbligatorio")
++    private Data eta;
+ 
+ 
+     public RegistrationForm(String nome, String cognome, String mail, String password, Indirizzo indirizzo) {
+Index: OpenDelivery/src/frontend/registrazione.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"it\" xmlns:th=\"http://www.thymeleaf.org\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Registrati</title>\r\n    <link rel=\"stylesheet\" href=\"assets/css/normalize.css\">\r\n    <link rel=\"preload\" href=\"Urbanist-ExtraBoldItalic.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>\r\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\">\r\n    <link rel=\"stylesheet\" href=\"assets/css/registrazione.css\">\r\n</head>\r\n\r\n<body>\r\n    <div class=\"container\">\r\n        <div class=\"titlecontainer\">\r\n            <h1>REGISTRATI</h1>\r\n            <p>Inserisci i dati richiesti per completare la registrazione</p>\r\n        </div>\r\n        <form action=\"/registrazione\" class=\"simpleForm\" method=\"post\">\r\n            <input class=\"simpleForm__textbar\" type=\"text\" th:name=\"nome\" id=\"nome\" placeholder=\"nome\" required>\r\n            <input class=\"simpleForm__textbar\" type=\"text\" name=\"cognome\" id=\"cognome\" placeholder=\"cognome\" required>\r\n            <input class=\"simpleForm__textbar\" type=\"email\" name=\"email\" id=\"email\" placeholder=\"email\" required>\r\n            <div class=\"simpleForm__addresscontainer\">\r\n                <input class=\"\" type=\"text\" placeholder=\"indirizzo\" name=\"via\" required>\r\n                <input class=\"simpleForm__addresscontainer__number\" type=\"text\" placeholder=\"N° civico\" name=\"civico\" required>\r\n                <input class=\"\" type=\"text\" placeholder=\"CAP\" name=\"cap\" required>\r\n            </div>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"simpleForm__textbar\" placeholder=\"password\" required>\r\n            <input type=\"password\" name=\"conferma_password\" id=\"conferma_password\" class=\"simpleForm__textbar\" placeholder=\"Conferma passoword\" required>\r\n            <input type=\"submit\" value=\"Registrati\" class=\"simpleButton\">\r\n        </form>\r\n        <div class=\"notform\" id=\"notform\">\r\n            <p>Sei già registrato?<br>effettua il login </p>\r\n            <a href=\"login\"><button class=\"simpleButton\">Login</button></a>\r\n        </div>\r\n    </div>\r\n\r\n</body>\r\n\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OpenDelivery/src/frontend/registrazione.html b/OpenDelivery/src/frontend/registrazione.html
+--- a/OpenDelivery/src/frontend/registrazione.html	(revision 56ed5882cdd8af969ed0562bd56c6ada4ab64fa5)
++++ b/OpenDelivery/src/frontend/registrazione.html	(date 1657110932212)
+@@ -21,6 +21,7 @@
+         <form action="/registrazione" class="simpleForm" method="post">
+             <input class="simpleForm__textbar" type="text" th:name="nome" id="nome" placeholder="nome" required>
+             <input class="simpleForm__textbar" type="text" name="cognome" id="cognome" placeholder="cognome" required>
++            <input class="simpleForm__addresscontainer__number" type="text" placeholder="eta" name="civico" required>
+             <input class="simpleForm__textbar" type="email" name="email" id="email" placeholder="email" required>
+             <div class="simpleForm__addresscontainer">
+                 <input class="" type="text" placeholder="indirizzo" name="via" required>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0c7d20e5-5062-4c27-be3c-3e8c968b7626\" name=\"Changes\" comment=\"fix repoutente for everyone\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoUtente.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoUtente.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/handlers/HomepageHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/handlers/HomepageHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Indirizzo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Indirizzo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Offerta.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Tipo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Tipo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"InvalidFacetManager\">\r\n    <ignored-facets>\r\n      <facet id=\"demo/invalid/JPA\" />\r\n      <facet id=\"demo/invalid/Spring\" />\r\n      <facet id=\"demo/invalid/Web\" />\r\n    </ignored-facets>\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"workOffline\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ApbKkU9oKJXQivcm4QlIbG49qs\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Project\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\IvanLucchini\\Open_Delivey\\OpenDelivery\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.OpenDeliveryApplication\">\r\n    <configuration name=\"OpenDeliveryApplication\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"it.opendelivey.demo.OpenDeliveryApplication\" />\r\n      <module name=\"demo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Unnamed (1)\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"it.opendelivey.demo.OpenDeliveryApplication\" />\r\n      <module name=\"demo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"it.opendelivey.demo.OpenDeliveryApplication\" />\r\n      <module name=\"Open_Delivey\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Unnamed\" />\r\n      <item itemvalue=\"Application.Unnamed (1)\" />\r\n      <item itemvalue=\"Application.OpenDeliveryApplication\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0c7d20e5-5062-4c27-be3c-3e8c968b7626\" name=\"Changes\" comment=\"\" />\r\n      <created>1655709412127</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1655709412127</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"fix finalmento funziona tutto\">\r\n      <created>1657011861472</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657011861472</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"feat: Allergie &amp; collegamento a DB\">\r\n      <created>1657034686591</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657034686591</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"fix repoutente for everyone\">\r\n      <created>1657035496418</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657035496418</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"fix finalmento funziona tutto\" />\r\n    <MESSAGE value=\"Feat ristorante db &amp; repo ristorante\" />\r\n    <MESSAGE value=\"change U in u\" />\r\n    <MESSAGE value=\"fix repoutente for everyone\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix repoutente for everyone\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 56ed5882cdd8af969ed0562bd56c6ada4ab64fa5)
++++ b/.idea/workspace.xml	(date 1657110739239)
+@@ -4,17 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix repoutente for everyone">
++    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: Tipo &amp; collegamento a DB">
++      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoUtente.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/handlers/HomepageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/handlers/HomepageHandler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Indirizzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Indirizzo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Offerta.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Tipo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/registrazione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/registrazione.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -68,11 +62,9 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/OpenDelivery" />
+     <property name="project.structure.last.edited" value="Project" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.0" />
+@@ -133,14 +125,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1657034686591</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="fix repoutente for everyone">
+-      <created>1657035496418</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1657035496418</updated>
+-    </task>
+-    <option name="localTasksCounter" value="4" />
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -159,7 +144,6 @@
+     <MESSAGE value="fix finalmento funziona tutto" />
+     <MESSAGE value="Feat ristorante db &amp; repo ristorante" />
+     <MESSAGE value="change U in u" />
+-    <MESSAGE value="fix repoutente for everyone" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix repoutente for everyone" />
++    <option name="LAST_COMMIT_MESSAGE" value="change U in u" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/OpenDelivery/target/classes/templates/chart.html\r\n/OpenDelivery/target/classes/it/opendelivey/demo/handlers/FavoritesHandler.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/handlers/Handler.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/handlers/HomepageHandler.class\r\n/OpenDelivery/target/classes/templates/index.html\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/Indirizzo.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/LoginForm.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/Offerta.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/handlers/ProfileHandler.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class\r\n/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class\r\n/OpenDelivery/src/main/resources/templates/vuetest.html\r\n/OpenDelivery/target/classes/templates/vuetest.html\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 56ed5882cdd8af969ed0562bd56c6ada4ab64fa5)
++++ b/.gitignore	(date 1657110520203)
+@@ -13,3 +13,4 @@
+ /OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class
+ /OpenDelivery/src/main/resources/templates/vuetest.html
+ /OpenDelivery/target/classes/templates/vuetest.html
++/OpenDelivery/target/*

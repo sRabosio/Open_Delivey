@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]" date="1657110941513" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/07/2022 14:35 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/RegistrationForm.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Indirizzo.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Indirizzo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/Indirizzo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoUtente.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoUtente.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/RepoUtente.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/Utente.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/HomepageHandler.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/HomepageHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/HomepageHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/Piatto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" />
+    <option name="AFTER_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_14_35_[Changes]/Ristorante.class" />
+  </binary>
+</changelist>
