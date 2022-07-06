@@ -3,13 +3,12 @@ package it.opendelivey.demo.model;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Ristorante {
@@ -27,6 +26,13 @@ public class Ristorante {
     private String menu;
     @NotNull
     private String indirizzo;
+
+    @ManyToMany
+    @JoinColumn
+    private Set<Piatto> prodotti = new HashSet<>();
+
+    @ManyToMany @JoinColumn
+    private Set<Tipo> tipologie = new HashSet<>();
 
     public Ristorante() {
     }
