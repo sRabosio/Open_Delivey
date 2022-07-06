@@ -40,6 +40,8 @@ public class Utente {
     @ManyToMany @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
+    private String imagePath;
+
     public Utente() {
     }
 

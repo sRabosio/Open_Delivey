@@ -34,6 +34,8 @@ public class Ristorante {
     @ManyToMany @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
+    private String imagePath;
+
     public Ristorante() {
     }
 

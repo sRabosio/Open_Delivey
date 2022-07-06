@@ -36,6 +36,8 @@ public class Piatto {
     @ManyToMany @JoinColumn
     private Set<Allergene> allergeni = new HashSet<>();
 
+    private String imagePath;
+
 
 
     //TODO: relazione allergeni
