@@ -34,7 +34,7 @@ public class Piatto {
     private Set<Ristorante> ristoranti = new HashSet<>();
 
     @ManyToMany @JoinColumn
-    private Set<Allergie> allergiePiatto = new HashSet<>();
+    private Set<Allergene> allergeni = new HashSet<>();
 
 
 
