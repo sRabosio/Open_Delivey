@@ -79,10 +79,10 @@ public class IndexController {
 
 
     @RequestMapping("/")
-    public String index() {
-
-        //TODO: controllare se i dati di login sono salvati nel browser e agire di conseguenza
-        return "registrazione";
+    public String index(HttpSession session) {
+        Utente utente = (Utente)session.getAttribute("loggedUser");
+        if(utente == null) return "registrazione";
+        return "redirect:homepage";
     }
 
 }
