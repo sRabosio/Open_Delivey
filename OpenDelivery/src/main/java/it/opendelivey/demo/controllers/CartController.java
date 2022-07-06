@@ -21,11 +21,18 @@ public class CartController {
     ){
         //TODO: aggiungi utente dal database
 
-        Utente utente = Utente.utenteSample();
-        //Piatto[] carrello = utente.getCarrello();
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(utente == null) return "login";
 
+        Piatto[] carrello = new Piatto[]{
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+                Piatto.piattoSample(),
+        };
         model.addAttribute("utente", utente);
-        //model.addAttribute("carrello", carrello);
+        model.addAttribute("carrello", carrello);
         model.addAttribute("items", 0);
 
         return "cart";

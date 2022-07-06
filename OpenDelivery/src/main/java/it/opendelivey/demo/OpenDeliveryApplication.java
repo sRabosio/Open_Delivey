@@ -32,6 +32,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		if(repoUtenteDao.findById(1).isPresent()) return;
+		repoUtenteDao.save(Utente.utenteSample());
 	}
 
 
