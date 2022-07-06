@@ -1,8 +1,10 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Ristorante;
 import it.opendelivey.demo.model.Utente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,10 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class HomepageController {
+
+    @Autowired
+
+    private RepoUtente repoUtenteDao;
 
     /*TODO: verificare che i dati siano corretti per evitare che
      *  i dati possano essere visti da qualcuno senza autorizzazione */
@@ -22,6 +28,7 @@ public class HomepageController {
         //TODO: algoritmo per scegliere il piatto da visualizzare (da fare nell'apposita classe, ovvero: non qua)
 
         Utente utente = (Utente)session.getAttribute("loggedUser");
+        if(utente == null) return "login";
 
         System.out.println(utente);
 

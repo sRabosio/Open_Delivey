@@ -1,7 +1,9 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoOrdine;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Utente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +15,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class CartController {
+
+    @Autowired
+    RepoOrdine repoOrdineDao;
 
     @GetMapping("/cart")
     public String getCart(
@@ -38,14 +43,15 @@ public class CartController {
         return "cart";
     }
 
-    @PostMapping("/cart")
-    public String deleteFromChart(
-            @RequestParam("idPiatto") int idPiatto,
-            @RequestParam("mail") String mail,
-            @RequestParam("password") String password
+    @PostMapping("/cart/remove")
+    public String cartRemove(
+            HttpSession session,
+            Model model,
+            @RequestParam("productId") int productId
     ){
-        //TODO: delete from user chart
+
 
         return "cart";
     }
+
 }
