@@ -19,9 +19,6 @@ public class Allergie {
     @ManyToMany(mappedBy = "allergie")
     private Set<Utente> utenti = new HashSet<>();
 
-    @ManyToMany(mappedBy = "allergiePiatto")
-    private Set<Piatto> prodotti = new HashSet<>();
-
     public Allergie() {
     }
 
