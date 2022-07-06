@@ -35,7 +35,7 @@ public class Utente {
     //private String recentSearches;
 
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
-    private Set<Ordine> ordini = new HashSet<Ordine>();
+    private Set<Ordine> ordini = new HashSet<>();
 
     public Utente() {
     }
