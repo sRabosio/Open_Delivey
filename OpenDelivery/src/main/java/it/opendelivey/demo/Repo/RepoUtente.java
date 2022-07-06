@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RepoUtente extends CrudRepository<Utente, Integer> {
-    List<Utente> findByMail(String mail);
+    /*List<Utente> findByMail(String mail);
     Optional<Utente> findById(Integer id);
-    List<Utente> findByPassword(String password);
+    List<Utente> findByPassword(String password);*/
 }
 

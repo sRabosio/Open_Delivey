@@ -1,11 +1,13 @@
 package it.opendelivey.demo.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Ordine {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
 
@@ -13,6 +15,10 @@ public class Ordine {
         @JoinColumn(name = "utente_id")
         private Utente utente;
 
+
+        @JoinColumn
+        @ManyToMany
+        private Set<Piatto> piatti = new HashSet<>();
 
         public Integer getId() {
                 return id;
