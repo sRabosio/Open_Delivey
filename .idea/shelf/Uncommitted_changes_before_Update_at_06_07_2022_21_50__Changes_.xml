@@ -1,0 +1,94 @@
+<changelist name="Uncommitted_changes_before_Update_at_06_07_2022_21_50_[Changes]" date="1657137070233" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_21_50_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/07/2022 21:50 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/FavoritesHandler.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/ChartController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Indirizzo.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/HomepageHandler.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Offerta.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/HomepageController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/ProfileHandler.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/RegistrationController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/PlateController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/model/LoginForm.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OpenDelivery/target/classes/it/opendelivey/demo/handlers/Handler.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
