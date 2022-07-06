@@ -1,6 +1,5 @@
 package it.opendelivey.demo.handlers;
 
-import it.opendelivey.demo.model.Offerta;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Ristorante;
 
@@ -23,24 +22,13 @@ public class HomepageHandler extends  Handler{
             case "categorie":
                 return categories();
 
-            case "offerte":
-                return offerte();
-
             default:
                 return -1;
         }
     }
 
     //Ritorna la lista delle offerte da far vedere all utente
-    private Offerta[] offerte() {
-        return new Offerta[]{
-                Offerta.offertaSample(),
-                Offerta.offertaSample(),
-                Offerta.offertaSample(),
-                Offerta.offertaSample(),
-                Offerta.offertaSample(),
-        };
-    }
+
 
     //Ritorna la lista delle categorie
     private String[] categories() {
