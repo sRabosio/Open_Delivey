@@ -8,8 +8,9 @@ public class Ordine {
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
 
+
         @ManyToOne
-        @JoinColumn
+        @JoinColumn(name = "utente_id")
         private Utente utente;
 
 

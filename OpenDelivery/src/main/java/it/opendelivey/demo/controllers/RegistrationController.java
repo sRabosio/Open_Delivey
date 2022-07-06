@@ -52,7 +52,7 @@ public class RegistrationController {
         u.setMail(form.getMail());
         //u.setIndirizzo(indirizzo);
         u.setPassword(form.getPassword());
-        u.setEta(50);
+        u.setEta(form.getEta());
 
 
         repoUtente.save(u);
