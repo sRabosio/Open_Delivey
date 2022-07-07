@@ -2,15 +2,14 @@ package it.opendelivey.demo.controllers;
 
 
 import it.opendelivey.demo.Repo.RepoUtente;
-import it.opendelivey.demo.model.Indirizzo;
-import it.opendelivey.demo.model.LoginForm;
-import it.opendelivey.demo.model.RegistrationForm;
-import it.opendelivey.demo.model.Utente;
+import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashSet;
+import java.util.List;
 
 @Controller
 public class IndexController {
@@ -29,7 +28,7 @@ public class IndexController {
     //processo di registrazione
     @PostMapping("/registrazione")
     public String Registrazione(
-            RegistrationForm form
+            RegistrationForm form, HttpSession session
     ) {
 
         int i = 0;
@@ -44,18 +43,31 @@ public class IndexController {
         //se la richiesta è andata a buon fine manderò
         //l'utente alla pagina di login per loggarsi
         System.out.println(form);
-        Utente U= new Utente();
-        U.setNome(form.getNome());
-        U.setCognome(form.getCognome());
-        U.setMail(form.getMail());
+        Utente u= new Utente();
+        u.setNome(form.getNome());
+        u.setCognome(form.getCognome());
+        u.setMail(form.getMail());
         //U.setIndirizzo(indirizzo);
-        U.setPassword(form.getPassword());
+        u.setPassword(form.getPassword());
         if(repoUtente.findByMail(form.getMail()) != null)
             return "registrazione";
 
-        repoUtente.save(U);
-        return "login";
+        repoUtente.save(u);
+        session.setAttribute("utenteRegistrato",u);
+        return "allergie-iscrizione";
     }
+    @RequestMapping("/allergie-iscrizione")
+    public String allergie_iscrizione() {
+        return "redirect:allergie_iscrizione";
+    }
+    @PostMapping("/allergie-iscrizione")
+    public String allergie_iscrizione(HttpSession session, Allergie[] allergie){
+       Utente utente= (Utente) session.getAttribute("loggedUser");
+       utente.setAllergie(new HashSet<Allergie>(List.of(allergie)));
+       repoUtente.save(utente);
+       return "homepage";
+    }
+
 
     @RequestMapping("/login")
     public String login() {
