@@ -33,6 +33,11 @@ public class Utente {
     @ManyToMany @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
+    @OneToMany(mappedBy = "utente")
+    private Set<IndirizzoUtente> indirizzi = new HashSet<>();
+
+    private String imagePath;
+
     public Utente() {
     }
 
@@ -43,7 +48,12 @@ public class Utente {
         u.setNome("pollo");
         u.setMail("testmail@tmail.com");
         u.setPassword("password");
+        u.setId(1);
         return u;
+    }
+
+    public void addIndirizzo(IndirizzoUtente indirizzo) {
+        indirizzi.add(indirizzo);
     }
 
 
@@ -119,5 +129,29 @@ public class Utente {
 
     public void setAllergie(Set<Allergie> allergie) {
         this.allergie = allergie;
+    }
+
+    public Set<Ordine> getOrdini() {
+        return ordini;
+    }
+
+    public void setOrdini(Set<Ordine> ordini) {
+        this.ordini = ordini;
+    }
+
+    public Set<IndirizzoUtente> getIndirizzi() {
+        return indirizzi;
+    }
+
+    public void setIndirizzi(Set<IndirizzoUtente> indirizzi) {
+        this.indirizzi = indirizzi;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

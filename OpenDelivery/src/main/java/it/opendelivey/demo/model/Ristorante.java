@@ -34,6 +34,11 @@ public class Ristorante {
     @ManyToMany @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
+    @OneToMany(mappedBy = "ristorante")
+    private Set<IndirizzoRistorante> indirizzi = new HashSet<>();
+
+    private String imagePath;
+
     public Ristorante() {
     }
 
@@ -93,5 +98,43 @@ public class Ristorante {
         this.categoria = categoria;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Set<Piatto> getProdotti() {
+        return prodotti;
+    }
+
+    public void setProdotti(Set<Piatto> prodotti) {
+        this.prodotti = prodotti;
+    }
+
+    public Set<Tipo> getTipologie() {
+        return tipologie;
+    }
+
+    public void setTipologie(Set<Tipo> tipologie) {
+        this.tipologie = tipologie;
+    }
+
+    public Set<IndirizzoRistorante> getIndirizzi() {
+        return indirizzi;
+    }
+
+    public void setIndirizzi(Set<IndirizzoRistorante> indirizzi) {
+        this.indirizzi = indirizzi;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }

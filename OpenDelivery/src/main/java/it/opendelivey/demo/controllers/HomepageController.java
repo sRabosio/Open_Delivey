@@ -1,5 +1,7 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoPiatto;
+import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Ristorante;
@@ -10,13 +12,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @Controller
 public class HomepageController {
 
     @Autowired
-
     private RepoUtente repoUtenteDao;
+
+    @Autowired
+    private RepoRistorante repoRistoranteDao;
+
+    @Autowired
+    private RepoPiatto repoPiattoDao;
 
     /*TODO: verificare che i dati siano corretti per evitare che
      *  i dati possano essere visti da qualcuno senza autorizzazione */
@@ -32,21 +40,9 @@ public class HomepageController {
 
         System.out.println(utente);
 
-        Piatto[] consigliati = {
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample()
-        };
+        ArrayList<Piatto> consigliati = repoPiattoDao.findAll();
 
-        Ristorante[] ristoranti = {
-                Ristorante.ristoranteSample(),
-                Ristorante.ristoranteSample(),
-                Ristorante.ristoranteSample(),
-                Ristorante.ristoranteSample(),
-        };
+        ArrayList<Ristorante> ristoranti = repoRistoranteDao.findAll();
 
         //usare equals per comparare gli oggetti non mi funziona
         //se qualcuno sa come farlo lo faccia, sta roba è cancerogena

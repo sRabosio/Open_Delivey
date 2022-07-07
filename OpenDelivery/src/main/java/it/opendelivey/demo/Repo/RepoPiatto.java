@@ -3,6 +3,8 @@ package it.opendelivey.demo.Repo;
 import it.opendelivey.demo.model.Piatto;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RepoPiatto extends CrudRepository<Piatto, Integer> {
+import java.util.ArrayList;
 
+public interface RepoPiatto extends CrudRepository<Piatto, Integer> {
+    ArrayList<Piatto> findAll();
 }

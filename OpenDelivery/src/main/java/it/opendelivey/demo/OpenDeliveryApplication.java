@@ -24,16 +24,39 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Autowired
 	RepoRistorante repoRistorante;
 	@Autowired
-	RepoIndirizzo repoIndirizzoDao;
-	@Autowired
 	RepoAllergie repoAllergieDao;
 	@Autowired
 	RepoTipo repoTipoDao;
+	@Autowired
+	RepoOrdine repoOrdineDao;
+	@Autowired
+	RepoRecordOrdine repoRecordOrdineDao;
+	@Autowired
+	RepoIndirizzoUtente repoIndirizzoUtenteDao;
+	@Autowired
+	RepoIndirizzoRistorante repoIndirizzoRistoranteDao;
 
 	@Override
 	public void run(String... args) throws Exception {
-		if(repoUtenteDao.findById(1).isPresent()) return;
-		repoUtenteDao.save(Utente.utenteSample());
+
+		Ordine ordine = Ordine.ordineSample();
+		ordine.setUtente(
+				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
+		);
+
+		Piatto p = Piatto.piattoSample();
+		repoPiattoDao.save(p);
+
+		repoOrdineDao.save(ordine);
+		OrdineRecord or = new OrdineRecord(
+				ordine,
+				p,
+				5
+		);
+		or.setId(1);
+		repoRecordOrdineDao.save(
+				or
+		);
 	}
 
 

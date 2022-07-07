@@ -27,14 +27,16 @@ public class Piatto {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToMany(mappedBy = "piatti", cascade = CascadeType.ALL)
-    private Set<Ordine> ordini = new HashSet<>();
+    @OneToMany(mappedBy = "prodotto", cascade = CascadeType.ALL)
+    private Set<OrdineRecord> ordini = new HashSet<>();
 
     @ManyToMany(mappedBy = "prodotti")
     private Set<Ristorante> ristoranti = new HashSet<>();
 
     @ManyToMany @JoinColumn
     private Set<Allergene> allergeni = new HashSet<>();
+
+    private String imagePath;
 
 
 
@@ -47,14 +49,6 @@ public class Piatto {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
-    }
-
-    public static Piatto piattoSample(){
-        return new Piatto(
-                "piattone",
-                "l'originale",
-                15.0
-        );
     }
 
     public String getNome() {
@@ -91,5 +85,37 @@ public class Piatto {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Ristorante> getRistoranti() {
+        return ristoranti;
+    }
+
+    public void setRistoranti(Set<Ristorante> ristoranti) {
+        this.ristoranti = ristoranti;
+    }
+
+    public Set<Allergene> getAllergeni() {
+        return allergeni;
+    }
+
+    public void setAllergeni(Set<Allergene> allergeni) {
+        this.allergeni = allergeni;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public static Piatto piattoSample(){
+        Piatto piatto = new Piatto();
+        piatto.setNome("pollo fritto");
+        piatto.setDescrizione("il grande pollone");
+        piatto.setPrezzo(8);
+        return piatto;
     }
 }
