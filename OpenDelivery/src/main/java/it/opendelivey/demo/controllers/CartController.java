@@ -1,7 +1,9 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoIndirizzoUtente;
 import it.opendelivey.demo.Repo.RepoOrdine;
 import it.opendelivey.demo.Repo.RepoRecordOrdine;
+import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.Ordine;
 import it.opendelivey.demo.model.OrdineRecord;
 import it.opendelivey.demo.model.Utente;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Set;
 
@@ -24,6 +27,9 @@ public class CartController {
 
     @Autowired
     RepoRecordOrdine repoRecordOrdineDao;
+
+    @Autowired
+    RepoIndirizzoUtente repoIndirizzoUtenteDao;
 
     @GetMapping("/cart")
     public String getCart(
@@ -37,10 +43,12 @@ public class CartController {
         Ordine ordine = repoOrdineDao.findByUtente(utente);
         if(ordine == null) return "homepage";
         Set<OrdineRecord> carrello = ordine.getPiatti();
+        ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
 
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", carrello);
         model.addAttribute("items", 0);
+        model.addAttribute("indirizziUtente", indirizziUtente);
 
         return "cart";
     }

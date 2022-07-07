@@ -30,9 +30,9 @@
                     <button class="icon">X</button>
             </form>
         </content>
-        <div id="sidebar">
+        <div id="sidebar" th:each="indirizzo:${indirizziUtente}">
             <span> Indirizzo di spedizione </span>
-            <span id="indirizzoUtente" th:text="${utente.getIndirizzo()}"></span>
+            <span  th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></span>
         </div>
         <form class="buy" method="post" action="/cart">
             <div class="buy__description">
