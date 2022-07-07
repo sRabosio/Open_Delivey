@@ -3,6 +3,7 @@ package it.opendelivey.demo.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 public class IndirizzoUtente {
@@ -90,5 +91,13 @@ public class IndirizzoUtente {
 
     public void setUtente(Utente utente) {
         this.utente = utente;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IndirizzoUtente that = (IndirizzoUtente) o;
+        return Objects.equals(indirizzo, that.indirizzo) && Objects.equals(civico, that.civico) && Objects.equals(cap, that.cap) && Objects.equals(città, that.città);
     }
 }

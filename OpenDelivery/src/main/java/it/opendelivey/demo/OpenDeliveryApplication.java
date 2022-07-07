@@ -38,6 +38,25 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		Ordine ordine = Ordine.ordineSample();
+		ordine.setUtente(
+				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
+		);
+
+		Piatto p = Piatto.piattoSample();
+		repoPiattoDao.save(p);
+
+		repoOrdineDao.save(ordine);
+		OrdineRecord or = new OrdineRecord(
+				ordine,
+				p,
+				5
+		);
+		or.setId(1);
+		repoRecordOrdineDao.save(
+				or
+		);
 	}
 
 

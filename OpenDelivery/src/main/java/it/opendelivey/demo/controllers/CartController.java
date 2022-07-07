@@ -83,6 +83,11 @@ public class CartController {
         Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
         if(record.isEmpty()) return "redirect:cart";
 
+        if(record.get().getAmount() < 2){
+            repoRecordOrdineDao.deleteById(recordId);
+            return "redirect:/cart";
+        }
+
         record.get().setAmount(
                 record.get().getAmount()-1
         );
@@ -107,6 +112,25 @@ public class CartController {
                 record.get().getAmount()+1
         );
         repoRecordOrdineDao.save(record.get());
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/cart/newAddress")
+    public String newAddress(
+            HttpSession session,
+            IndirizzoUtente indirizzo
+    ){
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(utente == null) return "login";
+        indirizzo.setUtente(utente);
+
+        ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
+        for(IndirizzoUtente temp: indirizziUtente){
+            if(temp.equals(indirizzo)) return "redirect:/cart";
+        }
+
+
+        repoIndirizzoUtenteDao.save(indirizzo);
         return "redirect:/cart";
     }
 }

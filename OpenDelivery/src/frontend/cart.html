@@ -31,7 +31,7 @@
             </form>
         </content>
 
-        <form class="buy" method="post" action="/cart">
+        <div class="buy"> <!--method="post" action="/cart"-->
             <label for="indirizzo"> Indirizzo di spedizione </label>
             <select id="indirizzo" name="indirizzo" size="1">
                 <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
@@ -39,11 +39,18 @@
                     <button action="">aggiungi indirizzo...</button>
                 </option>
             </select>
+            <form method="POST" action="/cart/newAddress">
+                <input class="" type="text" placeholder="indirizzo" name="indirizzo" required>
+                <input class="simpleForm__addresscontainer__number" type="text" placeholder="N° civico" name="civico" required>
+                <input class="" type="text" placeholder="CAP" name="cap" required>
+                <input class="" type="text" placeholder="città" name="città" required>
+                <button type="submit">aggiungi</button>
+            </form>
                 <div class="buy__description">
             </div>
             <span class="buy__price"></span>
             <button class="simpleButton"> PAY </button>
-        </form>
+        </div>
     </div>
 </body>
 </html>
