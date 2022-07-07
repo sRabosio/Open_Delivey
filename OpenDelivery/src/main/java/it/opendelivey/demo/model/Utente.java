@@ -49,13 +49,10 @@ public class Utente {
         u.setMail("testmail@tmail.com");
         u.setPassword("password");
         u.setId(1);
-        u.addIndirizzo(
-                 IndirizzoUtente.indirizzoUtenteSample()
-        );
         return u;
     }
 
-    private void addIndirizzo(IndirizzoUtente indirizzo) {
+    public void addIndirizzo(IndirizzoUtente indirizzo) {
         indirizzi.add(indirizzo);
     }
 

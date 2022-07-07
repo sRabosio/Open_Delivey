@@ -113,9 +113,8 @@ public class Piatto {
 
     public static Piatto piattoSample(){
         Piatto piatto = new Piatto();
-        piatto.setId(1);
         piatto.setNome("pollo fritto");
-        piatto.setDescrizione("kfc");
+        piatto.setDescrizione("il grande pollone");
         piatto.setPrezzo(8);
         return piatto;
     }

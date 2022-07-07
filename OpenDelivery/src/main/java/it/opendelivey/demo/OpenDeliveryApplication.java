@@ -38,22 +38,6 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repoUtenteDao.save(Utente.utenteSample());
-		repoPiattoDao.save(Piatto.piattoSample());
-		IndirizzoUtente i = IndirizzoUtente.indirizzoUtenteSample();
-		i.setUtente(Utente.utenteSample());
-		repoIndirizzoUtenteDao.save(i);
-
-		repoOrdineDao.save(Ordine.ordineSample());
-		OrdineRecord or = new OrdineRecord(
-				Ordine.ordineSample(),
-				Piatto.piattoSample(),
-				5
-		);
-		or.setId(1);
-		repoRecordOrdineDao.save(
-				or
-		);
 	}
 
 

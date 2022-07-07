@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat login backend completed">
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix: refactored cart.html">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_09_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_09_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/allergie-iscrizione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/allergie-iscrizione.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/registrazione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/registrazione.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergie-iscrizione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergie-iscrizione.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/registrazione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/registrazione.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoAllergie.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoAllergie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Allergie.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Allergie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/registrazione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/registrazione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/registrazione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/registrazione.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +143,7 @@
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Unnamed (1)" />
       <item itemvalue="Application.OpenDeliveryApplication" />
+      <item itemvalue="Spring Boot.OpenDeliveryApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -252,6 +262,11 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

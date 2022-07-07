@@ -2,6 +2,7 @@ package it.opendelivey.demo.controllers;
 
 
 import it.opendelivey.demo.Repo.RepoAllergie;
+import it.opendelivey.demo.Repo.RepoIndirizzoUtente;
 import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.RegistrationForm;
 import it.opendelivey.demo.model.Utente;
@@ -21,6 +22,8 @@ public class IndexController {
     RepoUtente repoUtente;
     @Autowired
     RepoAllergie repoAllergie;
+    @Autowired
+    RepoIndirizzoUtente repoIndirizzoUtenteDao;
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
      * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
@@ -33,7 +36,9 @@ public class IndexController {
     //processo di registrazione
     @PostMapping("/registrazione")
     public String Registrazione(
-            RegistrationForm form, HttpSession session
+            RegistrationForm form,
+            IndirizzoUtente indirizzo,
+            HttpSession session
     ) {
 
         int i = 0;
@@ -59,9 +64,12 @@ public class IndexController {
             return "registrazione";
 
         repoUtente.save(u);
+        indirizzo.setUtente(u);
+        repoIndirizzoUtenteDao.save(indirizzo);
         session.setAttribute("loggedUser",u);
         return "redirect:allergie-iscrizione";
     }
+
     @GetMapping("/allergie-iscrizione")
     public String allergie_iscrizione(HttpSession session, Model model) {
         ArrayList<Allergie> allergie = new ArrayList<>();

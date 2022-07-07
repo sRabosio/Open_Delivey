@@ -18,12 +18,20 @@ public class IndirizzoUtente {
 
     public IndirizzoUtente(){};
 
+    public IndirizzoUtente(String indirizzo, String civico, String cap, String città) {
+        this.indirizzo = indirizzo;
+        this.civico = civico;
+        this.cap = cap;
+        this.città = città;
+    }
+
     public IndirizzoUtente(String indirizzo, String civico, String cap, String città, Integer id) {
         this.indirizzo = indirizzo;
         this.civico = civico;
         this.cap = cap;
         this.città = città;
         this.id = id;
+        this.utente = utente;
     }
 
     public static IndirizzoUtente indirizzoUtenteSample(){
@@ -32,7 +40,7 @@ public class IndirizzoUtente {
           "180",
           "20099",
           "sesto san giovanni",
-          1
+                1
         );
     }
 

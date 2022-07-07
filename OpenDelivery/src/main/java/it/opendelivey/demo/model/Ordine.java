@@ -1,6 +1,7 @@
 package it.opendelivey.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,6 +11,10 @@ public class Ordine {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
+        //questo attributo segna se l'ordine è stato comprato o meno
+        //in alternativa si può usare un'entità fattura
+        @NotNull
+        private boolean isBought = false;
 
         @ManyToOne
         @JoinColumn(name = "utente_id")
