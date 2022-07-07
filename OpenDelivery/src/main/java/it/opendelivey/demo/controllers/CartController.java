@@ -45,8 +45,8 @@ public class CartController {
         return "cart";
     }
 
-    @PostMapping("/cart/remove")
-    public String cartRemove(
+    @PostMapping("/cart/delete")
+    public String cartDelete(
             HttpSession session,
             Model model,
             @RequestParam("recordId") int recordId
@@ -62,4 +62,43 @@ public class CartController {
         return "redirect:/cart";
     }
 
+    @PostMapping("/cart/remove")
+    public String cartRemove(
+            HttpSession session,
+            Model model,
+            @RequestParam("recordId") int recordId
+    ){
+
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(utente == null) return "login";
+
+        Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
+        if(record.isEmpty()) return "redirect:cart";
+
+        record.get().setAmount(
+                record.get().getAmount()-1
+        );
+        repoRecordOrdineDao.save(record.get());
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/cart/add")
+    public String cartAdd(
+            HttpSession session,
+            Model model,
+            @RequestParam("recordId") int recordId
+    ){
+
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(utente == null) return "login";
+
+        Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
+        if(record.isEmpty()) return "redirect:cart";
+
+        record.get().setAmount(
+                record.get().getAmount()+1
+        );
+        repoRecordOrdineDao.save(record.get());
+        return "redirect:/cart";
+    }
 }

@@ -16,13 +16,14 @@
             <h4>CARRELLO</h4>
         </div>
         <content class="cart">
-            <form class="cart__card" th:each="record:${carrello}" method="POST" action="/cart/remove">
+            <form class="cart__card" th:each="record:${carrello}" method="POST" action="/cart/delete">
                     <span th:text="${record.getProdotto().getNome()}"></span>
                     <span th:text="${record.getProdotto().getDescrizione()}"></span>
                     <span th:text="${record.getProdotto().getPrezzo()}"></span>
                     <input type="hidden" th:value="${record.getId()}" name="recordId">
-                    <button class="icon">-</button>
+                    <button class="icon" formaction="/cart/remove">-</button>
                     <span th:text="${record.getAmount()}"></span>
+                    <button class="icon" formaction="/cart/add">+</button>
                     <button class="icon">X</button>
             </form>
         </content>
@@ -30,9 +31,6 @@
             <div class="buy__description">
 
             </div>
-            <input type="hidden" th:value="${utente.getMail()}" name="mail">
-            <input type="hidden" th:value="${utente.getPassword()}" name="password">
-            <input type="hidden" name="chartId">
             <span class="buy__price"></span>
             <button class="simpleButton"> PAY </button>
         </form>
