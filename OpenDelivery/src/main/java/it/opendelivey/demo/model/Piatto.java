@@ -27,8 +27,8 @@ public class Piatto {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToMany(mappedBy = "piatti", cascade = CascadeType.ALL)
-    private Set<Ordine> ordini = new HashSet<>();
+    @OneToMany(mappedBy = "prodotto", cascade = CascadeType.ALL)
+    private Set<OrdineRecord> ordini = new HashSet<>();
 
     @ManyToMany(mappedBy = "prodotti")
     private Set<Ristorante> ristoranti = new HashSet<>();
@@ -85,14 +85,6 @@ public class Piatto {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Set<Ordine> getOrdini() {
-        return ordini;
-    }
-
-    public void setOrdini(Set<Ordine> ordini) {
-        this.ordini = ordini;
     }
 
     public Set<Ristorante> getRistoranti() {

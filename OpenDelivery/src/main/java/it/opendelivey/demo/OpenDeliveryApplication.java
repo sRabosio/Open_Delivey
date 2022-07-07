@@ -31,12 +31,23 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	RepoTipo repoTipoDao;
 	@Autowired
 	RepoOrdine repoOrdineDao;
+	@Autowired
+	RepoRecordOrdine repoRecordOrdineDao;
 
 	@Override
 	public void run(String... args) throws Exception {
 		repoUtenteDao.save(Utente.utenteSample());
 		repoPiattoDao.save(Piatto.piattoSample());
 		repoOrdineDao.save(Ordine.ordineSample());
+		OrdineRecord or = new OrdineRecord(
+				Ordine.ordineSample(),
+				Piatto.piattoSample(),
+				5
+		);
+		or.setId(1);
+		repoRecordOrdineDao.save(
+				or
+		);
 	}
 
 

@@ -15,10 +15,8 @@ public class Ordine {
         @JoinColumn(name = "utente_id")
         private Utente utente;
 
-
-        @JoinColumn
-        @ManyToMany
-        private Set<Piatto> piatti = new HashSet<>();
+        @OneToMany(mappedBy = "ordine")
+        private Set<OrdineRecord> piatti = new HashSet<>();
 
         public Integer getId() {
                 return id;
@@ -36,19 +34,18 @@ public class Ordine {
                 this.utente = utente;
         }
 
-        public Set<Piatto> getPiatti() {
-                return piatti;
-        }
-
-        public void addPiatto(Piatto piatto) {
-                piatti.add(piatto);
-        }
-
         public static Ordine ordineSample(){
                 Ordine ordine = new Ordine();
                 ordine.setId(1);
                 ordine.setUtente(Utente.utenteSample());
-                ordine.addPiatto(Piatto.piattoSample());
                 return ordine;
+        }
+
+        public Set<OrdineRecord> getPiatti() {
+                return piatti;
+        }
+
+        public void setPiatti(Set<OrdineRecord> piatti) {
+                this.piatti = piatti;
         }
 }

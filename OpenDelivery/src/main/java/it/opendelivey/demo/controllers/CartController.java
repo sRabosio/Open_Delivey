@@ -2,6 +2,7 @@ package it.opendelivey.demo.controllers;
 
 import it.opendelivey.demo.Repo.RepoOrdine;
 import it.opendelivey.demo.model.Ordine;
+import it.opendelivey.demo.model.OrdineRecord;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Utente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class CartController {
         if(utente == null) return "login";
         Ordine ordine = repoOrdineDao.findByUtente(utente);
         if(ordine == null) return "homepage";
-        Set<Piatto> carrello = ordine.getPiatti();
+        Set<OrdineRecord> carrello = ordine.getPiatti();
 
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", carrello);
@@ -55,7 +56,7 @@ public class CartController {
         if(utente == null || ordine == null || ordine.getPiatti().isEmpty()) return "login";
 
         //rimuovo il piatto desiderato da ordine e lo aggiorno
-        ordine.getPiatti().removeIf(result -> result.getId() == productId);
+        ordine.getPiatti().removeIf(result -> result.getProdotto().getId() == productId);
         repoOrdineDao.save(ordine);
         return "redirect:/cart";
     }
