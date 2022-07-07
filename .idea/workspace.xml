@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="fix: changed cart request mapping to use RecordOrdine">
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" afterDir="false" />
+    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added add and remove actions to cart">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657198770748</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: added add and remove actions to cart">
+      <created>1657199431930</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657199431930</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +282,8 @@
     <MESSAGE value="feat: now can delete element from cart" />
     <MESSAGE value="feat: added Ordinerecord" />
     <MESSAGE value="fix: changed cart request mapping to use RecordOrdine" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: changed cart request mapping to use RecordOrdine" />
+    <MESSAGE value="feat: added add and remove actions to cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added add and remove actions to cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

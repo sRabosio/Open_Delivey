@@ -12,7 +12,10 @@
 <body>
     <div class="container">
         <div class="topui">
-            <img src="assets/icons/std-arrow-purple.svg" alt="torna indietro" class="topui__back">
+            <a href="/homepage" class="topui__back" >
+                <img src="assets/icons/std-arrow-purple.svg" alt="torna indietro">
+            </a>
+
             <h4>CARRELLO</h4>
         </div>
         <content class="cart">
@@ -27,6 +30,9 @@
                     <button class="icon">X</button>
             </form>
         </content>
+        <div id="sidebar">
+            <p id="indirizzoUtente" th:text="${utente.getIndirizzo()}"></p>
+        </div>
         <form class="buy" method="post" action="/cart">
             <div class="buy__description">
 
