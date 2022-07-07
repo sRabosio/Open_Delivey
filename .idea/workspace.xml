@@ -4,20 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added getters and repo methods to ordine">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_21_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_2022_21_50__Changes_.xml" afterDir="false" />
+    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added get request for cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/restaurant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoUtente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoUtente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ChartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/PlateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/handlers/FavoritesHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/handlers/Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/handlers/HomepageHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/handlers/ProfileHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/favorites.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657179776387</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: added get request for cart">
+      <created>1657187113140</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657187113140</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +259,8 @@
     <MESSAGE value="feat: added navbar fragment" />
     <MESSAGE value="fix: fixed CMDLineRunner issue" />
     <MESSAGE value="feat: added getters and repo methods to ordine" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added getters and repo methods to ordine" />
+    <MESSAGE value="feat: added get request for cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added get request for cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

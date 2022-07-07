@@ -57,7 +57,7 @@ public class CartController {
         //rimuovo il piatto desiderato da ordine e lo aggiorno
         ordine.getPiatti().removeIf(result -> result.getId() == productId);
         repoOrdineDao.save(ordine);
-        return "redirect:cart";
+        return "redirect:/cart";
     }
 
 }
