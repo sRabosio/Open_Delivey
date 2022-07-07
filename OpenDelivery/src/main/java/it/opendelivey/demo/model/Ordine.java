@@ -35,4 +35,12 @@ public class Ordine {
         public void setUtente(Utente utente) {
                 this.utente = utente;
         }
+
+        public Set<Piatto> getPiatti() {
+                return piatti;
+        }
+
+        public void addPiatto(Piatto piatto) {
+                piatti.add(piatto);
+        }
 }
