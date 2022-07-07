@@ -45,6 +45,7 @@ public class Utente {
         u.setNome("pollo");
         u.setMail("testmail@tmail.com");
         u.setPassword("password");
+        u.setId(1);
         return u;
     }
 

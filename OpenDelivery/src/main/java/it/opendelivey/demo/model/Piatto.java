@@ -51,14 +51,6 @@ public class Piatto {
         this.prezzo = prezzo;
     }
 
-    public static Piatto piattoSample(){
-        return new Piatto(
-                "piattone",
-                "l'originale",
-                15.0
-        );
-    }
-
     public String getNome() {
         return nome;
     }
@@ -93,5 +85,46 @@ public class Piatto {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Ordine> getOrdini() {
+        return ordini;
+    }
+
+    public void setOrdini(Set<Ordine> ordini) {
+        this.ordini = ordini;
+    }
+
+    public Set<Ristorante> getRistoranti() {
+        return ristoranti;
+    }
+
+    public void setRistoranti(Set<Ristorante> ristoranti) {
+        this.ristoranti = ristoranti;
+    }
+
+    public Set<Allergene> getAllergeni() {
+        return allergeni;
+    }
+
+    public void setAllergeni(Set<Allergene> allergeni) {
+        this.allergeni = allergeni;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public static Piatto piattoSample(){
+        Piatto piatto = new Piatto();
+        piatto.setId(1);
+        piatto.setNome("pollo fritto");
+        piatto.setDescrizione("kfc");
+        piatto.setPrezzo(8);
+        return piatto;
     }
 }

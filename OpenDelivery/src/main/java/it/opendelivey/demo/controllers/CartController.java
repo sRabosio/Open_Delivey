@@ -1,6 +1,7 @@
 package it.opendelivey.demo.controllers;
 
 import it.opendelivey.demo.Repo.RepoOrdine;
+import it.opendelivey.demo.model.Ordine;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Utente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 public class CartController {
@@ -28,14 +32,10 @@ public class CartController {
 
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(utente == null) return "login";
+        Ordine ordine = repoOrdineDao.findByUtente(utente);
+        if(ordine == null) return "homepage";
+        Set<Piatto> carrello = ordine.getPiatti();
 
-        Piatto[] carrello = new Piatto[]{
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-                Piatto.piattoSample(),
-        };
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", carrello);
         model.addAttribute("items", 0);
@@ -50,8 +50,14 @@ public class CartController {
             @RequestParam("productId") int productId
     ){
 
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        Ordine ordine = repoOrdineDao.findByUtente(utente);
+        if(utente == null || ordine == null || ordine.getPiatti().isEmpty()) return "login";
 
-        return "cart";
+        //rimuovo il piatto desiderato da ordine e lo aggiorno
+        ordine.getPiatti().removeIf(result -> result.getId() == productId);
+        repoOrdineDao.save(ordine);
+        return "redirect:cart";
     }
 
 }

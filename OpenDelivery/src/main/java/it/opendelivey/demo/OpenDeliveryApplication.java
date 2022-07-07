@@ -29,11 +29,14 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	RepoAllergie repoAllergieDao;
 	@Autowired
 	RepoTipo repoTipoDao;
+	@Autowired
+	RepoOrdine repoOrdineDao;
 
 	@Override
 	public void run(String... args) throws Exception {
-		if(repoUtenteDao.findById(1).isPresent()) return;
 		repoUtenteDao.save(Utente.utenteSample());
+		repoPiattoDao.save(Piatto.piattoSample());
+		repoOrdineDao.save(Ordine.ordineSample());
 	}
 
 

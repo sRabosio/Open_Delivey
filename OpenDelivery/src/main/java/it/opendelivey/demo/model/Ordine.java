@@ -43,4 +43,12 @@ public class Ordine {
         public void addPiatto(Piatto piatto) {
                 piatti.add(piatto);
         }
+
+        public static Ordine ordineSample(){
+                Ordine ordine = new Ordine();
+                ordine.setId(1);
+                ordine.setUtente(Utente.utenteSample());
+                ordine.addPiatto(Piatto.piattoSample());
+                return ordine;
+        }
 }
