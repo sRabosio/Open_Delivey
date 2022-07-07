@@ -30,13 +30,16 @@
                     <button class="icon">X</button>
             </form>
         </content>
-        <div id="sidebar" th:each="indirizzo:${indirizziUtente}">
-            <span> Indirizzo di spedizione </span>
-            <span  th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></span>
-        </div>
-        <form class="buy" method="post" action="/cart">
-            <div class="buy__description">
 
+        <form class="buy" method="post" action="/cart">
+            <label for="indirizzo"> Indirizzo di spedizione </label>
+            <select id="indirizzo" name="indirizzo" size="1">
+                <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
+                <option>
+                    <button action="">aggiungi indirizzo...</button>
+                </option>
+            </select>
+                <div class="buy__description">
             </div>
             <span class="buy__price"></span>
             <button class="simpleButton"> PAY </button>
