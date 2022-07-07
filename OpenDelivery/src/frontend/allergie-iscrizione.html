@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +10,8 @@
 <body>
     <div class="container">
         <form action="/allergie-iscrizione" method="POST">
-            <input label="Lattosio" type="checkbox" name="lattosio">
-            <input label="Glutine" type="checkbox" name="glutine">
-            <input label="Arachidi" type="checkbox" name="arachidi">
-            <input label="Nichel" type="checkbox" name="nichel">
+
+            <input th:each="allergia:${allergie}" th:label="${allergia.getNome()}" type="checkbox" th:value="${allergia.getId()}">
             <input type="submit" value="aggiungi">
         </form>
 

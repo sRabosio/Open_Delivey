@@ -1,21 +1,24 @@
 package it.opendelivey.demo.controllers;
 
 
+import it.opendelivey.demo.Repo.RepoAllergie;
 import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class IndexController {
 
     @Autowired
     RepoUtente repoUtente;
+    @Autowired
+    RepoAllergie repoAllergie;
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
      * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
@@ -49,22 +52,26 @@ public class IndexController {
         u.setMail(form.getMail());
         //U.setIndirizzo(indirizzo);
         u.setPassword(form.getPassword());
+        u.setEta(form.getEta());
         if(repoUtente.findByMail(form.getMail()) != null)
             return "registrazione";
 
         repoUtente.save(u);
-        session.setAttribute("utenteRegistrato",u);
+        session.setAttribute("loggedUser",u);
+        return "redirect:allergie-iscrizione";
+    }
+    @GetMapping("/allergie-iscrizione")
+    public String allergie_iscrizione(HttpSession session, Model model) {
+        ArrayList<Allergie> allergie = new ArrayList<>();
+        allergie = repoAllergie.findAll();
+        model.addAttribute("allergie",allergie);
         return "allergie-iscrizione";
     }
-    @RequestMapping("/allergie-iscrizione")
-    public String allergie_iscrizione() {
-        return "redirect:allergie_iscrizione";
-    }
     @PostMapping("/allergie-iscrizione")
-    public String allergie_iscrizione(HttpSession session, Allergie[] allergie){
+    public String allergie_iscrizione( HttpSession session, ArrayList <Allergie> allergie){
        Utente utente= (Utente) session.getAttribute("loggedUser");
-       utente.setAllergie(new HashSet<Allergie>(List.of(allergie)));
-       repoUtente.save(utente);
+       if (utente==null)return "login";
+        repoUtente.save(utente);
        return "homepage";
     }
 
