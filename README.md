@@ -14,8 +14,6 @@ link css docs: https://docs.google.com/document/d/1157MOufLhzwuIpcUTnkwKqjT2dUM1
 
 Link srs: https://docs.google.com/document/d/1nrt91zghoYMdvW59_4LbjECgApzjB0CDsar_BRwfXks/edit#
 
-Vuejs: https://docs.google.com/document/d/10XC_kc-UtA1caf6Fqwv6PBmhEUlIcfC1Un8iGtluHc8/edit?usp=sharing
-
 Link maps api: https://dinotraining.it/google-api-key/
 
 Link prog&svil roba: https://docs.google.com/document/d/1qjRz_Yo_5eiMilV1LtuzGv1kbRKKqq6V/edit?usp=sharing&ouid=116032799368802732008&rtpof=true&sd=true

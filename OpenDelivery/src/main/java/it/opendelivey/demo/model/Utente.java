@@ -13,26 +13,19 @@ public class Utente {
     @NotNull @Size(max = 45, min = 3)
     private String nome,
         cognome;
+
     @NotNull @Size(max = 45, min = 8)
     private String password;
+
     @NotNull @Size(max = 64, min = 8)
     private String mail;
-    /*@NotNull @Size(max = 45, min = 3)
-    private String[] allergie;*/
+
     @NotNull
     private Integer eta;
-    /*
-    @NotNull @Size(max = 45, min = 3)
-    private Indirizzo indirizzo;*/
-    @NotNull @Positive
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
-/*
-    private Piatto[] preferiti,
-        carrello, recentPlates;
-*/
-    //private String recentSearches;
 
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private Set<Ordine> ordini = new HashSet<>();
@@ -45,31 +38,13 @@ public class Utente {
     public Utente() {
     }
 
-    public Utente(Integer id) {
-        this.id = id;
-    }
-
     public static Utente utenteSample(){
-        Utente u = new Utente(0);
-       /* u.setAllergie(
-                new String[]{"albania"}
-        );*/
+        Utente u = new Utente();
         u.setEta(19);
         u.setCognome("castoro");
         u.setNome("pollo");
         u.setMail("testmail@tmail.com");
-        //u.setIndirizzo(Indirizzo.indirizzo());
         u.setPassword("password");
-        /*u.setCarrello(
-                new Piatto[]{
-                        Piatto.piattoSample(),
-                        Piatto.piattoSample(),
-                        Piatto.piattoSample(),
-                        Piatto.piattoSample(),
-                        Piatto.piattoSample(),
-                }
-        );*/
-
         return u;
     }
 
@@ -127,14 +102,6 @@ public class Utente {
     public void setMail(String mail) {
         this.mail = mail;
     }
-/*
-    public String[] getAllergie() {
-        return allergie;
-    }
-
-    public void setAllergie(String[] allergie) {
-        this.allergie = allergie;
-    }*/
 
     public Integer getEta() {
         return eta;
@@ -143,48 +110,16 @@ public class Utente {
     public void setEta(Integer eta) {
         this.eta = eta;
     }
-/*
-    public Indirizzo getIndirizzo() {
-        return indirizzo;
-    }
-
-    public void setIndirizzo(Indirizzo indirizzo) {
-        this.indirizzo = indirizzo;
-    }*/
 
     public void setId(Integer id) {
         this.id = id;
     }
-/*
-    public Piatto[] getPreferiti() {
-        return preferiti;
+
+    public Set<Allergie> getAllergie() {
+        return allergie;
     }
 
-    public Piatto[] getCarrello() {
-        return carrello;
+    public void setAllergie(Set<Allergie> allergie) {
+        this.allergie = allergie;
     }
-
-    public Piatto[] getRecentPlates() {
-        return recentPlates;
-    }
-
-    public String getRecentSearches() {
-        return recentSearches;
-    }
-
-    public void setPreferiti(Piatto[] preferiti) {
-        this.preferiti = preferiti;
-    }
-
-    public void setCarrello(Piatto[] carrello) {
-        this.carrello = carrello;
-    }
-
-    public void setRecentPlates(Piatto[] recentPlates) {
-        this.recentPlates = recentPlates;
-    }
-
-    public void setRecentSearches(String recentSearches) {
-        this.recentSearches = recentSearches;
-    }*/
 }
