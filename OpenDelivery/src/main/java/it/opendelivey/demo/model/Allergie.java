@@ -22,9 +22,12 @@ public class Allergie {
     public Allergie() {
     }
 
-    public Allergie( String nome) {
+    public Allergie(Integer id, String nome, Set<Utente> utenti) {
+        this.id = id;
         this.nome = nome;
+        this.utenti = utenti;
     }
+
 
     public Integer getId() {
         return id;
@@ -41,9 +44,5 @@ public class Allergie {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public static Allergie allergieSample(){
-        return new Allergie(
-                "lattosio"
-        );
-    }
+
 }
