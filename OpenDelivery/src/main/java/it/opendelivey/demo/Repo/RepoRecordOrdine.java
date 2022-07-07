@@ -9,5 +9,5 @@ import java.util.ArrayList;
 
 public interface RepoRecordOrdine extends CrudRepository<OrdineRecord, Integer> {
     ArrayList<RepoRecordOrdine> findByOrdine(Ordine ordine);
-    ArrayList<RepoRecordOrdine> findByPiatto(Piatto piatto);
+    ArrayList<RepoRecordOrdine> findByProdotto(Piatto prodotto);
 }

@@ -17,11 +17,10 @@
         </div>
         <content class="cart">
             <form class="cart__card" th:each="record:${carrello}" method="POST" action="/cart/remove">
-                    <span th:text="${record.getPiatto().getNome()}"></span>
-                    <span th:text="${record.getPiatto().getDescrizione()}"></span>
-                    <span th:text="${record.getPiatto().getPrezzo()}"></span>
-                    <input type="hidden" th:value="${record.getPiatto().getId()}" name="productId">
-                    <input type="hidden" th:value="${record.getOrdine().getId()}" name="orderId">
+                    <span th:text="${record.getProdotto().getNome()}"></span>
+                    <span th:text="${record.getProdotto().getDescrizione()}"></span>
+                    <span th:text="${record.getProdotto().getPrezzo()}"></span>
+                    <input type="hidden" th:value="${record.getId()}" name="recordId">
                     <button class="icon">-</button>
                     <span th:text="${record.getAmount()}"></span>
                     <button class="icon">X</button>
