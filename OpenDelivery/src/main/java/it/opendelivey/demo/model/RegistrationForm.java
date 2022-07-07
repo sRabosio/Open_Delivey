@@ -20,19 +20,17 @@ public class RegistrationForm {
     @NotBlank(message = "questo campo è obbligatorio")
     @Size(min=5, message = "la password deve contenere almeno 5 caratteri") 
     private String password;
-    private Indirizzo indirizzo;
     /*@NotNull(message = "questo campo è obbligatorio")
     @NotBlank(message = "questo campo è obbligatorio")*/
     private Integer eta;
 
 
-    public RegistrationForm(String nome, String cognome, String mail, String password, Indirizzo indirizzo, Integer eta) {
+    public RegistrationForm(String nome, String cognome, String mail, String password,Integer eta) {
         this.nome = nome;
         this.eta= eta;
         this.cognome = cognome;
         this.mail = mail;
         this.password = password;
-        this.indirizzo = indirizzo;
     }
 
     @Override
@@ -43,7 +41,6 @@ public class RegistrationForm {
                 ", eta='" + eta + '\'' +
                 ", mail='" + mail + '\'' +
                 ", password='" + password + '\'' +
-                ", indirizzo=" + indirizzo +
                 '}';
     }
 
@@ -77,14 +74,6 @@ public class RegistrationForm {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Indirizzo getIndirizzo() {
-        return indirizzo;
-    }
-
-    public void setIndirizzo(Indirizzo indirizzo) {
-        this.indirizzo = indirizzo;
     }
 
     public Integer getEta() {

@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added add and remove actions to cart">
+    <list default="true" id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added homepage database integration">
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoIndirizzoRistorante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoIndirizzoUtente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoRistorante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoUtente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoIndirizzo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Indirizzo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/RegistrationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoIndirizzo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoPiatto.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoPiatto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoRistorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoRistorante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Indirizzo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/RegistrationForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657199431930</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: added homepage database integration">
+      <created>1657200791479</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657200791479</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +309,8 @@
     <MESSAGE value="feat: added Ordinerecord" />
     <MESSAGE value="fix: changed cart request mapping to use RecordOrdine" />
     <MESSAGE value="feat: added add and remove actions to cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added add and remove actions to cart" />
+    <MESSAGE value="feat: added homepage database integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added homepage database integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

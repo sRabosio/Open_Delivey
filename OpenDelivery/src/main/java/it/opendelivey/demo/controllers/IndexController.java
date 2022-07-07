@@ -2,8 +2,6 @@ package it.opendelivey.demo.controllers;
 
 
 import it.opendelivey.demo.Repo.RepoUtente;
-import it.opendelivey.demo.model.Indirizzo;
-import it.opendelivey.demo.model.LoginForm;
 import it.opendelivey.demo.model.RegistrationForm;
 import it.opendelivey.demo.model.Utente;
 import org.springframework.beans.factory.annotation.Autowired;

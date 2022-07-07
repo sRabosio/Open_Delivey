@@ -31,7 +31,8 @@
             </form>
         </content>
         <div id="sidebar">
-            <p id="indirizzoUtente" th:text="${utente.getIndirizzo()}"></p>
+            <span> Indirizzo di spedizione </span>
+            <span id="indirizzoUtente" th:text="${utente.getIndirizzo()}"></span>
         </div>
         <form class="buy" method="post" action="/cart">
             <div class="buy__description">
