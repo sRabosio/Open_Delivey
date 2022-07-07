@@ -50,8 +50,8 @@ public class IndexController {
         U.setMail(form.getMail());
         //U.setIndirizzo(indirizzo);
         U.setPassword(form.getPassword());
-        U.setEta(50);
-
+        if(repoUtente.findByMail(form.getMail()) != null)
+            return "registrazione";
 
         repoUtente.save(U);
         return "login";
@@ -64,14 +64,18 @@ public class IndexController {
 
     @PostMapping("/login")
     public String login(
+
             @RequestParam("mail") String mail,
             @RequestParam("password") String password,
             HttpSession session
+
     ){
+        Utente dbutente;
+        if(( dbutente= (Utente) repoUtente.findByMail(mail)) == null || !(dbutente.getPassword().equals(password))) return "login";
         //session ci permette di "mantenere" delle informazioni
         //che vengono prese da delle richieste
         //per venir utilizzate in altre
-        session.setAttribute("loggedUser", Utente.utenteSample());
+        session.setAttribute("loggedUser", dbutente);
         //usiamo redirect per "portarci" alla richiesta "/homepage"
         //invece di andare sulla pagina HTML
         return "redirect:homepage";
