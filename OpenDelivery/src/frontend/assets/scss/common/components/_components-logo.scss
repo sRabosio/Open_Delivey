@@ -1,0 +1,24 @@
+.logo{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 6rem;   
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 1rem;
+    background-color: $purple;
+    border-bottom-left-radius: $std_border_radius;
+    border-bottom-right-radius: $std_border_radius; 
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    &__image{
+        background-color: transparent;
+    }
+
+    &__name{
+        align-self: center;
+        color: $white;
+    }
+}
