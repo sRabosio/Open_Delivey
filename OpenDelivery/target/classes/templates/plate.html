@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Open delivery plate</title>
 </head>
 <body>
+<div class="container">
+    <a th:text="${piatto.getNome()}"></a>
+    <div class="fullcard">
+        <img src="assets/images/pizzeria.jpg">
+        <a th:text="${piato.getDescrizione()}"></a>
+    </div>
+    <content class="contentcontainer">
+        <div class="nearyoucontainer" id="piattiConsigliati" >
+            <div class="nearyoucontainer__titlecontainer">
+                <h5>Allergeni::</h5>
+            </div>
+            <div class="nearyoucontainer__cards">
+                <a class="fullcard" th:each="consigliato:${menu}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${piatto.getId()})}">
+                    <img src="assets/images/pizza brutta.jpg" alt="">
+                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
+                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
+                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
+                </a>
+            </div>
+        </div>
+    </content>
 
+    <div th:replace="fragments/navbar :: navbar"></div>
+</div>
 </body>
 </html>

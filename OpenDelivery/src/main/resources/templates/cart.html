@@ -18,8 +18,8 @@
 
             <h4>CARRELLO</h4>
         </div>
-        <content class="cart">
-            <form class="cart__card" th:each="record:${carrello}" method="POST" action="/cart/delete">
+        <content class="cart" >
+            <form class="cart__card" th:unless="${record == null}" th:each="record:${carrello}" method="POST" action="/cart/delete">
                     <span th:text="${record.getProdotto().getNome()}"></span>
                     <span th:text="${record.getProdotto().getDescrizione()}"></span>
                     <span th:text="${record.getProdotto().getPrezzo()}"></span>
@@ -31,7 +31,9 @@
             </form>
         </content>
 
-        <div class="buy"> <!--method="post" action="/cart"-->
+        <div th:if="${record == null}" th:replace="fragments/emptyCart :: emptyCart"></div>
+
+        <div class="buy" th:unless="${record == null}"> <!--method="post" action="/cart"-->
             <label for="indirizzo"> Indirizzo di spedizione </label>
             <select id="indirizzo" name="indirizzo" size="1">
                 <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
@@ -39,7 +41,7 @@
                     <button action="">aggiungi indirizzo...</button>
                 </option>
             </select>
-            <form method="POST" action="/cart/newAddress">
+            <form method="POST" action="/cart/newAddress" >
                 <input class="" type="text" placeholder="indirizzo" name="indirizzo" required>
                 <input class="simpleForm__addresscontainer__number" type="text" placeholder="N° civico" name="civico" required>
                 <input class="" type="text" placeholder="CAP" name="cap" required>

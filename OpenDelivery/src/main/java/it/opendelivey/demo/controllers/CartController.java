@@ -36,18 +36,18 @@ public class CartController {
             Model model,
             HttpSession session
     ){
-        //TODO: aggiungi utente dal database
 
+        Set<OrdineRecord> carrello = null;
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(utente == null) return "login";
         Ordine ordine = repoOrdineDao.findByUtente(utente);
-        if(ordine == null) return "homepage";
-        Set<OrdineRecord> carrello = ordine.getPiatti();
+        if(ordine != null)
+            carrello = ordine.getPiatti();
+
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
 
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", carrello);
-        model.addAttribute("items", 0);
         model.addAttribute("indirizziUtente", indirizziUtente);
 
         return "cart";

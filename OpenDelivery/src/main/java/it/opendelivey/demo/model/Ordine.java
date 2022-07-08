@@ -1,11 +1,13 @@
 package it.opendelivey.demo.model;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity @Where(clause = "is_bought = true")
 public class Ordine {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
