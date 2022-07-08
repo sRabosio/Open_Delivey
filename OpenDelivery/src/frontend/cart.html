@@ -32,6 +32,9 @@
             <div th:case="true" class="fragmentcontainer">
                 <div th:replace="fragments/emptyCart :: emptyCart"></div>
             </div>
+            <div th:if="${pagato != null && pagato}" class="fragmentcontainer">
+                <div th:replace="fragments/pagato :: pagato"></div>
+            </div>
         </content>
 
         <div class="buy" th:unless="${cartEmpty}"> <!--method="post" action="/cart"-->
@@ -52,11 +55,9 @@
                 <div class="buy__description">
             </div>
             <span class="buy__price"></span>
-            <form method="post" action="/cart/buy">
-                <input type="hidden" th:value="${idOrdine}">
-                <button class="simpleButton"> PAY </button>
+            <form>
+                <button class="simpleButton" formmethod="post" formaction="/cart/buy"> PAY </button>
             </form>
-
         </div>
     </div>
 </body>

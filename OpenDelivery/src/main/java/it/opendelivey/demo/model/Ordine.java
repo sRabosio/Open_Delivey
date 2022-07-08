@@ -9,7 +9,7 @@ import java.util.Set;
 
 //non prendiamo gli ordini che sono stati pagati/effettuati
 //ci aspettiamo che sia attivo un solo ordine non acquistato alla volta
-@Entity @Where(clause = "is_bought = false")
+@Entity
 public class Ordine {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +24,18 @@ public class Ordine {
         @JoinColumn(name = "utente_id")
         private Utente utente;
 
+        public Ordine(Utente utente) {
+                this.utente = utente;
+        }
+
+
+
         @OneToMany(mappedBy = "ordine")
         private Set<OrdineRecord> piatti = new HashSet<>();
+
+        public Ordine() {
+
+        }
 
         public Integer getId() {
                 return id;

@@ -49,7 +49,7 @@ public class CartController {
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
         //prendo l'ordine ed estraggo i record
-        Ordine ordine = repoOrdineDao.findByUtente(utente);
+        Ordine ordine = repoOrdineDao.findByUtenteAndIsBought(utente, false).get(0);
         if(ordine != null)
             if(ordine.getPiatti().size()>0)
                carrello = ordine.getPiatti();
@@ -166,14 +166,14 @@ public class CartController {
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
         //operazione
-        Ordine ordine = repoOrdineDao.findByUtente(utente);
+        Ordine ordine = repoOrdineDao.findByUtenteAndIsBought(utente, false).get(0);
         ordine.setBought(true);
-        utente.addOrdine(new Ordine());
 
         //salavataggio
-        repoOrdineDao.save(ordine);
+        repoOrdineDao.save(
+                new Ordine(utente)
+        );
         repoUtenteDao.save(utente);
-
         return "redirect:/cart";
     }
 }
