@@ -41,7 +41,12 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repoRistoranteDao.save(Ristorante.ristoranteSample());
+
+		Ordine ordine = Ordine.ordineSample();
+		ordine.setUtente(
+				Utente.utenteSample()
+		);
+
 		Piatto p = Piatto.piattoSample();
 		p.addRistorante(Ristorante.ristoranteSample());
 		repoPiattoDao.save(p);

@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: pag ristorante">
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/images/pizzeria.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,9 +100,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\IvanLucchini\Open_Delivey\OpenDelivery" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\RiccardoVerderio\OneDrive - ITS Rizzoli\Documenti\progetti\spring\Open_Delivey\OpenDelivery\src\main\resources\static\assets\images" />
-    </key>
   </component>
   <component name="RunManager" selected="Application.OpenDeliveryApplication">
     <configuration name="OpenDeliveryApplication" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -128,6 +136,7 @@
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Unnamed (1)" />
       <item itemvalue="Application.OpenDeliveryApplication" />
+      <item itemvalue="Spring Boot.OpenDeliveryApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -210,14 +219,7 @@
       <option name="project" value="LOCAL" />
       <updated>1657220865884</updated>
     </task>
-    <task id="LOCAL-00011" summary="feat: pag ristorante">
-      <created>1657294286883</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1657294286883</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,19 +230,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="work" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -264,8 +254,7 @@
     <MESSAGE value="fix id db" />
     <MESSAGE value="feat login backend completed" />
     <MESSAGE value="feat: added indirizzo to registrazione" />
-    <MESSAGE value="feat: pag ristorante" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: pag ristorante" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added indirizzo to registrazione" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +263,11 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java</url>
           <line>122</line>

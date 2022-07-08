@@ -4,9 +4,8 @@
     display: flex;
     flex-direction: column;
 
-    //scroll bar remover
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;
+    
+    margin-bottom: 3rem;
 
     &__titlecontainer{
         min-width: 100%;
@@ -29,5 +28,26 @@
         overflow-x: scroll;
         gap: 2rem;
         position: relative;
+
+        //scrollbar stuff
+            /* width */
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #aaa; 
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
     }
 }

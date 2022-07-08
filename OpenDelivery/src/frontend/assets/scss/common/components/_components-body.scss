@@ -6,7 +6,27 @@ body {
     grid-template-columns: $body_sides_space auto $body_sides_space;
     grid-template-rows: auto;
     min-height: 100vh;
-    min-width: 100vw;
-    overflow: none;
+    overflow: hidden;
     font-family: "Urbanist";
+   /* width */
+    &::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #aaa; 
+    border-radius: 3px;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 }

@@ -9,7 +9,8 @@
     align-items: center;
     place-items: center;
     gap: 1rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
 
     //scroll bar remover
     -ms-overflow-style: none;  /* IE and Edge */
@@ -27,12 +28,16 @@
     }
 
     &__category{
-        padding: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        background-color: $purple;
+        padding: 0.7rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        background-color: $light_purple;
         margin: 0;
         border-radius: 11px;
-        color: $white;
+        color: $black;
+        border: none;
+        &:active{
+            background-color: $purple;
+        }
     }
 }
