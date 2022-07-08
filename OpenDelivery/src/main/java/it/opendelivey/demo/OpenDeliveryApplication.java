@@ -36,27 +36,15 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Autowired
 	RepoIndirizzoRistorante repoIndirizzoRistoranteDao;
 
+	@Autowired
+	RepoRistorante repoRistoranteDao;
+
 	@Override
 	public void run(String... args) throws Exception {
-
-		Ordine ordine = Ordine.ordineSample();
-		ordine.setUtente(
-				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
-		);
-
+		repoRistoranteDao.save(Ristorante.ristoranteSample());
 		Piatto p = Piatto.piattoSample();
+		p.addRistorante(Ristorante.ristoranteSample());
 		repoPiattoDao.save(p);
-
-		repoOrdineDao.save(ordine);
-		OrdineRecord or = new OrdineRecord(
-				ordine,
-				p,
-				5
-		);
-		or.setId(1);
-		repoRecordOrdineDao.save(
-				or
-		);
 	}
 
 
