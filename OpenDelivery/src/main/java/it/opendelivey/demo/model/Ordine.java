@@ -7,7 +7,9 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity @Where(clause = "is_bought = true")
+//non prendiamo gli ordini che sono stati pagati/effettuati
+//ci aspettiamo che sia attivo un solo ordine non acquistato alla volta
+@Entity @Where(clause = "is_bought = false")
 public class Ordine {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)

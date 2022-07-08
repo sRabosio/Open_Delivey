@@ -42,12 +42,13 @@ public class CartController {
         if(utente == null) return "login";
         Ordine ordine = repoOrdineDao.findByUtente(utente);
         if(ordine != null)
-            carrello = ordine.getPiatti();
+            if(ordine.getPiatti().size()>0)
+               carrello = ordine.getPiatti();
 
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
 
         model.addAttribute("utente", utente);
-        model.addAttribute("carrello", carrello);
+        model.addAttribute("carrello", null);
         model.addAttribute("indirizziUtente", indirizziUtente);
 
         return "cart";
