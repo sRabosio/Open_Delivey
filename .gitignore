@@ -15,3 +15,4 @@
 /OpenDelivery/target/classes/templates/vuetest.html
 /OpenDelivery/target/*
 /OpenDelivery/src/main/resources/application.properties
+/.idea/
