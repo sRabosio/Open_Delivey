@@ -41,7 +41,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 		Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
-				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
+				Utente.utenteSample()
 		);
 
 		Piatto p = Piatto.piattoSample();
