@@ -29,10 +29,10 @@
                     <button class="icon" formaction="/cart/add">+</button>
                     <button class="icon">X</button>
             </form>
-            <div th:case="true" class="fragmentcontainer">
+            <div th:if="${cartEmpty && (pagato == null || !pagato)}" class="fragmentcontainer">
                 <div th:replace="fragments/emptyCart :: emptyCart"></div>
             </div>
-            <div th:if="${pagato != null && pagato}" class="fragmentcontainer">
+            <div th:if="${pagato == true}" class="fragmentcontainer">
                 <div th:replace="fragments/pagato :: pagato"></div>
             </div>
         </content>

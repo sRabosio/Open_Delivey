@@ -174,6 +174,17 @@ public class CartController {
                 new Ordine(utente)
         );
         repoUtenteDao.save(utente);
-        return "redirect:/cart";
+
+        return "redirect:/paymentsuccessful";
+    }
+
+    @GetMapping("paymentsuccessful")
+    public String paysuc(Model model,
+                         HttpSession session){
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+
+        model.addAttribute("pagato", true);
+        return "cart";
     }
 }
