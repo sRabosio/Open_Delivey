@@ -48,7 +48,7 @@ public class CartController {
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
 
         model.addAttribute("utente", utente);
-        model.addAttribute("carrello", null);
+        model.addAttribute("carrello", carrello);
         model.addAttribute("indirizziUtente", indirizziUtente);
 
         return "cart";

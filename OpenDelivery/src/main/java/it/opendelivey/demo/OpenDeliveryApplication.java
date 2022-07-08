@@ -49,13 +49,13 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 		Piatto p = Piatto.piattoSample();
 		p.addRistorante(Ristorante.ristoranteSample());
-		/*repoPiattoDao.save(p);
+		repoPiattoDao.save(p);
 		OrdineRecord or = new OrdineRecord(
 				ordine,
 				p,
 				5
 		);
-		repoRecordOrdineDao.save(or);*/
+		repoRecordOrdineDao.save(or);
 	}
 
 
