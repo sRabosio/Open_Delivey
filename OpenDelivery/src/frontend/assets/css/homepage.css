@@ -73,7 +73,8 @@ html h5 {
   align-items: center;
   place-items: center;
   gap: 1rem;
-  padding-top: 2rem;
+  padding-top: 3rem;
+  margin-bottom: 2rem;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
@@ -88,13 +89,17 @@ html h5 {
   padding: 0;
 }
 .categoriescontainer__category {
-  padding: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #BF0DCE;
+  padding: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: rgba(191, 13, 206, 0.4509803922);
   margin: 0;
   border-radius: 11px;
-  color: #EEE;
+  color: #333333;
+  border: none;
+}
+.categoriescontainer__category:active {
+  background-color: #BF0DCE;
 }
 
 .nearyoucontainer {
@@ -129,6 +134,8 @@ html h5 {
 
 body {
   overflow-y: scroll;
+  display: grid;
+  grid-template-rows: min-content auto;
 }
 
 .carouselcontainer__allergies p {
