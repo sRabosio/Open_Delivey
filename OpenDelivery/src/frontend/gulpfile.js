@@ -12,6 +12,8 @@ const sassList = [
     "./assets/scss/homepage/*.scss", "./assets/scss/homepage/**/*.scss",
     //registrazione
     "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
+    //moreRestaurant
+    "./assets/scss/moreRestaurants/*.scss", "./assets/scss/moreRestaurants/**/*.scss",
 ];
 
 const javaDir = "../main/resources/";
@@ -61,10 +63,20 @@ function html(){
     });*/
 }
 
+function moreRestaurantsStyle(){
+    //file da convertire
+    return gulp.src("./assets/scss/moreRestaurants/moreRestaurants.scss")
+
+    .pipe(sass())
+
+    .pipe(gulp.dest("./assets/css"))
+}
+
 function processStyle(){
     commonStyle();
     homeStyle();
     regStyle();
+    moreRestaurantsStyle();
 
     return gulp.src("./assets/css/*.css")
         .pipe(gulp.dest(javaDir + "/static/assets/css"));
