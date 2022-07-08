@@ -3,10 +3,12 @@ package it.opendelivey.demo.controllers;
 import it.opendelivey.demo.Repo.RepoIndirizzoUtente;
 import it.opendelivey.demo.Repo.RepoOrdine;
 import it.opendelivey.demo.Repo.RepoRecordOrdine;
+import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.Ordine;
 import it.opendelivey.demo.model.OrdineRecord;
 import it.opendelivey.demo.model.Utente;
+import org.hibernate.annotations.Where;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,22 +33,31 @@ public class CartController {
     @Autowired
     RepoIndirizzoUtente repoIndirizzoUtenteDao;
 
+    @Autowired
+    RepoUtente repoUtenteDao;
+
     @GetMapping("/cart")
     public String getCart(
             Model model,
             HttpSession session
     ){
-
+        //ordine a null come valore iniziale x thymeleaf
         Set<OrdineRecord> carrello = null;
+
+        //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
-        if(utente == null) return "login";
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+
+        //prendo l'ordine ed estraggo i record
         Ordine ordine = repoOrdineDao.findByUtente(utente);
         if(ordine != null)
             if(ordine.getPiatti().size()>0)
                carrello = ordine.getPiatti();
 
+        //prendo gli indirizzi dell'utente
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
 
+        //mando tutto a thymeleaf
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", carrello);
         model.addAttribute("indirizziUtente", indirizziUtente);
@@ -60,16 +71,20 @@ public class CartController {
             Model model,
             @RequestParam("recordId") int recordId
     ){
-
+        //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
-        if(utente == null) return "login";
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
+        //prendo il record
         Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
         if(record.isEmpty()) return "redirect:cart";
 
+        //lo cancello
         repoRecordOrdineDao.deleteById(recordId);
         return "redirect:/cart";
     }
+
+
 
     @PostMapping("/cart/remove")
     public String cartRemove(
@@ -77,13 +92,15 @@ public class CartController {
             Model model,
             @RequestParam("recordId") int recordId
     ){
-
+        //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
-        if(utente == null) return "login";
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
+        //trovo il record
         Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
         if(record.isEmpty()) return "redirect:cart";
 
+        //faccio l'operazione
         if(record.get().getAmount() < 2){
             repoRecordOrdineDao.deleteById(recordId);
             return "redirect:/cart";
@@ -102,13 +119,15 @@ public class CartController {
             Model model,
             @RequestParam("recordId") int recordId
     ){
-
+        //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
-        if(utente == null) return "login";
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
+        //prendo il record
         Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
         if(record.isEmpty()) return "redirect:cart";
 
+        //operazione
         record.get().setAmount(
                 record.get().getAmount()+1
         );
@@ -121,10 +140,12 @@ public class CartController {
             HttpSession session,
             IndirizzoUtente indirizzo
     ){
+        //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
-        if(utente == null) return "login";
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
         indirizzo.setUtente(utente);
 
+        //salvo i nuovi dati
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
         for(IndirizzoUtente temp: indirizziUtente){
             if(temp.equals(indirizzo)) return "redirect:/cart";
@@ -132,6 +153,27 @@ public class CartController {
 
 
         repoIndirizzoUtenteDao.save(indirizzo);
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/cart/buy")
+    public String cartBuy(
+            HttpSession session,
+            Model model
+    ){
+        //trovo l'utente
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+
+        //operazione
+        Ordine ordine = repoOrdineDao.findByUtente(utente);
+        ordine.setBought(true);
+        utente.addOrdine(new Ordine());
+
+        //salavataggio
+        repoOrdineDao.save(ordine);
+        repoUtenteDao.save(utente);
+
         return "redirect:/cart";
     }
 }

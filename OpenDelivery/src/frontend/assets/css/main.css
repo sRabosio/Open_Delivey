@@ -227,6 +227,11 @@ body::-webkit-scrollbar-thumb:hover {
   color: #EEE;
 }
 
+.fragmentcontainer {
+  height: 0;
+  width: 0;
+}
+
 .simpleForm a {
   text-align: right;
   color: #333333;

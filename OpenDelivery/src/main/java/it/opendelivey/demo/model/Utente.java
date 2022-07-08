@@ -1,10 +1,14 @@
 package it.opendelivey.demo.model;
 
+import it.opendelivey.demo.Repo.RepoUtente;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import javax.xml.crypto.Data;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 //TODO: implementare annotazione ibernate
@@ -73,6 +77,15 @@ public class Utente {
                 ", recentPlates=" + Arrays.toString(recentPlates) +*/
                 //", recentSearches='" + recentSearches + '\'' +
                 '}';
+    }
+
+    //controlla se l'utente esiste già nel database
+    //usando mail e password
+    public static boolean validate(Utente utente, RepoUtente repoUtenteDao){
+
+        return utente != null &&
+                repoUtenteDao.existsByMailAndPassword(
+                        utente.getMail(), utente.getPassword());
     }
 
     public Integer getId() {
@@ -153,5 +166,9 @@ public class Utente {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public void addOrdine(Ordine ordine){
+        ordini.add(ordine);
     }
 }

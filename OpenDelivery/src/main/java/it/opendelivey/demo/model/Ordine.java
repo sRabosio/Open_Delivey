@@ -57,4 +57,12 @@ public class Ordine {
         public void setPiatti(Set<OrdineRecord> piatti) {
                 this.piatti = piatti;
         }
+
+        public boolean isBought() {
+                return isBought;
+        }
+
+        public void setBought(boolean bought) {
+                isBought = bought;
+        }
 }
