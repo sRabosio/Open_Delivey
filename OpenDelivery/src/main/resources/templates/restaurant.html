@@ -10,8 +10,11 @@
 </head>
 <body>
 <div class="container">
-    <div>
-        <a href="fotoristorante"></a>
+    <a th:text="${ristorante.getNome()}"></a>
+    <div class="fullcard">
+        <img src="assets/images/pizzeria.jpg">
+        <a th:text="${ristorante.getIndirizzi()}"></a>
+        <a th:text="${ristorante.getNumero()}"></a>
     </div>
     <content class="contentcontainer">
         <div class="nearyoucontainer" id="piattiConsigliati" >
@@ -19,7 +22,7 @@
                 <h5>Menù:</h5>
             </div>
             <div class="nearyoucontainer__cards">
-                <a class="fullcard" th:each="consigliato:${consigliati}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${consigliato.getId()})}">
+                <a class="fullcard" th:each="consigliato:${menu}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${piatto.getId()})}">
                     <img src="assets/images/pizza brutta.jpg" alt="">
                     <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
                     <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
@@ -29,24 +32,7 @@
         </div>
     </content>
 
-    <footer class="uicontainer">
-        <div class="uielement">
-            <img src="assets/icons/menu.svg" alt="homepage" class="icon" id="homepage">
-            <p></p>
-        </div>
-        <div class="uielement">
-            <img src="assets/icons/search.svg" alt="cerca" class="icon" id="search">
-            <p></p>
-        </div>
-        <div class="uielement">
-            <img src="assets/icons/bookmark.svg" alt="salvati" class="icon" id="bookmark">
-            <p></p>
-        </div>
-        <a class="uielement" th:href="@{profile(email=${utente.getMail()}, password=${utente.getPassword()})}">
-            <img src="assets/icons/user.svg" alt="profilo" class="icon" id="profile">
-            <p></p>
-        </a>
-    </footer>
+<div th:replace="fragments/navbar :: navbar"></div>
 </div>
 </body>
 </html>

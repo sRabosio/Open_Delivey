@@ -111,6 +111,10 @@ public class Piatto {
         this.imagePath = imagePath;
     }
 
+    public void addRistorante(Ristorante ristorante){
+        ristoranti.add(ristorante);
+    }
+
     public static Piatto piattoSample(){
         Piatto piatto = new Piatto();
         piatto.setNome("pollo fritto");

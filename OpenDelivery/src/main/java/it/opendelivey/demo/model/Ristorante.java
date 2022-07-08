@@ -12,7 +12,6 @@ import java.util.Set;
 
 @Entity
 public class Ristorante {
-    @NotNull
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
@@ -23,10 +22,7 @@ public class Ristorante {
     @NotNull
     private String categoria;
     @NotNull
-    private String menu;
-    @NotNull
-    private String indirizzo;
-
+    private String numero;
     @ManyToMany
     @JoinColumn
     private Set<Piatto> prodotti = new HashSet<>();
@@ -44,42 +40,28 @@ public class Ristorante {
 
 
 
-    public Ristorante(String nome, String categoria, String menu, String indirizzo) {
-
+    public Ristorante(String nome, String categoria, String numero) {
+        this.numero= numero;
         this.nome = nome;
         this.categoria = categoria;
-        this.menu = menu;
-        this.indirizzo = indirizzo;
-    }
-
-
-    public String getIndirizzo() {
-        return indirizzo;
-    }
-
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
     }
 
     public static Ristorante ristoranteSample(){
         Ristorante ri = new Ristorante();
         ri.setNome("napoliuaglio");
         ri.setCategoria("pizzeria");
-        ri.setIndirizzo("VIA ROMA 52");
-        ri.setMenu("napoli , margherita");
+        ri.setNumero("3926803723");
         return ri;
 
     }
 
-    public String getMenu() {
-        return menu;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setMenu(String menu) {
-        this.menu = menu;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
-
-
 
     public String getNome() {
         return nome;
@@ -137,4 +119,9 @@ public class Ristorante {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
+
+    public void addProdotto(Piatto piatto){
+        prodotti.add(piatto);
+    }
+
 }
