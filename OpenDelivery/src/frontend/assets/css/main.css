@@ -31,8 +31,25 @@ body {
   grid-template-columns: 10% auto 10%;
   grid-template-rows: auto;
   min-height: 100vh;
-  min-width: 100vw;
+  overflow: hidden;
   font-family: "Urbanist";
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .simpleButton {
