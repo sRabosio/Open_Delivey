@@ -169,3 +169,9 @@ body {
   float: left;
   margin-top: 0.3rem;
 }
+
+.fullcard img {
+  max-width: 6rem;
+  max-height: 6rem;
+  place-self: center;
+}
