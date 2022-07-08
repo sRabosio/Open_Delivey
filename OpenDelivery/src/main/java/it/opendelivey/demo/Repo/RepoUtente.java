@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface RepoUtente extends CrudRepository<Utente, Integer> {
    Utente findByMail(String mail);
    Optional<Utente> findById(Integer id);
-
+   boolean existsByMailAndPassword(String mail, String password);
+   boolean existsByMail(String mail);
 }
 

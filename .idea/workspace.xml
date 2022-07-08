@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/images/pizzeria.jpg" afterDir="false" />
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added payment">
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/basicMessage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Piatto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Piatto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +63,9 @@
         <option name="workOffline" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="2ApbKkU9oKJXQivcm4QlIbG49qs" />
   <component name="ProjectLevelVcsManager">
@@ -142,12 +137,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fb3c3426-ad60-4c32-9573-25e181afb979" name="Changes" comment="feat: added ordine-utente relation" />
+      <changelist id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added validation method to user to properly handle logins and such" />
       <created>1655709412127</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655709412127</updated>
       <workItem from="1657133908618" duration="2251000" />
+      <workItem from="1657319223448" duration="2524000" />
     </task>
     <task id="LOCAL-00001" summary="fix finalmento funziona tutto">
       <created>1657011861472</created>
@@ -219,7 +215,42 @@
       <option name="project" value="LOCAL" />
       <updated>1657220865884</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: added empty cart message">
+      <created>1657311960101</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657311960101</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix: fixed empty cart checker issue">
+      <created>1657314602768</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657314602768</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix: fixed empty cart checker issue">
+      <created>1657315526027</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657315526027</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: added validation method to user to properly handle logins and such">
+      <created>1657318794862</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657318794862</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: added payment">
+      <created>1657320807474</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657320807474</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +285,11 @@
     <MESSAGE value="fix id db" />
     <MESSAGE value="feat login backend completed" />
     <MESSAGE value="feat: added indirizzo to registrazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added indirizzo to registrazione" />
+    <MESSAGE value="feat: added empty cart message" />
+    <MESSAGE value="fix: fixed empty cart checker issue" />
+    <MESSAGE value="feat: added validation method to user to properly handle logins and such" />
+    <MESSAGE value="feat: added payment" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added payment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,11 +302,6 @@
           <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java</url>
           <line>55</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

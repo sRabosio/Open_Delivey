@@ -44,12 +44,19 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 		Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
-				Utente.utenteSample()
+				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
 		);
-
+		ordine.setBought(false);
+		repoOrdineDao.save(ordine);
 		Piatto p = Piatto.piattoSample();
 		p.addRistorante(Ristorante.ristoranteSample());
 		repoPiattoDao.save(p);
+		OrdineRecord or = new OrdineRecord(
+				ordine,
+				p,
+				5
+		);
+		repoRecordOrdineDao.save(or);
 	}
 
 

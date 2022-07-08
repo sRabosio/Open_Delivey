@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/cart.css">
 </head>
-<body>
+<body th:with="cartEmpty = ${#lists.isEmpty(carrello)}">
     <div class="container">
         <div class="topui">
             <a href="/homepage" class="topui__back" >
@@ -18,8 +18,8 @@
 
             <h4>CARRELLO</h4>
         </div>
-        <content class="cart">
-            <form class="cart__card" th:each="record:${carrello}" method="POST" action="/cart/delete">
+        <content class="cart" th:switch="${cartEmpty}">
+            <form class="cart__card" th:case="false" th:each="record:${carrello}" method="POST" action="/cart/delete">
                     <span th:text="${record.getProdotto().getNome()}"></span>
                     <span th:text="${record.getProdotto().getDescrizione()}"></span>
                     <span th:text="${record.getProdotto().getPrezzo()}"></span>
@@ -29,9 +29,15 @@
                     <button class="icon" formaction="/cart/add">+</button>
                     <button class="icon">X</button>
             </form>
+            <div th:if="${cartEmpty && (pagato == null || !pagato)}" class="fragmentcontainer">
+                <div th:replace="fragments/emptyCart :: emptyCart"></div>
+            </div>
+            <div th:if="${pagato == true}" class="fragmentcontainer">
+                <div th:replace="fragments/pagato :: pagato"></div>
+            </div>
         </content>
 
-        <div class="buy"> <!--method="post" action="/cart"-->
+        <div class="buy" th:unless="${cartEmpty}"> <!--method="post" action="/cart"-->
             <label for="indirizzo"> Indirizzo di spedizione </label>
             <select id="indirizzo" name="indirizzo" size="1">
                 <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
@@ -39,7 +45,7 @@
                     <button action="">aggiungi indirizzo...</button>
                 </option>
             </select>
-            <form method="POST" action="/cart/newAddress">
+            <form method="POST" action="/cart/newAddress" >
                 <input class="" type="text" placeholder="indirizzo" name="indirizzo" required>
                 <input class="simpleForm__addresscontainer__number" type="text" placeholder="N° civico" name="civico" required>
                 <input class="" type="text" placeholder="CAP" name="cap" required>
@@ -49,7 +55,9 @@
                 <div class="buy__description">
             </div>
             <span class="buy__price"></span>
-            <button class="simpleButton"> PAY </button>
+            <form>
+                <button class="simpleButton" formmethod="post" formaction="/cart/buy"> PAY </button>
+            </form>
         </div>
     </div>
 </body>
