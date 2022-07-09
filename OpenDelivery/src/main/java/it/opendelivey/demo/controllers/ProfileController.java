@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 public class ProfileController {
@@ -140,6 +142,27 @@ public class ProfileController {
                 continue;
             utente.addAllergie(allergia);
         }
+
+        repoUtenteDao.save(utente);
+        session.setAttribute("loggedUser", utente);
+        return "redirect:/profile/allergie";
+    }
+
+    @PostMapping("/profile/allergie/remove")
+    public String allergieprofiloRemove(
+            HttpSession session,
+            @RequestParam("allergiaId") Integer[] allergieIds
+    ){
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+
+        //prendo le allergie selezionate
+        Set<Allergie> allergie = new HashSet<>(
+                repoAllergieDao.findAllById(Arrays.asList(allergieIds)));
+        if(allergie.isEmpty()) return "redirect:/profile/allergie";
+
+        //rimozione allergie selezionate
+        utente.getAllergie().removeAll(allergie);
 
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", utente);
