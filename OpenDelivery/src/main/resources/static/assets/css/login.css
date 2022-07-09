@@ -1,0 +1,109 @@
+html {
+  color: #333333;
+  font-size: 15px;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+html h1 {
+  font-size: 3.5rem;
+}
+html h2 {
+  font-size: 3rem;
+}
+html h3 {
+  font-size: 2.5rem;
+}
+html h4 {
+  font-size: 2rem;
+}
+html h5 {
+  font-size: 1.5rem;
+}
+
+.container {
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.7);
+  height: 65%;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.simpleForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-width: 50%;
+  max-width: 100%;
+  height: 60%;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.simpleForm__textbar {
+  align-self: center;
+  max-width: 90%;
+}
+.simpleForm__addresscontainer {
+  position: relative;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: min-content, min-content;
+  place-items: center;
+  max-width: 90%;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.simpleForm__addresscontainer__type {
+  max-width: 90%;
+}
+.simpleForm__addresscontainer__number {
+  max-width: 90%;
+}
+.simpleForm .simpleButton {
+  min-width: 50%;
+}
+.simpleForm::-webkit-scrollbar {
+  width: 10px;
+}
+.simpleForm::-webkit-scrollbar-track {
+  background: transparent;
+}
+.simpleForm::-webkit-scrollbar-thumb {
+  background: #BF0DCE;
+  border-radius: 3px;
+}
+.simpleForm::-webkit-scrollbar-thumb:hover {
+  background: rgba(191, 13, 206, 0.7);
+}
+
+.notform {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: #EEE;
+  font-family: "Urbanist";
+  text-align: center;
+}
+.notform .simpleButton {
+  justify-content: center;
+  width: 100%;
+}
