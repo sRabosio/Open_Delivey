@@ -4,10 +4,7 @@ import it.opendelivey.demo.Repo.RepoPiatto;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoTipo;
 import it.opendelivey.demo.Repo.RepoUtente;
-import it.opendelivey.demo.model.Piatto;
-import it.opendelivey.demo.model.Ristorante;
-import it.opendelivey.demo.model.Tipo;
-import it.opendelivey.demo.model.Utente;
+import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -71,6 +68,8 @@ public class HomepageController {
                 filtersId.add(i.getId());
             }
 
+
+
             //prendo i piatti
         ArrayList<Piatto> consigliati = new ArrayList<>();
         for(Ristorante r: ristoranti){
@@ -78,6 +77,9 @@ public class HomepageController {
             consigliati.addAll(piattoList);
         }
 
+        if(utente.getAllergie() != null)
+            for(Allergie a:utente.getAllergie())
+                consigliati.removeIf(c->c.hasAllergia(a));
 
         model.addAttribute("utente", utente);
         model.addAttribute("consigliati", consigliati);

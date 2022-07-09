@@ -40,6 +40,11 @@ public class Piatto {
     private String imagePath;
 
 
+    public boolean hasAllergia(Allergie a){
+        for(Allergene allergene:allergeni)
+            if(allergene.getNome().equals(a.getNome())) return true;
+        return false;
+    }
 
     //TODO: relazione allergeni
 
