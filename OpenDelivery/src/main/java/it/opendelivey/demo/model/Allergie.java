@@ -6,6 +6,7 @@ import org.hibernate.annotations.Fetch;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -56,4 +57,16 @@ public class Allergie {
         utenti.add(utente);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Allergie allergie = (Allergie) o;
+        return Objects.equals(id, allergie.id) && Objects.equals(nome, allergie.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome);
+    }
 }

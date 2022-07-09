@@ -113,7 +113,6 @@ public class ProfileController {
         Set<Allergie> allergieUtente = utente.getAllergie();
         ArrayList<Allergie> allAllergie = repoAllergieDao.findAll();
 
-
         for(Allergie allergia: allergieUtente){
             allAllergie.remove(allergia);
         }
