@@ -31,7 +31,7 @@ public class Utente {
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<Ordine> ordini = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)   @JoinColumn
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)   @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
     @OneToMany(mappedBy = "utente",fetch = FetchType.EAGER)

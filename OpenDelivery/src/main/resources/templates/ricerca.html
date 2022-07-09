@@ -12,16 +12,22 @@
 
 <body>
     <div class="container">
-        <form action="" method="get">
-            <input type="text" name="" id="">
+        <form action="/search/query" method="get">
+            <input type="text" name="q" id="q">
             <input type="submit" value="cerca">
         </form>
     </div>
-    <div class="fullcard">
+    <div class="fullcard" th:each="ristorante:${ristoranti}">
         <img src="assets/images/pizza brutta.jpg" alt="">
-        <h5 class="fullcard__title"></h5>
-        <p class="fullcard__subtitle"></p>
-        <span class="currency">$$</span>
+        <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
     </div>
+
+    <div class="fullcard" th:each="prodotto:${prodotti}">
+        <img src="assets/images/pizza brutta.jpg" alt="">
+        <h5 class="fullcard__title" th:text="${prodotto.getNome()}"></h5>
+        <span class="fullcard__subtitle" th:text="${prodotto.getDescrizione()}"></span>
+        <span class="fullcard__price" th:text="${prodotto.getPrezzo()}"></span>
+    </div>
+</body>
 
 </html>
