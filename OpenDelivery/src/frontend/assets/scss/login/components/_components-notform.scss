@@ -1,0 +1,14 @@
+.notform {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    color: $white;
+    font-family: "Urbanist";
+    text-align: center;
+    .simpleButton {
+        justify-content: center;
+        width: 100%;
+    }
+}
