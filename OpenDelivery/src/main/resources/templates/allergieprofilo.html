@@ -17,8 +17,10 @@
         </form>
     </table>
     <form action="/allergieprofilo" method="POST">
-
-        <input th:each="allergia:${allergie}" th:label="${allergia.getNome()}" type="checkbox" th:value="${allergia.getId()}">
+        <div th:each="allergia:${allergie}">
+            <label th:for="'allergia'+${allergia.getId()}" th:text="${allergia.getNome()}"></label>
+            <input th:id="'allergia'+${allergia.getId()}" type="checkbox" th:value="${allergia.getId()}">
+        </div>
         <input type="submit" value="aggiungi">
     </form>
 

@@ -22,10 +22,8 @@ public class Allergie {
     public Allergie() {
     }
 
-    public Allergie(Integer id, String nome, Set<Utente> utenti) {
-        this.id = id;
+    public Allergie( String nome) {
         this.nome = nome;
-        this.utenti = utenti;
     }
 
 

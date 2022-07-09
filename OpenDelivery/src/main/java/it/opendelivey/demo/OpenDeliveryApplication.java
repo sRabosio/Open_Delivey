@@ -7,6 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
+import java.util.Arrays;
+
 @SpringBootApplication
 public class OpenDeliveryApplication implements CommandLineRunner {
 
@@ -58,6 +61,16 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 				5
 		);
 		repoRecordOrdineDao.save(or);
+		/*Allergie[] allergie = {
+				new Allergie("lattosio"),
+				new Allergie("glutine"),
+				new Allergie("arachidi"),
+				new Allergie("soia"),
+				new Allergie("uova"),
+				new Allergie("senape"),
+				new Allergie("molluschi")
+		};
+		repoAllergieDao.saveAll(Arrays.stream(allergie).toList());*/
 	}
 
 
