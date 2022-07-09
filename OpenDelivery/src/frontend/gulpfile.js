@@ -1,26 +1,28 @@
 //importazzi vari da gulp
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
-const {src, series, parallel, dest, watch} = require("gulp");
+const { src, series, parallel, dest, watch } = require("gulp");
 
 
 //lista delle directory di scss
 const sassList = [
     //common
-    "./assets/scss/common/*.scss","./assets/scss/common/**/*.scss",
+    "./assets/scss/common/*.scss", "./assets/scss/common/**/*.scss",
     //homepage
     "./assets/scss/homepage/*.scss", "./assets/scss/homepage/**/*.scss",
     //registrazione
     "./assets/scss/registrazione/*.scss", "./assets/scss/registrazione/**/*.scss",
     //moreRestaurant
     "./assets/scss/moreRestaurants/*.scss", "./assets/scss/moreRestaurants/**/*.scss",
+    //login
+    "./assets/scss/login/*.scss", "./assets/scss/login/**/*.scss",
 ];
 
 const javaDir = "../main/resources/";
 
 //per ogni nuova sezione di scss andrà fatta una funzione che la gestisce e andrà aggiunta a "allStyle"
 
-function commonStyle(){
+function commonStyle() {
     //file da convertire
     return gulp.src("./assets/scss/common/main.scss")
 
@@ -28,7 +30,16 @@ function commonStyle(){
 
     .pipe(gulp.dest("./assets/css"))
 }
-function homeStyle(){
+
+function loginstyle() {
+    return gulp.src("./assets/scss/login/login.scss")
+
+    .pipe(sass())
+
+    .pipe(gulp.dest("./assets/css"))
+}
+
+function homeStyle() {
     //file da convertire
     return gulp.src("./assets/scss/homepage/homepage.scss")
 
@@ -37,7 +48,7 @@ function homeStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function regStyle(){
+function regStyle() {
     //file da convertire
     return gulp.src("./assets/scss/registrazione/registrazione.scss")
 
@@ -46,13 +57,13 @@ function regStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function html(){
+function html() {
     const localJavaDir = javaDir + "templates/";
 
     //da qua a java
-    gulp.watch("*.html", ()=>{
+    gulp.watch("*.html", () => {
         return gulp.src("*.html")
-        .pipe(gulp.dest(localJavaDir));
+            .pipe(gulp.dest(localJavaDir));
     });
     //da java a qua
 
@@ -63,7 +74,7 @@ function html(){
     });*/
 }
 
-function moreRestaurantsStyle(){
+function moreRestaurantsStyle() {
     //file da convertire
     return gulp.src("./assets/scss/moreRestaurants/moreRestaurants.scss")
 
@@ -72,39 +83,40 @@ function moreRestaurantsStyle(){
     .pipe(gulp.dest("./assets/css"))
 }
 
-function processStyle(){
+function processStyle() {
     commonStyle();
     homeStyle();
     regStyle();
     moreRestaurantsStyle();
+    loginstyle();
 
     return gulp.src("./assets/css/*.css")
         .pipe(gulp.dest(javaDir + "/static/assets/css"));
 }
 
 
-function watchStyle(){
-    
+function watchStyle() {
+
     processStyle();
 
     console.log("watching sass...");
-    gulp.watch(sassList,() => {
-        processStyle();     
+    gulp.watch(sassList, () => {
+        processStyle();
         return gulp.src("./assets/css/*.css")
-        .pipe(gulp.dest(javaDir + "/static/assets/css"));   
+            .pipe(gulp.dest(javaDir + "/static/assets/css"));
     });
 }
 
 
 exports.style = watchStyle;
 exports.html = html;
-exports.all = ()=>{
+exports.all = () => {
     watchStyle();
     html();
 };
-exports.reverse = ()=>{
-    gulp.watch(javaDir + "templates/*.html", ()=>{
+exports.reverse = () => {
+    gulp.watch(javaDir + "templates/*.html", () => {
         return gulp.src(javaDir + "templates/*.html")
-        .pipe(gulp.dest("./"));
+            .pipe(gulp.dest("./"));
     })
 };

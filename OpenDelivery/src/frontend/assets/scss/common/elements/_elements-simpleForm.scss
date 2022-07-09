@@ -1,23 +1,21 @@
-.simpleForm{
-    a{
+.simpleForm {
+    a {
         text-align: right;
         color: $black;
-        &:hover{
+        &:hover {
             cursor: pointer;
             text-decoration: underline;
-            transition: 3s ;
+            transition: 3s;
         }
     }
-
-    input{
+    input {
         border: solid $purple $form_input_border;
         padding: $std_padding;
-        border-radius: $std_border_radius; 
+        border-radius: $std_border_radius;
     }
-
-    &__addresscontainer{
-        input{
-            min-width: 60%;
+    &__addresscontainer {
+        input {
+            max-width: 90%;
         }
     }
 }

@@ -8,25 +8,21 @@ body {
     min-height: 100vh;
     overflow: hidden;
     font-family: "Urbanist";
-   /* width */
+    /* width */
     &::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background: #aaa; 
-    border-radius: 3px;
-  }
-  
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-
+        width: 10px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $purple;
+        border-radius: 3px;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: transparentize($purple, 0.3);
+    }
 }
