@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added payment">
-      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/basicMessage.html" afterDir="false" />
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added labels to allergie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoAllergie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Allergie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergieprofilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergieprofilo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoAllergie.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoAllergie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Allergie.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Allergie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +148,8 @@
       <option name="presentableId" value="Default" />
       <updated>1655709412127</updated>
       <workItem from="1657133908618" duration="2251000" />
-      <workItem from="1657319223448" duration="2524000" />
+      <workItem from="1657319223448" duration="2687000" />
+      <workItem from="1657354186845" duration="13322000" />
     </task>
     <task id="LOCAL-00001" summary="fix finalmento funziona tutto">
       <created>1657011861472</created>
@@ -250,7 +256,49 @@
       <option name="project" value="LOCAL" />
       <updated>1657320807474</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: added successful payment message to cart">
+      <created>1657321862153</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657321862153</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: finished profile get request">
+      <created>1657356299964</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1657356299964</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: added error messages to change password">
+      <created>1657360907185</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1657360907185</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: fixed null ordine and indirzzo.citta issues">
+      <created>1657363143820</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1657363143820</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: added allergieprofilo page">
+      <created>1657364896942</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1657364896942</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: added labels to allergie">
+      <created>1657365873676</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1657365873676</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +317,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix finalmento funziona tutto" />
     <MESSAGE value="feat: added Piatto to database" />
     <MESSAGE value="feat: added ordine-utente relation" />
     <MESSAGE value="feat: added HTTPSession" />
@@ -289,7 +336,13 @@
     <MESSAGE value="fix: fixed empty cart checker issue" />
     <MESSAGE value="feat: added validation method to user to properly handle logins and such" />
     <MESSAGE value="feat: added payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added payment" />
+    <MESSAGE value="feat: added successful payment message to cart" />
+    <MESSAGE value="feat: finished profile get request" />
+    <MESSAGE value="feat: added error messages to change password" />
+    <MESSAGE value="fix: fixed null ordine and indirzzo.citta issues" />
+    <MESSAGE value="feat: added allergieprofilo page" />
+    <MESSAGE value="feat: added labels to allergie" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added labels to allergie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -303,11 +356,17 @@
           <line>55</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/ProfileController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="it.opendelivey.demo.model.Ristorante" memberName="indirizzo" />
+        <PinnedItemInfo parentTag="it.opendelivey.demo.controllers.ProfileController$$Lambda$1275/0x00000008014a9b90" memberName="arg$1" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

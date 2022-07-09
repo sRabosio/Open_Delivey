@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import javax.xml.crypto.Data;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 //TODO: implementare annotazione ibernate
 @Entity
@@ -31,13 +28,13 @@ public class Utente {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<Ordine> ordini = new HashSet<>();
 
-    @ManyToMany @JoinColumn
+    @ManyToMany(fetch = FetchType.EAGER)   @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
-    @OneToMany(mappedBy = "utente")
+    @OneToMany(mappedBy = "utente",fetch = FetchType.EAGER)
     private Set<IndirizzoUtente> indirizzi = new HashSet<>();
 
     private String imagePath;
@@ -170,5 +167,13 @@ public class Utente {
 
     public void addOrdine(Ordine ordine){
         ordini.add(ordine);
+    }
+
+    public void addAllAllergie(ArrayList<Allergie> newAllergie){
+        allergie.addAll(newAllergie);
+    }
+
+    public void addAllergie(Allergie allergia){
+        allergie.add(allergia);
     }
 }

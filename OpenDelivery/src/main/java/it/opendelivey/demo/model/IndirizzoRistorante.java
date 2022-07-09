@@ -19,6 +19,21 @@ public class IndirizzoRistorante {
     @JoinColumn
     public Ristorante ristorante;
 
+    public IndirizzoRistorante(String indirizzo, String civico, String cap, String città) {
+        this.indirizzo = indirizzo;
+        this.civico = civico;
+        this.cap = cap;
+        this.città = città;
+    }
+
+    public Ristorante getRistorante() {
+        return ristorante;
+    }
+
+    public void setRistorante(Ristorante ristorante) {
+        this.ristorante = ristorante;
+    }
+
     public IndirizzoRistorante(){};
 
     public String getIndirizzo() {
@@ -59,5 +74,14 @@ public class IndirizzoRistorante {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public static IndirizzoRistorante indirizzoRistoranteSample(){
+        return new IndirizzoRistorante(
+                "via ristorante",
+                "38",
+                "93933",
+                "citta dei ristoranti"
+        );
     }
 }

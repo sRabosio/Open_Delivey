@@ -31,7 +31,6 @@
                     <a class="fullcard" th:each="ristorante:${ristoranti}" th:id="'ristorante'+${ristorante.getId()}" th:href="@{restaurant(id=${ristorante.getId()})}">
                         <img src="assets/images/pizza brutta.jpg" alt="">
                         <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
-                        <p class="fullcard__subtitle" th:text="${ristorante.getDescrizione()}"></p>
                         <!--span class="fullcard__price" th:text="${ristorante.getPrezzo()}"><span class="currency">$</span></span-->
                     </a>
                 </div>

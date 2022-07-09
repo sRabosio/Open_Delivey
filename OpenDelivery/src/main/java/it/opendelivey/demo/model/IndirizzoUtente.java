@@ -9,7 +9,7 @@ import java.util.Objects;
 public class IndirizzoUtente {
 
     @NotNull @NotEmpty
-    private String indirizzo, civico, cap, città;
+    private String indirizzo, civico, cap, citta;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,18 +19,18 @@ public class IndirizzoUtente {
 
     public IndirizzoUtente(){};
 
-    public IndirizzoUtente(String indirizzo, String civico, String cap, String città) {
+    public IndirizzoUtente(String indirizzo, String civico, String cap, String citta) {
         this.indirizzo = indirizzo;
         this.civico = civico;
         this.cap = cap;
-        this.città = città;
+        this.citta = citta;
     }
 
-    public IndirizzoUtente(String indirizzo, String civico, String cap, String città, Integer id) {
+    public IndirizzoUtente(String indirizzo, String civico, String cap, String citta, Integer id) {
         this.indirizzo = indirizzo;
         this.civico = civico;
         this.cap = cap;
-        this.città = città;
+        this.citta = citta;
         this.id = id;
         this.utente = utente;
     }
@@ -69,12 +69,12 @@ public class IndirizzoUtente {
         this.cap = cap;
     }
 
-    public String getCittà() {
-        return città;
+    public String getCitta() {
+        return citta;
     }
 
-    public void setCittà(String città) {
-        this.città = città;
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 
     public Integer getId() {
@@ -93,11 +93,12 @@ public class IndirizzoUtente {
         this.utente = utente;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         IndirizzoUtente that = (IndirizzoUtente) o;
-        return Objects.equals(indirizzo, that.indirizzo) && Objects.equals(civico, that.civico) && Objects.equals(cap, that.cap) && Objects.equals(città, that.città);
+        return Objects.equals(indirizzo, that.indirizzo) && Objects.equals(civico, that.civico) && Objects.equals(cap, that.cap) && Objects.equals(citta, that.citta);
     }
 }

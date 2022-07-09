@@ -49,10 +49,10 @@ public class CartController {
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
         //prendo l'ordine ed estraggo i record
-        Ordine ordine = repoOrdineDao.findByUtenteAndIsBought(utente, false).get(0);
-        if(ordine != null)
-            if(ordine.getPiatti().size()>0)
-               carrello = ordine.getPiatti();
+        ArrayList<Ordine> ordine = repoOrdineDao.findByUtenteAndIsBought(utente, false);
+        if(ordine != null && ordine.size() > 0)
+            if(ordine.get(0).getPiatti().size()>0)
+               carrello = ordine.get(0).getPiatti();
 
         //prendo gli indirizzi dell'utente
         ArrayList<IndirizzoUtente> indirizziUtente = repoIndirizzoUtenteDao.findByUtente(utente);
