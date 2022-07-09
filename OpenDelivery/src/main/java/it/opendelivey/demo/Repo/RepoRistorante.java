@@ -8,4 +8,5 @@ import java.util.ArrayList;
 
 public interface RepoRistorante extends CrudRepository<Ristorante, Integer> {
     ArrayList<Ristorante> findAll();
+    ArrayList<Ristorante> findByNomeContains(String query);
 }

@@ -8,4 +8,5 @@ import java.util.Set;
 
 public interface RepoPiatto extends CrudRepository<Piatto, Integer> {
     ArrayList<Piatto> findAll();
+    ArrayList<Piatto> findByNomeContains(String query);
 }
