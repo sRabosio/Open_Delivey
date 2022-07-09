@@ -7,6 +7,7 @@ import it.opendelivey.demo.model.Allergie;
 import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.LoginForm;
 import it.opendelivey.demo.model.Utente;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Set;
 
 @Controller
@@ -111,10 +113,37 @@ public class ProfileController {
         Set<Allergie> allergieUtente = utente.getAllergie();
         ArrayList<Allergie> allAllergie = repoAllergieDao.findAll();
 
+
+        for(Allergie allergia: allergieUtente){
+            allAllergie.remove(allergia);
+        }
+
         model.addAttribute("utente", utente);
-        model.addAttribute("allergieutente", allergieUtente);
+        model.addAttribute("allergieprofilo", allergieUtente);
         model.addAttribute("allergie", allAllergie);
 
         return "allergieprofilo";
+    }
+
+    @PostMapping("/profile/allergie/add")
+    public String allergieprofiloAdd(
+            HttpSession session,
+            @RequestParam("allergiaId") Integer[] allergieIds
+    ){
+            Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+
+        ArrayList<Allergie> allergie = repoAllergieDao.findAllById(Arrays.asList(allergieIds));
+        if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
+
+        for(Allergie allergia: allergie){
+            if(utente.getAllergie().contains(allergia))
+                continue;
+            utente.addAllergie(allergia);
+        }
+
+        repoUtenteDao.save(utente);
+        session.setAttribute("loggedUser", utente);
+        return "redirect:/profile/allergie";
     }
 }

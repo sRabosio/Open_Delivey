@@ -6,5 +6,6 @@ import java.util.ArrayList;
 
 public interface RepoAllergie extends CrudRepository<Allergie, Integer> {
     ArrayList<Allergie> findAll();
+    ArrayList<Allergie> findAllById(Iterable<Integer> ids);
 }
 

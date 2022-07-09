@@ -12,14 +12,14 @@
     <table>
         <form th:each="allergiaprofilo:${allergieprofilo}" action="/allergieprofilo/delete">
             <span th:text="${allergiaprofilo.getNome()}"></span>
-            <input type="hidden" th:value="${allergieprofilo.getId()}" name="idAllergia">
+            <input type="hidden" th:value="${allergiaprofilo.getId()}" name="idAllergia">
             <button class="simpleButton" type="submit">X</button>
         </form>
     </table>
-    <form action="/allergieprofilo" method="POST">
+    <form action="/profile/allergie/add" method="POST">
         <div th:each="allergia:${allergie}">
             <label th:for="'allergia'+${allergia.getId()}" th:text="${allergia.getNome()}"></label>
-            <input th:id="'allergia'+${allergia.getId()}" type="checkbox" th:value="${allergia.getId()}">
+            <input th:id="'allergia'+${allergia.getId()}" type="checkbox" th:value="${allergia.getId()}" name="allergiaId">
         </div>
         <input type="submit" value="aggiungi">
     </form>
