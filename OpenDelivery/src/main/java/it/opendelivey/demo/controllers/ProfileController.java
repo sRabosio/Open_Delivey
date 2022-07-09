@@ -3,11 +3,14 @@ package it.opendelivey.demo.controllers;
 import it.opendelivey.demo.Repo.RepoIndirizzoUtente;
 import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.IndirizzoUtente;
+import it.opendelivey.demo.model.LoginForm;
 import it.opendelivey.demo.model.Utente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -44,14 +47,52 @@ public class ProfileController {
 
     @GetMapping("/profile/changepassword")
     public String changepassword(
-            Model model,
             HttpSession session
     ){
+        if(session.getAttribute("loggedUser") == null) return "redirect:/login";
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(!(
                 Utente.validate(utente, repoUtenteDao)
         )) return "redirect:/login";
 
+
+
         return "changepassword";
+    }
+
+    @PostMapping("/profile/changepassword")
+    public String changepasswordaction(
+            LoginForm loginForm,
+            @RequestParam("password_new") String newPassword,
+            @RequestParam("password_new_conf") String newPasswordConf,
+            HttpSession session,
+            Model model
+    ){
+        if(session.getAttribute("loggedUser") == null) return "redirect:/login";
+
+        //controllo che i dati vecchi del profilo siano giusti
+        if(
+                !(repoUtenteDao.existsByMailAndPassword(loginForm.getMail(), loginForm.getPassword()))
+        ) return "redirect:/login";
+
+
+        //controllo che le due password coincidano e che la nuova password non sia uguale a quella vecchia
+        if(!(newPassword.equals(newPasswordConf))){
+            model.addAttribute("title", "ERRORE");
+            model.addAttribute("message", "la nuova password deve essere uguale a quella di conferma");
+            return "changepassword";
+        }
+        if(newPassword.equals(loginForm.getPassword())){
+            model.addAttribute("title", "ERRORE");
+            model.addAttribute("message", "la nuova password non può essere uguale a quella vecchia");
+            return "changepassword";
+        }
+
+        //salvo la nuova password e faccio riloggare l'utente
+        Utente utente = repoUtenteDao.findByMail(loginForm.getMail());
+        utente.setPassword(newPassword);
+        repoUtenteDao.save(utente);
+        session.setAttribute("loggedUser", null);
+        return "redirect:/login";
     }
 }
