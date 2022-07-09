@@ -1,9 +1,8 @@
 .container {
     align-items: center;
     background-color: transparentize($black, $amount: 0.3);
-    height: 80%;
+    height: 65%;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     justify-content: center;
 }

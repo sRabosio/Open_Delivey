@@ -27,16 +27,16 @@ body {
   background-image: url("../images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  overflow-y: scroll;
 }
 
 .container {
   align-items: center;
-  background-color: rgba(238, 238, 238, 0.5);
-  height: 100%;
+  background-color: rgba(51, 51, 51, 0.7);
+  height: 80%;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 }
 
 .notform {
@@ -45,9 +45,15 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  color: #333333;
+  color: #EEE;
   font-family: "Urbanist";
+  text-align: center;
 }
 .notform .simpleButton {
-  max-width: 90%;
+  justify-content: center;
+  width: 100%;
+}
+
+.simpleform {
+  overflow-y: scroll;
 }
