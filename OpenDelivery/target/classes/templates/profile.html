@@ -27,7 +27,7 @@
                         <td th:text="${indirizzo.getIndirizzo()} + ${indirizzo.getCivico()} + ${indirizzo.getCap()} + ${indirizzo.getCitta()}" ></td>
                     </tr>
                     <tr>
-                        <td th:text="'vedi allergie'"></td>
+                        <td><a th:text="'vedi allergie'" href="profile/allergie"></a></td>
                     </tr>
                     <tr>
                         <td><a th:text="'cambia password'" href="/profile/changepassword"></a></td>

@@ -1,7 +1,9 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoAllergie;
 import it.opendelivey.demo.Repo.RepoIndirizzoUtente;
 import it.opendelivey.demo.Repo.RepoUtente;
+import it.opendelivey.demo.model.Allergie;
 import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.LoginForm;
 import it.opendelivey.demo.model.Utente;
@@ -24,6 +26,9 @@ public class ProfileController {
 
     @Autowired
     RepoIndirizzoUtente repoIndirizzoUtenteDao;
+
+    @Autowired
+    RepoAllergie repoAllergieDao;
 
     @GetMapping("/profile")
     public String profile(
@@ -94,5 +99,22 @@ public class ProfileController {
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", null);
         return "redirect:/login";
+    }
+
+    @GetMapping("/profile/allergie")
+    public String allergieprofilo(
+            Model model,
+            HttpSession session
+    ){
+        Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
+        Set<Allergie> allergieUtente = utente.getAllergie();
+        ArrayList<Allergie> allAllergie = repoAllergieDao.findAll();
+
+        model.addAttribute("utente", utente);
+        model.addAttribute("allergieutente", allergieUtente);
+        model.addAttribute("allergie", allAllergie);
+
+        return "allergieprofilo";
     }
 }
