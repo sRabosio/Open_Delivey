@@ -23,8 +23,14 @@
                     <tr>
                         <td th:text="${utente.getMail()}"></td>
                     </tr>
+                    <tr th:unless="${#lists.isEmpty(indirizzi)}" th:each="indirizzo:${indirizzi}">
+                        <td th:text="${indirizzo.getIndirizzo()} + ${indirizzo.getCivico()} + ${indirizzo.getCap()} + ${indirizzo.getCitta()}" ></td>
+                    </tr>
                     <tr>
-                        <td><a th:text="'cambia password'"></a></td>
+                        <td th:text="'vedi allergie'"></td>
+                    </tr>
+                    <tr>
+                        <td><a th:text="'cambia password'" href="/changepassword"></a></td>
                     </tr>
                 </table>
 
