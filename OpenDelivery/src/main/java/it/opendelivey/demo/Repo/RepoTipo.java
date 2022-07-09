@@ -6,5 +6,6 @@ import java.util.ArrayList;
 
 public interface RepoTipo extends CrudRepository<Tipo, Integer> {
     ArrayList<Tipo> findAll();
+    ArrayList<Tipo> findByNome(String nome);
 }
 

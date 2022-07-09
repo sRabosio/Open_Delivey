@@ -98,7 +98,7 @@ html h5 {
   color: #333333;
   border: none;
 }
-.categoriescontainer__category:active {
+.categoriescontainer__category-active {
   background-color: #BF0DCE;
 }
 

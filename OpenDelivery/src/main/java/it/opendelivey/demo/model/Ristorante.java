@@ -22,11 +22,11 @@ public class Ristorante {
     private String nome;
     @NotNull
     private String numero;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn
     private Set<Piatto> prodotti = new HashSet<>();
 
-    @ManyToMany @JoinColumn
+    @ManyToMany(fetch = FetchType.EAGER) @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
     @OneToMany(mappedBy = "ristorante")
@@ -121,6 +121,16 @@ public class Ristorante {
 
     public void addTipologia(Tipo tipo){
         tipologie.add(tipo);
+    }
+
+
+    //per qualche dannato motive l'equals non funziona
+    public boolean hasTipo(Tipo tipo){
+        for(Tipo tht: tipologie){
+            if(tht.getId().equals(tipo.getId()))
+                return true;
+        }
+        return false;
     }
 
 }

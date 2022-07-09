@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Set;
 
 @SpringBootApplication
 public class OpenDeliveryApplication implements CommandLineRunner {
@@ -49,6 +50,12 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		Ristorante r = repoRistorante.findById(1).get();
+		r.addTipologia(
+				repoTipoDao.findByNome("pizzeria").get(0)
+		);
+
+		repoRistorante.save(r);
 		/*Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
 				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
@@ -126,7 +133,9 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 				new Allergie("molluschi")
 		};
 
-		Ristorante ristorante = repoRistoranteDao.findById(2).get();
+		repoAllergieDao.saveAll(Arrays.stream(allergie).toList());
+
+		Ristorante ristorante = Ristorante.ristoranteSample();
 		repoRistoranteDao.save(ristorante);
 
 		Piatto[] piatti = {
@@ -156,7 +165,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 			repoPiattoDao.save(p);
 		}
 
-		Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
+		/*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
 
 		Piatto[] piatti2 = {
 				new Piatto("tagliolini all'aragosta", "sdfiljkbdfijb", 10.0, new Allergene[]{
@@ -171,8 +180,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		for(Piatto p: piatti2){
 			p.addRistorante(ristorante2);
 			repoPiattoDao.save(p);
-		}
-		*/
+		}*/
+
 	}
 
 

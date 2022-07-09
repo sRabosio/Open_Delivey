@@ -72,7 +72,7 @@ public class IndexController {
 
     @GetMapping("/allergie-iscrizione")
     public String allergie_iscrizione(HttpSession session, Model model) {
-        ArrayList<Allergie> allergie = new ArrayList<>();
+        ArrayList<Allergie> allergie;
         allergie = repoAllergie.findAll();
         model.addAttribute("allergie",allergie);
         return "allergie-iscrizione";
