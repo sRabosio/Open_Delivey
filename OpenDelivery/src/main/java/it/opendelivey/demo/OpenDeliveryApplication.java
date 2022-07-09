@@ -49,6 +49,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		ordine.setBought(false);
 		repoOrdineDao.save(ordine);
 		Piatto p = Piatto.piattoSample();
+		repoRistoranteDao.save(Ristorante.ristoranteSample());
 		p.addRistorante(Ristorante.ristoranteSample());
 		repoPiattoDao.save(p);
 		OrdineRecord or = new OrdineRecord(

@@ -51,6 +51,7 @@ public class Ristorante {
         ri.setNome("napoliuaglio");
         ri.setCategoria("pizzeria");
         ri.setNumero("3926803723");
+        ri.addIndirizzo(IndirizzoRistorante.indirizzoRistoranteSample());
         return ri;
 
     }
@@ -122,6 +123,10 @@ public class Ristorante {
 
     public void addProdotto(Piatto piatto){
         prodotti.add(piatto);
+    }
+
+    public void addIndirizzo(IndirizzoRistorante indirizzoRistorante){
+        indirizzi.add(indirizzoRistorante);
     }
 
 }

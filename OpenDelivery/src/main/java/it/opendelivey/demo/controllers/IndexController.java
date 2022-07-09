@@ -67,7 +67,7 @@ public class IndexController {
         indirizzo.setUtente(u);
         repoIndirizzoUtenteDao.save(indirizzo);
         session.setAttribute("loggedUser",u);
-        return "redirect:allergie-iscrizione";
+        return "redirect:/allergie-iscrizione";
     }
 
     @GetMapping("/allergie-iscrizione")
