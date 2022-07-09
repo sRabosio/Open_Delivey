@@ -17,10 +17,17 @@
         </h1>
     </div>
     <div class="container">
-            <div class="categoriescontainer">
+            <div class="categoriescontainer" th:unless="${#lists.isEmpty(categorie)}">
             <h5 class="categoriescontainer__title">Categorie</h5>
-            <button class="categoriescontainer__category"><b>pizza</b></button>
-        </div>
+
+            <button class="categoriescontainer__category" th:each="categoria:${categorie}">
+                <form>
+                    <input type="hidden" th:value="${categoria.getId()}" name="idCategoria">
+                    <b th:text="${categoria.getNome()}">pizza</b>
+                </form>
+            </button>
+
+            </div>
         <content class="contentcontainer">
             <div class="nearyoucontainer" id="ristorantiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">

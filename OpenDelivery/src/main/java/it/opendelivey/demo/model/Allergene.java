@@ -18,6 +18,13 @@ public class Allergene{
     @Size(min = 3, max = 30)
     private String nome;
 
+    public Allergene() {
+    }
+
+    public Allergene(String nome) {
+        this.nome = nome;
+    }
+
     @ManyToMany(mappedBy = "allergeni")
     private Set<Piatto> prodotti = new HashSet<>();
 }

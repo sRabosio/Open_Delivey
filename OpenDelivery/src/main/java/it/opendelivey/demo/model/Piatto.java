@@ -4,13 +4,14 @@ package it.opendelivey.demo.model;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity @Table(name = "prodotti")
 public class Piatto {
     @NotNull
     @NotBlank
-    @Size(min = 3, max = 30)
+    @Size(min = 3, max = 50)
     private String nome;
 
     @NotNull
@@ -49,6 +50,13 @@ public class Piatto {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
+    }
+
+    public Piatto(String nome, String descrizione, Double prezzo, Allergene[] allergenes) {
+        this.nome = nome;
+        this.descrizione = descrizione;
+        this.prezzo = prezzo;
+        allergeni.addAll(List.of(allergenes));
     }
 
     public String getNome() {

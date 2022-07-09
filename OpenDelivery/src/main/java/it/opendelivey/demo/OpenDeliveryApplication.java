@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 @SpringBootApplication
 public class OpenDeliveryApplication implements CommandLineRunner {
@@ -42,36 +43,138 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Autowired
 	RepoRistorante repoRistoranteDao;
 
+	@Autowired
+	RepoAllergene repoAllergeneDao;
+
 	@Override
 	public void run(String... args) throws Exception {
 
-		Ordine ordine = Ordine.ordineSample();
+		/*Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
 				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
 		);
 		ordine.setBought(false);
 		repoOrdineDao.save(ordine);
-		Piatto p = Piatto.piattoSample();
-		repoRistoranteDao.save(Ristorante.ristoranteSample());
-		p.addRistorante(Ristorante.ristoranteSample());
-		repoPiattoDao.save(p);
-		OrdineRecord or = new OrdineRecord(
-				ordine,
-				p,
-				5
-		);
-		repoRecordOrdineDao.save(or);
-		/*Allergie[] allergie = {
-				new Allergie("lattosio"),
+
+		Tipo buffet = new Tipo("buffet");
+		Tipo fastFood = new Tipo("fast food");
+		Tipo mensa = new Tipo("mensa");
+		Tipo osteria = new Tipo("osteria");
+		Tipo paninoteca = new Tipo("paninoteca");
+		Tipo pizzeria = new Tipo("pizzeria");
+		Tipo ristoranteTipo = new Tipo("ristorante");
+		Tipo selfService = new Tipo("self service");
+		Tipo taverna = new Tipo("taverna");
+		Tipo tavolaCalda = new Tipo("tavola calda");
+		Tipo trattoria = new Tipo("trattoria");
+
+		repoTipoDao.save(buffet);
+		repoTipoDao.save(fastFood);
+		repoTipoDao.save(osteria);
+		repoTipoDao.save(paninoteca);
+		repoTipoDao.save(ristoranteTipo);
+		repoTipoDao.save(mensa);
+		repoTipoDao.save(selfService);
+		repoTipoDao.save(taverna);
+		repoTipoDao.save(tavolaCalda);
+		repoTipoDao.save(trattoria);
+		repoTipoDao.save(pizzeria);
+
+
+
+		Allergene glutine = new Allergene("glutine");
+		Allergene crostacei = new Allergene("crostacei");
+		Allergene uova = new Allergene("uova");
+		Allergene pesce = new Allergene("pesce");
+		Allergene arachidi = new Allergene("arachidi");
+		Allergene soia = new Allergene("soia");
+		Allergene latte = new Allergene("latte");
+		Allergene frutta_a_guscio = new Allergene("frutta a guscio");
+		Allergene sedano = new Allergene("sedano");
+		Allergene senape = new Allergene("senape");
+		Allergene sesamo = new Allergene("sesamo");
+		Allergene lupino =	new Allergene("lupino");
+		Allergene molluschi = new Allergene("molluschi");
+
+		repoAllergeneDao.save(glutine);
+		repoAllergeneDao.save(crostacei);
+		repoAllergeneDao.save(uova);
+		repoAllergeneDao.save(pesce);
+		repoAllergeneDao.save(arachidi);
+		repoAllergeneDao.save(soia);
+		repoAllergeneDao.save(latte);
+		repoAllergeneDao.save(frutta_a_guscio);
+		repoAllergeneDao.save(sedano);
+		repoAllergeneDao.save(senape);
+		repoAllergeneDao.save(sesamo);
+		repoAllergeneDao.save(lupino);
+		repoAllergeneDao.save(molluschi);
+
+		Allergie[] allergie = {
 				new Allergie("glutine"),
+				new Allergie("crostacei"),
+				new Allergie("uova"),
+				new Allergie("pesce"),
 				new Allergie("arachidi"),
 				new Allergie("soia"),
-				new Allergie("uova"),
-				new Allergie("senape"),
+				new Allergie("latte"),
+				new Allergie("frutta a guscio"),
+				new Allergie("sedano"),
+				new Allergie("seanape"),
+				new Allergie("sesamo"),
+				new Allergie("lupino"),
 				new Allergie("molluschi")
 		};
-		repoAllergieDao.saveAll(Arrays.stream(allergie).toList());*/
+
+		Ristorante ristorante = repoRistoranteDao.findById(2).get();
+		repoRistoranteDao.save(ristorante);
+
+		Piatto[] piatti = {
+			new Piatto("margerita", "pizza margherita classica", 4.0, new Allergene[]{
+				latte,
+				glutine
+			}),
+				new Piatto("marinara", "pizza", 4.0, new Allergene[]{
+						glutine
+				}),
+				new Piatto("primavera", "pizza", 6.0, new Allergene[]{
+						latte,
+						glutine
+				}),
+				new Piatto("4 formaggi", "pizza", 5.0, new Allergene[]{
+						latte,
+						glutine
+				}),
+				new Piatto("boscaiola", "pizza margherita classica", 8.0, new Allergene[]{
+						latte,
+						glutine
+				})
+		};
+
+		for(Piatto p: piatti){
+			p.addRistorante(ristorante);
+			repoPiattoDao.save(p);
+		}
+
+		Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
+
+		Piatto[] piatti2 = {
+				new Piatto("tagliolini all'aragosta", "sdfiljkbdfijb", 10.0, new Allergene[]{
+						repoAllergeneDao.findByNome("glutine"),
+						repoAllergeneDao.findByNome("crostacei")
+				}),
+				new Piatto("grigliata di pesce", "sdfiljkbdfijb", 20.0, new Allergene[]{
+						repoAllergeneDao.findByNome("pesce")
+				})
+		};
+
+		for(Piatto p: piatti2){
+			p.addRistorante(ristorante2);
+			repoPiattoDao.save(p);
+		}
+		*/
 	}
+
 
 
 }

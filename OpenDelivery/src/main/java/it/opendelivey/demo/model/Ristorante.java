@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,8 +20,6 @@ public class Ristorante {
     @NotBlank
     @Size(min = 3)
     private String nome;
-    @NotNull
-    private String categoria;
     @NotNull
     private String numero;
     @ManyToMany
@@ -40,16 +39,15 @@ public class Ristorante {
 
 
 
-    public Ristorante(String nome, String categoria, String numero) {
-        this.numero= numero;
+    public Ristorante(String nome, String numero, Tipo[] tipi) {
         this.nome = nome;
-        this.categoria = categoria;
+        this.numero = numero;
+        tipologie.addAll(List.of(tipi));
     }
 
     public static Ristorante ristoranteSample(){
         Ristorante ri = new Ristorante();
         ri.setNome("napoliuaglio");
-        ri.setCategoria("pizzeria");
         ri.setNumero("3926803723");
         ri.addIndirizzo(IndirizzoRistorante.indirizzoRistoranteSample());
         return ri;
@@ -72,14 +70,6 @@ public class Ristorante {
         this.nome = nome;
     }
 
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
 
     public Integer getId() {
         return id;
@@ -127,6 +117,10 @@ public class Ristorante {
 
     public void addIndirizzo(IndirizzoRistorante indirizzoRistorante){
         indirizzi.add(indirizzoRistorante);
+    }
+
+    public void addTipologia(Tipo tipo){
+        tipologie.add(tipo);
     }
 
 }
