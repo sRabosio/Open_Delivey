@@ -10,11 +10,10 @@
 </head>
 <body>
 <div class="container">
-    <a th:text="${ristorante.getNome()}"></a>
+    <a th:text="${ristorante.getNome()}">Ristorante:</a>
     <div class="fullcard">
         <img src="assets/images/pizzeria.jpg">
         <a th:text="${ristorante.getIndirizzi()}"></a>
-        <a th:text="${ristorante.getNumero()}"></a>
     </div>
     <content class="contentcontainer">
         <div class="nearyoucontainer" id="piattiConsigliati" >

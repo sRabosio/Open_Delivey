@@ -46,7 +46,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		ordine.setUtente(
 				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
 		);
-		ordine.setBought(false);
+/*		ordine.setBought(false);
 		repoOrdineDao.save(ordine);
 		Piatto p = Piatto.piattoSample();
 		p.addRistorante(Ristorante.ristoranteSample());
@@ -56,7 +56,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 				p,
 				5
 		);
-		repoRecordOrdineDao.save(or);
+		repoRecordOrdineDao.save(or);*/
 	}
 
 
