@@ -18,7 +18,7 @@
     <content class="contentcontainer">
         <div class="nearyoucontainer" id="piattiConsigliati" >
             <div class="nearyoucontainer__titlecontainer">
-                <h5>Allergeni::</h5>
+                <h5>Allergeni:</h5>
             </div>
             <div class="nearyoucontainer__cards">
                 <a class="fullcard" th:each="consigliato:${menu}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${piatto.getId()})}">
