@@ -1,7 +1,5 @@
 package it.opendelivey.demo.model;
 
-import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;

@@ -130,7 +130,7 @@ public class Ristorante {
         for(Piatto p:prodotti)
             avg += p.getPrezzo();
 
-        avg /= (double) prodotti.size();
+        avg /= prodotti.size();
 
         if(avg <= 10) return "low";
         if(avg <= 20) return "medium";

@@ -17,7 +17,7 @@ public class IndirizzoUtente {
     @ManyToOne @JoinColumn
     private Utente utente;
 
-    public IndirizzoUtente(){};
+    public IndirizzoUtente(){}
 
     public IndirizzoUtente(String indirizzo, String civico, String cap, String citta) {
         this.indirizzo = indirizzo;
@@ -32,7 +32,6 @@ public class IndirizzoUtente {
         this.cap = cap;
         this.citta = citta;
         this.id = id;
-        this.utente = utente;
     }
 
     public static IndirizzoUtente indirizzoUtenteSample(){

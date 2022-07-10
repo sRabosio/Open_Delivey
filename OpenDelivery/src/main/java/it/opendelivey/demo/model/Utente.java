@@ -1,11 +1,8 @@
 package it.opendelivey.demo.model;
 
 import it.opendelivey.demo.Repo.RepoUtente;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import javax.xml.crypto.Data;
 import java.util.*;
 
 //TODO: implementare annotazione ibernate
@@ -34,7 +31,7 @@ public class Utente {
     @ManyToMany(cascade = CascadeType.ALL)   @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
-    @OneToMany(mappedBy = "utente")
+    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private Set<IndirizzoUtente> indirizzi = new HashSet<>();
 
     private String imagePath;

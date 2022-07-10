@@ -34,7 +34,7 @@ public class IndirizzoRistorante {
         this.ristorante = ristorante;
     }
 
-    public IndirizzoRistorante(){};
+    public IndirizzoRistorante(){}
 
     public String getIndirizzo() {
         return indirizzo;

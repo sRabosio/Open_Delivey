@@ -8,6 +8,5 @@ import java.util.ArrayList;
 
 public interface RepoIndirizzoUtente extends CrudRepository<IndirizzoUtente, Integer> {
     ArrayList<IndirizzoUtente> findAll();
-
     ArrayList<IndirizzoUtente> findByUtente(Utente utente);
 }
