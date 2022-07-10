@@ -17,19 +17,17 @@
             <input type="submit" value="cerca">
         </form>
     </div>
-    <content class="results">
-    <th:block th:each="ristorante:${ristoranti}">
-        <div th:replace="fragments/restaurantcard :: restaurantcard(
-                            id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange})"></div>
-    </th:block>
+    <div class="fullcard" th:each="ristorante:${ristoranti}">
+        <img src="assets/images/pizza brutta.jpg" alt="">
+        <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
+    </div>
 
-    <th:block th:each="consigliato:${consigliati}">
-        <div th:replace="fragments/platecard :: platecard(
-                            id=${consigliato.getId()}, nome=${consigliato.getNome()}, descrizione=${consigliato.getDescrizione},
-                            prezzo=${consigliato.getPrezzo()}, immagine=${consigliato.getImagePath()}
-                        )"></div>
-    </th:block>
-    </content>
+    <div class="fullcard" th:each="prodotto:${prodotti}">
+        <img src="assets/images/pizza brutta.jpg" alt="">
+        <h5 class="fullcard__title" th:text="${prodotto.getNome()}"></h5>
+        <span class="fullcard__subtitle" th:text="${prodotto.getDescrizione()}"></span>
+        <span class="fullcard__price" th:text="${prodotto.getPrezzo()}"></span>
+    </div>
 </body>
 
 </html>

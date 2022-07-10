@@ -34,26 +34,26 @@
                     <p class="nearyoucontainer__titlecontainer__more">Vedi altro ></p>
                 </div>
                 <div class="nearyoucontainer__cards">
-                    <th:block th:each="ristorante:${ristoranti}">
-                        <div th:replace="fragments/restaurantcard :: restaurantcard(
-                            id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange})"></div>
-                    </th:block>
+                    <a class="fullcard" th:each="ristorante:${ristoranti}" th:id="'ristorante'+${ristorante.getId()}" th:href="@{restaurant(id=${ristorante.getId()})}">
+                        <img src="assets/images/pizza brutta.jpg" alt="">
+                        <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
+                        <!--span class="fullcard__price" th:text="${ristorante.getPrezzo()}"><span class="currency">$</span></span-->
+                    </a>
                 </div>
                 
                 
             </div>
-            <!-- sezione piatti -->
             <div class="nearyoucontainer" id="piattiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>Altro per te:</h5>
                 </div>
                 <div class="nearyoucontainer__cards">
-                    <th:block th:each="consigliato:${consigliati}">
-                        <div th:replace="fragments/platecard :: platecard(
-                            id=${consigliato.getId()}, nome=${consigliato.getNome()}, descrizione=${consigliato.getDescrizione},
-                            prezzo=${consigliato.getPrezzo()}, immagine=${consigliato.getImagePath()}
-                        )"></div>
-                    </th:block>
+                   <a class="fullcard" th:each="consigliato:${consigliati}" th:id="'consigliato'+${consigliato.getId()}" th:href="@{plate(id=${consigliato.getId()})}">
+                        <img src="assets/images/pizza brutta.jpg" alt="">
+                        <h5 class="fullcard__title" th:text="${consigliato.getNome()}"></h5>
+                        <p class="fullcard__subtitle" th:text="${consigliato.getDescrizione()}"></p>
+                        <span class="fullcard__price" th:text="${consigliato.getPrezzo()}"><span class="currency">$</span></span>
+                    </a>
                 </div>
             </div>
         </content>
