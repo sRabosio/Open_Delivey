@@ -14,14 +14,13 @@
 
 <body>
     <div class="container">
-        <form action="/allergie-iscrizione" method="POST">
-            <div class="checkbox" th:each="allergia:${allergie}">
-                <label th:for="'allergia'+${allergia.getId()}" th:text="${allergia.getNome()}"></label>
-                <input type="checkbox" class="plus-minus" th:value="${allergia.getId()}" name="allergieId">
-            </div>
-            <div class="notform"><input class="simpleButton" type="submit" value="aggiungi" /></div>
-
-
+        <h3>Seleziona le tue allergie</h3>
+        <form action="/allergie-iscrizione" method="POST" >
+            <th:block th:each="allergia:${allergie}">
+            <div th:replace="fragments/allergiaCheckbox :: allergiaCheckbox(nome=${allergia.getNome()}, id=${allergia.getId()})"></div>
+            </th:block>
+            <input type="submit" value="fatto" class="simpleButton">
+            <input type="submit" value="salta" class="simpleButton" formaction="/homepage" formmethod="get">
         </form>
 
     </div>

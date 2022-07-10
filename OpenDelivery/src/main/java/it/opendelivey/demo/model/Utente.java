@@ -176,4 +176,11 @@ public class Utente {
     public void addAllergie(Allergie allergia){
         allergie.add(allergia);
     }
+
+    public Ordine getActiveCart(){
+        for(Ordine o: ordini)
+            if(!o.isBought()) return o;
+
+        return null;
+    }
 }
