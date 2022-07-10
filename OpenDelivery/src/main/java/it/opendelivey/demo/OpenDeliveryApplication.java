@@ -50,18 +50,10 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		/*Ristorante r = repoRistorante.findById(1).get();
-		r.addTipologia(
-				repoTipoDao.findByNome("pizzeria").get(0)*/
-		;
+		/*Ristorante r = Ristorante.ristoranteSample();
 
-		/*repoRistorante.save(r);*/
-		/*Ordine ordine = Ordine.ordineSample();
-		ordine.setUtente(
-				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
-		);
-		ordine.setBought(false);
-		repoOrdineDao.save(ordine);
+
+		repoRistorante.save(r);
 
 		Tipo buffet = new Tipo("buffet");
 		Tipo fastFood = new Tipo("fast food");
@@ -86,6 +78,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		repoTipoDao.save(tavolaCalda);
 		repoTipoDao.save(trattoria);
 		repoTipoDao.save(pizzeria);
+		r.addTipologia(
+				repoTipoDao.findByNome("pizzeria").get(0));
 
 
 
@@ -165,7 +159,7 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 			repoPiattoDao.save(p);
 		}
 
-		/*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
+		*//*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
 
 		Piatto[] piatti2 = {
 				new Piatto("tagliolini all'aragosta", "sdfiljkbdfijb", 10.0, new Allergene[]{
