@@ -50,12 +50,12 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Ristorante r = repoRistorante.findById(1).get();
+		/*Ristorante r = repoRistorante.findById(1).get();
 		r.addTipologia(
-				repoTipoDao.findByNome("pizzeria").get(0)
-		);
+				repoTipoDao.findByNome("pizzeria").get(0)*/
+		;
 
-		repoRistorante.save(r);
+		/*repoRistorante.save(r);*/
 		/*Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
 				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
