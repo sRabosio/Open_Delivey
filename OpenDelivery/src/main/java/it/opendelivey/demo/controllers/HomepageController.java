@@ -1,5 +1,6 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoAllergie;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoTipo;
 import it.opendelivey.demo.model.*;
@@ -23,6 +24,9 @@ public class HomepageController {
 
     @Autowired
     private RepoTipo repoTipoDao;
+
+    @Autowired
+    private RepoAllergie repoAllergieDao;
 
 
     @RequestMapping("/homepage")
@@ -67,8 +71,10 @@ public class HomepageController {
             consigliati.addAll(piattoList);
         }
 
-        if(utente.getAllergie() != null)
-            for(Allergie a:utente.getAllergie())
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
+
+        if(allergieUtente != null)
+            for(Allergie a:allergieUtente)
                 consigliati.removeIf(c->c.hasAllergia(a));
 
         model.addAttribute("utente", utente);

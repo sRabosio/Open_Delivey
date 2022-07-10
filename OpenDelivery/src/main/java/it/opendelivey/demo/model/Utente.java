@@ -28,13 +28,13 @@ public class Utente {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private Set<Ordine> ordini = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)   @JoinColumn
+    @ManyToMany(cascade = CascadeType.ALL)   @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
-    @OneToMany(mappedBy = "utente",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "utente")
     private Set<IndirizzoUtente> indirizzi = new HashSet<>();
 
     private String imagePath;
