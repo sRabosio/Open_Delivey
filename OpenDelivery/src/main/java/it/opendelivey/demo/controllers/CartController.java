@@ -67,7 +67,7 @@ public class CartController {
     @PostMapping("/cart/delete")
     public String cartDelete(
             HttpSession session,
-            @RequestParam("recordId") int recordId
+            @RequestParam("recordId") Integer recordId
     ){
         //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");
@@ -75,7 +75,7 @@ public class CartController {
 
         //prendo il record
         Optional<OrdineRecord> record = repoRecordOrdineDao.findById(recordId);
-        if(record.isEmpty()) return "redirect:cart";
+        if(record.isEmpty()) return "redirect:/cart";
 
         //lo cancello
         repoRecordOrdineDao.deleteById(recordId);
@@ -168,8 +168,8 @@ public class CartController {
         repoOrdineDao.save(
                 new Ordine(utente)
         );
-        repoUtenteDao.save(utente);
-
+        utente = repoUtenteDao.findByMail(utente.getMail());
+        session.setAttribute("loggedUser", utente);
         return "redirect:/paymentsuccessful";
     }
 

@@ -18,8 +18,8 @@
 
             <h4>CARRELLO</h4>
         </div>
-        <content class="cart" th:switch="${cartEmpty}">
-            <form class="cart__card" th:case="false" th:each="record:${carrello}" method="POST" action="/cart/delete">
+        <content class="cart">
+            <form class="cart__card" th:unless="${cartEmpty}" th:each="record:${carrello}" method="POST" action="/cart/delete">
                     <span th:text="${record.getProdotto().getNome()}"></span>
                     <span th:text="${record.getProdotto().getDescrizione()}"></span>
                     <span th:text="${record.getProdotto().getPrezzo()}"></span>
