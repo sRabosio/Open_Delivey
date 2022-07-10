@@ -118,6 +118,11 @@ function watchStyle() {
     });
 }
 
+function processReverseHtml(){
+    console.log("first compile");
+    return gulp.src(javaDir + "templates/*.html")
+            .pipe(gulp.dest("./"));
+}
 
 exports.style = watchStyle;
 exports.html = html;
@@ -126,8 +131,10 @@ exports.all = () => {
     html();
 };
 exports.reverse = () => {
+    processReverseHtml()
     gulp.watch(javaDir + "templates/*.html", () => {
         return gulp.src(javaDir + "templates/*.html")
             .pipe(gulp.dest("./"));
     })
 };
+
