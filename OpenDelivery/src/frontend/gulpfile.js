@@ -16,6 +16,8 @@ const sassList = [
     "./assets/scss/moreRestaurants/*.scss", "./assets/scss/moreRestaurants/**/*.scss",
     //login
     "./assets/scss/login/*.scss", "./assets/scss/login/**/*.scss",
+    //allergie registrazione
+    "./assets/scss/allergie-iscrizione/*.scss", "./assets/scss/allergie-iscrizione/**/*.scss",
 ];
 
 const javaDir = "../main/resources/";
@@ -33,6 +35,14 @@ function commonStyle() {
 
 function loginstyle() {
     return gulp.src("./assets/scss/login/login.scss")
+
+    .pipe(sass())
+
+    .pipe(gulp.dest("./assets/css"))
+}
+
+function alliscrizione() {
+    return gulp.src("./assets/scss/allergie-iscrizione/allergie-iscrizione.scss")
 
     .pipe(sass())
 
@@ -89,6 +99,7 @@ function processStyle() {
     regStyle();
     moreRestaurantsStyle();
     loginstyle();
+    alliscrizione();
 
     return gulp.src("./assets/css/*.css")
         .pipe(gulp.dest(javaDir + "/static/assets/css"));

@@ -6,7 +6,6 @@ body {
     grid-template-columns: $body_sides_space auto $body_sides_space;
     grid-template-rows: auto;
     min-height: 100vh;
-    overflow: hidden;
     font-family: "Urbanist";
     /* width */
     &::-webkit-scrollbar {

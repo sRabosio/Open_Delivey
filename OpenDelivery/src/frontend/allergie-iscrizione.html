@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="it" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="preload" href="Urbanist-ExtraBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/allergie-iscrizione.css">
+    <title>Seleziona allergie</title>
 </head>
 
 <body>
     <div class="container">
         <form action="/allergie-iscrizione" method="POST">
-            <div th:each="allergia:${allergie}">
+            <div class="checkbox" th:each="allergia:${allergie}">
                 <label th:for="'allergia'+${allergia.getId()}" th:text="${allergia.getNome()}"></label>
-                <input type="checkbox" th:value="${allergia.getId()}" name="allergieId">
+                <input type="checkbox" class="plus-minus" th:value="${allergia.getId()}" name="allergieId">
             </div>
-            <input type="submit" value="aggiungi">
+            <div class="notform"><input class="simpleButton" type="submit" value="aggiungi" /></div>
+
+
         </form>
 
     </div>
