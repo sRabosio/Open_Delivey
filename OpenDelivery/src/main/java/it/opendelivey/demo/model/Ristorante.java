@@ -130,4 +130,18 @@ public class Ristorante {
         return false;
     }
 
+    public String getPriceRange(){
+        double avg = 0;
+        for(Piatto p:prodotti)
+            avg += p.getPrezzo();
+
+        avg /= (double) prodotti.size();
+
+        if(avg <= 10) return "low";
+        if(avg <= 20) return "medium";
+        if(avg >20) return "high";
+
+        return null;
+    }
+
 }

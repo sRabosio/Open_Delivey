@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added allergiaCHeckbox fragment">
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" afterDir="false" />
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added check for pending registration to allergies selection page">
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/platecard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/restaurantcard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/moreRestaurants.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/moreRestaurants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/ricerca.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/ricerca.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Ristorante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +47,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/restaurantcard.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -147,7 +160,7 @@
       <workItem from="1657319223448" duration="2687000" />
       <workItem from="1657354186845" duration="15868000" />
       <workItem from="1657386336271" duration="17490000" />
-      <workItem from="1657443135906" duration="3213000" />
+      <workItem from="1657443135906" duration="5722000" />
     </task>
     <task id="LOCAL-00001" summary="fix finalmento funziona tutto">
       <created>1657011861472</created>
@@ -352,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657446132613</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: added check for pending registration to allergies selection page">
+      <created>1657446497537</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1657446497537</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +391,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: fixed allergeni issue" />
     <MESSAGE value="fix: fixed index issue" />
     <MESSAGE value="feat: added navbar fragment" />
     <MESSAGE value="fix: fixed CMDLineRunner issue" />
@@ -396,7 +415,8 @@
     <MESSAGE value="feat: fixed html issue allergieprofilo" />
     <MESSAGE value="feat: added search feature" />
     <MESSAGE value="feat: added allergiaCHeckbox fragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added allergiaCHeckbox fragment" />
+    <MESSAGE value="feat: added check for pending registration to allergies selection page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added check for pending registration to allergies selection page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
