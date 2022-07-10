@@ -1,5 +1,6 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoPiatto;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Ristorante;
@@ -8,9 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -19,6 +17,9 @@ public class RestaurantController {
 
     @Autowired
     RepoRistorante repoRistoranteDao;
+
+    @Autowired
+    RepoPiatto repoPiattoDao;
 
     @GetMapping("/ristorante")
     public String getRestaurant(
@@ -39,8 +40,6 @@ public class RestaurantController {
             @RequestParam("id") int id,
             Model model
     ){
-
-        model.addAttribute(Piatto.piattoSample());
 
         return "plate";
     }

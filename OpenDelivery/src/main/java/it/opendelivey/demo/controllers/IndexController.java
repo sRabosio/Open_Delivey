@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.Registration;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -24,6 +25,8 @@ public class IndexController {
     RepoAllergie repoAllergie;
     @Autowired
     RepoIndirizzoUtente repoIndirizzoUtenteDao;
+    @Autowired
+    RepoAllergie repoAllergieDao;
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
      * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
@@ -41,12 +44,6 @@ public class IndexController {
             HttpSession session
     ) {
 
-        int i = 0;
-        //controllo conferma password
-
-
-
-
         //TODO: email confirmation
         //TODO: piantare i dati nel DB
 
@@ -60,29 +57,55 @@ public class IndexController {
         //U.setIndirizzo(indirizzo);
         u.setPassword(form.getPassword());
         u.setEta(form.getEta());
+
+        //controllo se esiste l'utente
         if(repoUtente.findByMail(form.getMail()) != null)
             return "registrazione";
 
         repoUtente.save(u);
         indirizzo.setUtente(u);
         repoIndirizzoUtenteDao.save(indirizzo);
+        session.setAttribute("registrazione", form);
         session.setAttribute("loggedUser",u);
         return "redirect:/allergie-iscrizione";
     }
 
     @GetMapping("/allergie-iscrizione")
     public String allergie_iscrizione(HttpSession session, Model model) {
+        //controllo se la registrazione è in corso, evito che la gente entri qua a caso
+        RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
+        if(form == null) return "redirect:/registrazione";
+
+
         ArrayList<Allergie> allergie;
         allergie = repoAllergie.findAll();
         model.addAttribute("allergie",allergie);
         return "allergie-iscrizione";
     }
+
+
     @PostMapping("/allergie-iscrizione")
-    public String allergie_iscrizione( HttpSession session, ArrayList <Allergie> allergie){
+    public String allergie_iscrizione(
+            HttpSession session,
+            @RequestParam("allergieId") Integer[] allergieIds
+    ){
+        //controllo se la registrazione è in corso, evito che la gente entri qua a caso
+        RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
+        if(form == null) return "redirect:/registrazione";
+
        Utente utente= (Utente) session.getAttribute("loggedUser");
        if (utente==null)return "login";
+
+        ArrayList<Allergie> allergie = repoAllergieDao.findAllById(Arrays.asList(allergieIds));
+        if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
+
+        //essendo un set posso aggiungere tutto e filtrerà da solo i dati che sono già all'interno della lista
+        utente.addAllAllergie(allergie);
+
         repoUtente.save(utente);
-       return "homepage";
+
+        session.removeAttribute("registrazione");
+       return "redirect:/homepage";
     }
 
 
@@ -99,8 +122,9 @@ public class IndexController {
             HttpSession session
 
     ){
+        //controllo se i dati sono corretti
         Utente dbutente;
-        if(( dbutente= (Utente) repoUtente.findByMail(mail)) == null || !(dbutente.getPassword().equals(password))) return "login";
+        if((dbutente = repoUtente.findByMailAndPassword(mail, password)) == null) return "login";
         //session ci permette di "mantenere" delle informazioni
         //che vengono prese da delle richieste
         //per venir utilizzate in altre

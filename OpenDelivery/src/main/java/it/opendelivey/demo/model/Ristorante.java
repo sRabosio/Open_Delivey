@@ -1,8 +1,5 @@
 package it.opendelivey.demo.model;
 
-import it.opendelivey.demo.Repo.RepoRistorante;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -131,6 +128,20 @@ public class Ristorante {
                 return true;
         }
         return false;
+    }
+
+    public String getPriceRange(){
+        double avg = 0;
+        for(Piatto p:prodotti)
+            avg += p.getPrezzo();
+
+        avg /= (double) prodotti.size();
+
+        if(avg <= 10) return "low";
+        if(avg <= 20) return "medium";
+        if(avg >20) return "high";
+
+        return null;
     }
 
 }

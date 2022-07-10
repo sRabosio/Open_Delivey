@@ -8,7 +8,6 @@ import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.Ordine;
 import it.opendelivey.demo.model.OrdineRecord;
 import it.opendelivey.demo.model.Utente;
-import org.hibernate.annotations.Where;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,7 +67,6 @@ public class CartController {
     @PostMapping("/cart/delete")
     public String cartDelete(
             HttpSession session,
-            Model model,
             @RequestParam("recordId") int recordId
     ){
         //trovo l'utente
@@ -89,7 +87,6 @@ public class CartController {
     @PostMapping("/cart/remove")
     public String cartRemove(
             HttpSession session,
-            Model model,
             @RequestParam("recordId") int recordId
     ){
         //trovo l'utente
@@ -116,7 +113,6 @@ public class CartController {
     @PostMapping("/cart/add")
     public String cartAdd(
             HttpSession session,
-            Model model,
             @RequestParam("recordId") int recordId
     ){
         //trovo l'utente
@@ -158,8 +154,7 @@ public class CartController {
 
     @PostMapping("/cart/buy")
     public String cartBuy(
-            HttpSession session,
-            Model model
+            HttpSession session
     ){
         //trovo l'utente
         Utente utente = (Utente) session.getAttribute("loggedUser");

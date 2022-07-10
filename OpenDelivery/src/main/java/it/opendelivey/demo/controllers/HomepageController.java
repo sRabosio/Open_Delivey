@@ -1,9 +1,7 @@
 package it.opendelivey.demo.controllers;
 
-import it.opendelivey.demo.Repo.RepoPiatto;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoTipo;
-import it.opendelivey.demo.Repo.RepoUtente;
 import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,25 +14,17 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Controller
 public class HomepageController {
 
     @Autowired
-    private RepoUtente repoUtenteDao;
-
-    @Autowired
     private RepoRistorante repoRistoranteDao;
-
-    @Autowired
-    private RepoPiatto repoPiattoDao;
 
     @Autowired
     private RepoTipo repoTipoDao;
 
-    /*TODO: verificare che i dati siano corretti per evitare che
-     *  i dati possano essere visti da qualcuno senza autorizzazione */
+
     @RequestMapping("/homepage")
     public String getHomepage(
             Model model,
@@ -64,13 +54,13 @@ public class HomepageController {
         //la soluzione fa schifo, ma funziona (miracolo)
         if(filter != null)
             for(Tipo i: filter) {
-                ristoranti.removeIf(r -> r.hasTipo(i));
+                ristoranti.removeIf(r -> !(r.hasTipo(i)));
                 filtersId.add(i.getId());
             }
 
 
 
-            //prendo i piatti
+            //prendo i piatti dai ristoranti che ho filtrato
         ArrayList<Piatto> consigliati = new ArrayList<>();
         for(Ristorante r: ristoranti){
             List<Piatto> piattoList = r.getProdotti().stream().toList();
@@ -93,7 +83,6 @@ public class HomepageController {
     @GetMapping("/homepage/addFilter")
     public String homepageCat(
             HttpSession session,
-            Model model,
             @RequestParam("idCategoria") Integer idCat
     ){
         ArrayList<Tipo> filter = (ArrayList<Tipo>) session.getAttribute("filter");

@@ -15,9 +15,6 @@ import java.util.Set;
 @SpringBootApplication
 public class OpenDeliveryApplication implements CommandLineRunner {
 
-	//TODO: usare il create-drop per testare le query
-	//TODO: aggiungere il framework per gestire il database
-
 	public static void main(String[] args) {
 		SpringApplication.run(OpenDeliveryApplication.class, args);
 	}
@@ -50,13 +47,13 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Ristorante r = repoRistorante.findById(1).get();
+		/*Ristorante r = repoRistorante.findById(1).get();
 		r.addTipologia(
 				repoTipoDao.findByNome("pizzeria").get(0)
 		);
 
 		repoRistorante.save(r);
-		/*Ordine ordine = Ordine.ordineSample();
+		Ordine ordine = Ordine.ordineSample();
 		ordine.setUtente(
 				repoUtenteDao.findByMail("rabosiosimone@gmail.com")
 		);
