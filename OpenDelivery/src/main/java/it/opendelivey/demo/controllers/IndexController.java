@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.Registration;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -64,13 +65,18 @@ public class IndexController {
         repoUtente.save(u);
         indirizzo.setUtente(u);
         repoIndirizzoUtenteDao.save(indirizzo);
+        session.setAttribute("registrazione", form);
         session.setAttribute("loggedUser",u);
         return "redirect:/allergie-iscrizione";
     }
 
     @GetMapping("/allergie-iscrizione")
     public String allergie_iscrizione(HttpSession session, Model model) {
-        //TODO: aggiungere registration form a sessione per non entrare in questa pagina  a caso
+        //controllo se la registrazione è in corso, evito che la gente entri qua a caso
+        RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
+        if(form == null) return "redirect:/registrazione";
+
+
         ArrayList<Allergie> allergie;
         allergie = repoAllergie.findAll();
         model.addAttribute("allergie",allergie);
@@ -83,6 +89,10 @@ public class IndexController {
             HttpSession session,
             @RequestParam("allergieId") Integer[] allergieIds
     ){
+        //controllo se la registrazione è in corso, evito che la gente entri qua a caso
+        RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
+        if(form == null) return "redirect:/registrazione";
+
        Utente utente= (Utente) session.getAttribute("loggedUser");
        if (utente==null)return "login";
 
@@ -93,7 +103,9 @@ public class IndexController {
         utente.addAllAllergie(allergie);
 
         repoUtente.save(utente);
-       return "homepage";
+
+        session.removeAttribute("registrazione");
+       return "redirect:/homepage";
     }
 
 
