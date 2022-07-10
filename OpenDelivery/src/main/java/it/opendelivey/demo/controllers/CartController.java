@@ -147,8 +147,9 @@ public class CartController {
             if(temp.equals(indirizzo)) return "redirect:/cart";
         }
 
-
-        repoIndirizzoUtenteDao.save(indirizzo);
+        utente.addIndirizzo(indirizzo);
+        repoUtenteDao.save(utente);
+        session.setAttribute("loggedUser", utente);
         return "redirect:/cart";
     }
 
