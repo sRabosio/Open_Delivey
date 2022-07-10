@@ -1,5 +1,6 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoAllergie;
 import it.opendelivey.demo.Repo.RepoPiatto;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoUtente;
@@ -28,6 +29,9 @@ public class SearchController {
     @Autowired
     RepoPiatto repoPiattoDao;
 
+    @Autowired
+    private RepoAllergie repoAllergieDao;
+
     @GetMapping("/search")
     public String search(){
 
@@ -46,10 +50,12 @@ public class SearchController {
         ArrayList<Ristorante> ristoranti = repoRistoranteDao.findByNomeContains(ricerca);
         ArrayList<Piatto> prodotti = repoPiattoDao.findByNomeContains(ricerca);
 
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
+
         //filtro i prodotti che contengono allergeni che provocano reazioni all'utente
         if(utente != null){
             if(utente.getAllergie() != null)
-                for(Allergie a:utente.getAllergie())
+                for(Allergie a:allergieUtente)
                     prodotti.removeIf(c->c.hasAllergia(a));
         }
 
