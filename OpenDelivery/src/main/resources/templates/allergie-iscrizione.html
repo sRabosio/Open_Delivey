@@ -5,14 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="preload" href="Urbanist-ExtraBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/registrazione.css">
+</head>
 </head>
 
 <body>
     <div class="container">
-        <form action="/allergie-iscrizione" method="POST">
-
-            <input th:each="allergia:${allergie}" th:label="${allergia.getNome()}" type="checkbox" th:value="${allergia.getId()}">
-            <input type="submit" value="aggiungi">
+        <h3>Seleziona le tue allergie</h3>
+        <form action="/allergie-iscrizione" method="POST" >
+            <th:block th:each="allergia:${allergie}">
+            <div th:replace="fragments/allergiaCheckbox :: allergiaCheckbox(nome=${allergia.getNome()}, id=${allergia.getId()})"></div>
+            </th:block>
+            <input type="submit" value="fatto" class="simpleButton">
         </form>
 
     </div>

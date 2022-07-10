@@ -10,5 +10,6 @@ public interface RepoUtente extends CrudRepository<Utente, Integer> {
    Optional<Utente> findById(Integer id);
    boolean existsByMailAndPassword(String mail, String password);
    boolean existsByMail(String mail);
+   Utente findByMailAndPassword(String mail, String password);
 }
 

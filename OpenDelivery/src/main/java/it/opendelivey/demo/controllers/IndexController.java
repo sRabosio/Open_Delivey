@@ -24,6 +24,8 @@ public class IndexController {
     RepoAllergie repoAllergie;
     @Autowired
     RepoIndirizzoUtente repoIndirizzoUtenteDao;
+    @Autowired
+    RepoAllergie repoAllergieDao;
 
     /* mappare tutte le richieste con metodo vuoto ci permette di entrare nella pagina
      * con qualsiasi richiesta, o, SEMPLICEMENTE se non metto questo entrerà nella pagina
@@ -41,12 +43,6 @@ public class IndexController {
             HttpSession session
     ) {
 
-        int i = 0;
-        //controllo conferma password
-
-
-
-
         //TODO: email confirmation
         //TODO: piantare i dati nel DB
 
@@ -60,6 +56,8 @@ public class IndexController {
         //U.setIndirizzo(indirizzo);
         u.setPassword(form.getPassword());
         u.setEta(form.getEta());
+
+        //controllo se esiste l'utente
         if(repoUtente.findByMail(form.getMail()) != null)
             return "registrazione";
 
@@ -72,15 +70,28 @@ public class IndexController {
 
     @GetMapping("/allergie-iscrizione")
     public String allergie_iscrizione(HttpSession session, Model model) {
+        //TODO: aggiungere registration form a sessione per non entrare in questa pagina  a caso
         ArrayList<Allergie> allergie;
         allergie = repoAllergie.findAll();
         model.addAttribute("allergie",allergie);
         return "allergie-iscrizione";
     }
+
+
     @PostMapping("/allergie-iscrizione")
-    public String allergie_iscrizione( HttpSession session, ArrayList <Allergie> allergie){
+    public String allergie_iscrizione(
+            HttpSession session,
+            @RequestParam("allergieId") Integer[] allergieIds
+    ){
        Utente utente= (Utente) session.getAttribute("loggedUser");
        if (utente==null)return "login";
+
+        ArrayList<Allergie> allergie = repoAllergieDao.findAllById(Arrays.asList(allergieIds));
+        if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
+
+        //essendo un set posso aggiungere tutto e filtrerà da solo i dati che sono già all'interno della lista
+        utente.addAllAllergie(allergie);
+
         repoUtente.save(utente);
        return "homepage";
     }
@@ -99,8 +110,9 @@ public class IndexController {
             HttpSession session
 
     ){
+        //controllo se i dati sono corretti
         Utente dbutente;
-        if(( dbutente= (Utente) repoUtente.findByMail(mail)) == null || !(dbutente.getPassword().equals(password))) return "login";
+        if((dbutente = repoUtente.findByMailAndPassword(mail, password)) == null) return "login";
         //session ci permette di "mantenere" delle informazioni
         //che vengono prese da delle richieste
         //per venir utilizzate in altre

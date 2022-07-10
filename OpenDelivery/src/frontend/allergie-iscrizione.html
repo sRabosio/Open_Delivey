@@ -10,8 +10,10 @@
 <body>
     <div class="container">
         <form action="/allergie-iscrizione" method="POST">
-
-            <input th:each="allergia:${allergie}" th:label="${allergia.getNome()}" type="checkbox" th:value="${allergia.getId()}">
+            <div th:each="allergia:${allergie}">
+                <label th:for="'allergia'+${allergia.getId()}" th:text="${allergia.getNome()}"></label>
+                <input type="checkbox" th:value="${allergia.getId()}" name="allergieId">
+            </div>
             <input type="submit" value="aggiungi">
         </form>
 

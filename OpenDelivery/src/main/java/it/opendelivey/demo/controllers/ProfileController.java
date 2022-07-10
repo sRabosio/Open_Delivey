@@ -7,7 +7,6 @@ import it.opendelivey.demo.model.Allergie;
 import it.opendelivey.demo.model.IndirizzoUtente;
 import it.opendelivey.demo.model.LoginForm;
 import it.opendelivey.demo.model.Utente;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Controller
 public class ProfileController {
@@ -137,11 +135,8 @@ public class ProfileController {
         ArrayList<Allergie> allergie = repoAllergieDao.findAllById(Arrays.asList(allergieIds));
         if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
 
-        for(Allergie allergia: allergie){
-            if(utente.getAllergie().contains(allergia))
-                continue;
-            utente.addAllergie(allergia);
-        }
+        //essendo un set posso aggiungere tutto e filtrerà da solo i dati che sono già all'interno della lista
+        utente.addAllAllergie(allergie);
 
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", utente);

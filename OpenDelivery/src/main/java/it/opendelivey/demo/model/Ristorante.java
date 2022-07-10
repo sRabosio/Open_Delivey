@@ -1,8 +1,5 @@
 package it.opendelivey.demo.model;
 
-import it.opendelivey.demo.Repo.RepoRistorante;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
