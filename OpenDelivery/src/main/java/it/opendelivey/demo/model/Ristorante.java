@@ -26,8 +26,8 @@ public class Ristorante {
     @ManyToMany(fetch = FetchType.EAGER) @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
-    @OneToMany(mappedBy = "ristorante")
-    private Set<IndirizzoRistorante> indirizzi = new HashSet<>();
+    @OneToOne(mappedBy = "ristorante", cascade = CascadeType.ALL)
+    private IndirizzoRistorante indirizzo;
 
     private String imagePath;
 
@@ -46,7 +46,7 @@ public class Ristorante {
         Ristorante ri = new Ristorante();
         ri.setNome("napoliuaglio");
         ri.setNumero("3926803723");
-        ri.addIndirizzo(IndirizzoRistorante.indirizzoRistoranteSample());
+        ri.setIndirizzo(IndirizzoRistorante.indirizzoRistoranteSample());
         return ri;
 
     }
@@ -92,14 +92,6 @@ public class Ristorante {
         this.tipologie = tipologie;
     }
 
-    public Set<IndirizzoRistorante> getIndirizzi() {
-        return indirizzi;
-    }
-
-    public void setIndirizzi(Set<IndirizzoRistorante> indirizzi) {
-        this.indirizzi = indirizzi;
-    }
-
     public String getImagePath() {
         return imagePath;
     }
@@ -112,14 +104,17 @@ public class Ristorante {
         prodotti.add(piatto);
     }
 
-    public void addIndirizzo(IndirizzoRistorante indirizzoRistorante){
-        indirizzi.add(indirizzoRistorante);
-    }
-
     public void addTipologia(Tipo tipo){
         tipologie.add(tipo);
     }
 
+    public IndirizzoRistorante getIndirizzo() {
+        return indirizzo;
+    }
+
+    public void setIndirizzo(IndirizzoRistorante indirizzo) {
+        this.indirizzo = indirizzo;
+    }
 
     //per qualche dannato motive l'equals non funziona
     public boolean hasTipo(Tipo tipo){

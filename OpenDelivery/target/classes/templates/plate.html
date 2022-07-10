@@ -10,25 +10,26 @@
 </head>
 <body>
 <div class="container">
-    <a th:text="${piatto.getNome()}"></a>
+    <h1 th:text="${prodotto.getNome()}"></h1>
     <div class="fullcard">
         <img src="assets/images/pizzeria.jpg">
-        <a th:text="${piato.getDescrizione()}"></a>
+        <a th:text="${prodotto.getDescrizione()}"></a>
     </div>
     <content class="contentcontainer">
         <div class="nearyoucontainer" id="piattiConsigliati" >
             <div class="nearyoucontainer__titlecontainer">
-                <h5>Allergeni::</h5>
-            </div>
-            <div class="nearyoucontainer__cards">
-                <a class="fullcard" th:each="consigliato:${menu}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${piatto.getId()})}">
-                    <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
-                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
-                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
-                </a>
+                <h5>Allergeni</h5>
+                <span th:each="allergene:${allergeni}" th:text="${allergene.getNome()}"></span>
             </div>
         </div>
+        <form method="post" action="piatto/add">
+            <input type="hidden" th:value="${prodotto.getId()}" name="id">
+            <!-- bottoni + e - con javascript? -->
+            <!--button class="simpleButton">+</button-->
+            <input type="number" value="1" name="q">
+            <!--button class="simpleButton">-</button-->
+            <button type="submit" >Aggiungi al carrello</button>
+        </form>
     </content>
 
     <div th:replace="fragments/navbar :: navbar"></div>

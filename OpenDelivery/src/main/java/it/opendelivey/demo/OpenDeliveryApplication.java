@@ -6,17 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 @SpringBootApplication
 public class OpenDeliveryApplication implements CommandLineRunner {
-
-	//TODO: usare il create-drop per testare le query
-	//TODO: aggiungere il framework per gestire il database
 
 	public static void main(String[] args) {
 		SpringApplication.run(OpenDeliveryApplication.class, args);
@@ -50,10 +44,15 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		/*Optional<Ristorante> r = repoRistorante.findById(1);
+
+		IndirizzoRistorante i = IndirizzoRistorante.indirizzoRistoranteSample();
+		i.setRistorante(r.get());
+		repoIndirizzoRistoranteDao.save(i);
+
+		//repoUtenteDao.deleteAll();
+
 		/*Ristorante r = Ristorante.ristoranteSample();
-
-
-		repoRistorante.save(r);
 
 		Tipo buffet = new Tipo("buffet");
 		Tipo fastFood = new Tipo("fast food");
@@ -78,10 +77,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		repoTipoDao.save(tavolaCalda);
 		repoTipoDao.save(trattoria);
 		repoTipoDao.save(pizzeria);
-		r.addTipologia(
-				repoTipoDao.findByNome("pizzeria").get(0));
 
-
+		r.addTipologia(pizzeria);
 
 		Allergene glutine = new Allergene("glutine");
 		Allergene crostacei = new Allergene("crostacei");
@@ -154,12 +151,18 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 				})
 		};
 
-		for(Piatto p: piatti){
-			p.addRistorante(ristorante);
-			repoPiattoDao.save(p);
+		repoPiattoDao.saveAll(Arrays.asList(piatti));
+
+		Optional<Ristorante> r2 = repoRistorante.findById(1);
+
+		ArrayList<Piatto> piatti2 = repoPiattoDao.findAll();
+
+		for(Piatto p: piatti2){
+			r2.get().addProdotto(p);
 		}
 
-		*//*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
+		repoRistorante.save(r2.get());
+		/*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
 
 		Piatto[] piatti2 = {
 				new Piatto("tagliolini all'aragosta", "sdfiljkbdfijb", 10.0, new Allergene[]{
@@ -177,8 +180,6 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		}*/
 
 	}
-
-
 
 
 }

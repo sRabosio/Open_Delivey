@@ -28,13 +28,13 @@ public class Utente {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private Set<Ordine> ordini = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)   @JoinColumn
     private Set<Allergie> allergie = new HashSet<>();
 
-    @OneToMany(mappedBy = "utente",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "utente",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<IndirizzoUtente> indirizzi = new HashSet<>();
 
     private String imagePath;
@@ -80,7 +80,7 @@ public class Utente {
     //usando mail e password
     public static boolean validate(Utente utente, RepoUtente repoUtenteDao){
 
-        return utente != null &&
+         return utente != null &&
                 repoUtenteDao.existsByMailAndPassword(
                         utente.getMail(), utente.getPassword());
     }
@@ -175,5 +175,12 @@ public class Utente {
 
     public void addAllergie(Allergie allergia){
         allergie.add(allergia);
+    }
+
+    public Ordine getActiveCart(){
+        for(Ordine o: ordini)
+            if(!o.isBought()) return o;
+
+        return null;
     }
 }

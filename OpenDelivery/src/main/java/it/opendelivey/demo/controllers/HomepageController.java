@@ -103,4 +103,13 @@ public class HomepageController {
         return "redirect:/homepage";
     }
 
+    @GetMapping("/homepage/altriristoranti")
+    public String moreRestaurants(
+            Model model
+    ){
+        ArrayList<Ristorante> ristoranti = repoRistoranteDao.findAll();
+        model.addAttribute("ristoranti", ristoranti);
+        return "moreRestaurants";
+    }
+
 }

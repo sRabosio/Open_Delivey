@@ -28,7 +28,7 @@ public class Piatto {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "prodotto", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "prodotto")
     private Set<OrdineRecord> ordini = new HashSet<>();
 
     @ManyToMany(mappedBy = "prodotti")

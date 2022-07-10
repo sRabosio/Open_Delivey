@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 
 public interface RepoRecordOrdine extends CrudRepository<OrdineRecord, Integer> {
-    ArrayList<RepoRecordOrdine> findByOrdine(Ordine ordine);
-    ArrayList<RepoRecordOrdine> findByProdotto(Piatto prodotto);
+    ArrayList<OrdineRecord> findByOrdine(Ordine ordine);
+    ArrayList<OrdineRecord> findByProdotto(Piatto prodotto);
 }

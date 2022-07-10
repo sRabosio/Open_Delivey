@@ -30,7 +30,7 @@ public class Ordine {
 
 
 
-        @OneToMany(mappedBy = "ordine")
+        @OneToMany(mappedBy = "ordine", cascade = CascadeType.ALL)
         private Set<OrdineRecord> piatti = new HashSet<>();
 
         public Ordine() {
@@ -74,5 +74,13 @@ public class Ordine {
 
         public void setBought(boolean bought) {
                 isBought = bought;
+        }
+
+        public void addRecord(OrdineRecord record){
+                piatti.add(record);
+        }
+
+        public void removeRecordById(Integer id){
+                piatti.removeIf(p->p.getId().equals(id));
         }
 }

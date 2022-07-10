@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class="container">
-    <a th:text="${ristorante.getNome()}"></a>
+    <h1 th:text="${ristorante.getNome()}"></h1>
     <div class="fullcard">
         <img src="assets/images/pizzeria.jpg">
-        <a th:text="${ristorante.getIndirizzi()}"></a>
-        <a th:text="${ristorante.getNumero()}"></a>
+        <span th:text="${ristorante.getIndirizzo().getCitta()} + ' ' + ${ristorante.getIndirizzo().getCap()} + ', '+${ristorante.getIndirizzo.getIndirizzo()} + ' ' +${ristorante.getIndirizzo().getCivico}"></span>
+        <span th:text="${ristorante.getNumero()}"></span>
     </div>
     <content class="contentcontainer">
         <div class="nearyoucontainer" id="piattiConsigliati" >
@@ -22,12 +22,12 @@
                 <h5>Menù:</h5>
             </div>
             <div class="nearyoucontainer__cards">
-                <a class="fullcard" th:each="consigliato:${menu}" th:id="'piatto'+${consigliato.getId()}" th:href="@{plate(id=${piatto.getId()})}">
-                    <img src="assets/images/pizza brutta.jpg" alt="">
-                    <h5 class="fullcard__title" th:text="${piatto.getNome()}"></h5>
-                    <p class="fullcard__subtitle" th:text="${piatto.getDescrizione()}"></p>
-                    <span class="fullcard__price" th:text="${piatto.getPrezzo()}"><span class="currency">$</span></span>
-                </a>
+                <th:block th:each="prodotto:${menu}">
+                    <div th:replace="fragments/platecard :: platecard(
+                            id=${prodotto.getId()}, nome=${prodotto.getNome()}, descrizione=${prodotto.getDescrizione},
+                            prezzo=${prodotto.getPrezzo()}, immagine=${prodotto.getImagePath()}
+                        )"></div>
+                </th:block>
             </div>
         </div>
     </content>
