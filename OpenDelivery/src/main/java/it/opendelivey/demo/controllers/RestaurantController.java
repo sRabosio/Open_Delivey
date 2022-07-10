@@ -45,7 +45,7 @@ public class RestaurantController {
     ){
         Optional<Ristorante> ristorante = repoRistoranteDao.findById(id);
         if(ristorante.isEmpty()) return "redirect:/homepage";
-        Set<Piatto> menu = ristorante.get().getProdotti();
+        ArrayList<Piatto> menu = repoPiattoDao.findByRistoranti(ristorante.get());
 
         model.addAttribute("ristorante",ristorante.get());
         model.addAttribute("menu", menu);

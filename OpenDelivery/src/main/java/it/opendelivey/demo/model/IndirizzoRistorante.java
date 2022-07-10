@@ -9,21 +9,21 @@ public class IndirizzoRistorante {
 
     @NotNull
     @NotEmpty
-    private String indirizzo, civico, cap, città;
+    private String indirizzo, civico, cap, citta;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn
     public Ristorante ristorante;
 
-    public IndirizzoRistorante(String indirizzo, String civico, String cap, String città) {
+    public IndirizzoRistorante(String indirizzo, String civico, String cap, String citta) {
         this.indirizzo = indirizzo;
         this.civico = civico;
         this.cap = cap;
-        this.città = città;
+        this.citta = citta;
     }
 
     public Ristorante getRistorante() {
@@ -60,12 +60,12 @@ public class IndirizzoRistorante {
         this.cap = cap;
     }
 
-    public String getCittà() {
-        return città;
+    public String getCitta() {
+        return citta;
     }
 
-    public void setCittà(String città) {
-        this.città = città;
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 
     public Integer getId() {
