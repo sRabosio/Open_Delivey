@@ -1,5 +1,6 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoPiatto;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.model.Piatto;
 import it.opendelivey.demo.model.Ristorante;
@@ -16,6 +17,9 @@ public class RestaurantController {
 
     @Autowired
     RepoRistorante repoRistoranteDao;
+
+    @Autowired
+    RepoPiatto repoPiattoDao;
 
     @GetMapping("/ristorante")
     public String getRestaurant(
@@ -36,8 +40,6 @@ public class RestaurantController {
             @RequestParam("id") int id,
             Model model
     ){
-
-        model.addAttribute(Piatto.piattoSample());
 
         return "plate";
     }
