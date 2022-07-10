@@ -4,31 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: finished restaurant page">
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix: forgot to run gulp reverse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/OpenDeliveryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoIndirizzoUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoIndirizzoUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoRistorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoRistorante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/IndirizzoUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ordine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/OrdineRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/OrdineRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Ristorante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-body.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-body.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/platecard.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/platecard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/HomepageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/HomepageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/RestaurantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/model/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +412,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657485809829</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fix: cleaned backend final">
+      <created>1657493111435</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657493111435</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix: forgot to run gulp reverse">
+      <created>1657493468731</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657493468731</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,8 +457,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat login backend completed" />
-    <MESSAGE value="feat: added indirizzo to registrazione" />
     <MESSAGE value="feat: added empty cart message" />
     <MESSAGE value="fix: fixed empty cart checker issue" />
     <MESSAGE value="feat: added validation method to user to properly handle logins and such" />
@@ -476,7 +480,9 @@
     <MESSAGE value="fix: commented application stuff" />
     <MESSAGE value="feat: finished cart features" />
     <MESSAGE value="feat: finished restaurant page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: finished restaurant page" />
+    <MESSAGE value="fix: cleaned backend final" />
+    <MESSAGE value="fix: forgot to run gulp reverse" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: forgot to run gulp reverse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

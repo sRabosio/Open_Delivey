@@ -1,7 +1,7 @@
 <th:block th:fragment="platecard(id, nome, descrizione, prezzo, immagine)">
 
 <a class="fullcard" th:id="'consigliato'+${id}" th:href="@{piatto(id=${id})}">
-    <img th:unless="${immagine == null}" th:src="${immagine}" alt="">
+    <img src="assets/images/pizza brutta.jpg" alt="">
     <h5 class="fullcard__title" th:text="${nome}"></h5>
     <p class="fullcard__subtitle" th:text="${descrizione}"></p>
     <span class="fullcard__price" th:text="${prezzo}"><span class="currency">$</span></span>

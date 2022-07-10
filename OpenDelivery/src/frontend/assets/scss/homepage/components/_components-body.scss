@@ -2,4 +2,5 @@ body{
     overflow-y: scroll;
     display: grid;
     grid-template-rows: min-content auto;
+    background-color: $white;
 }

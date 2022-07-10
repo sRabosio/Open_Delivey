@@ -199,9 +199,17 @@ body::-webkit-scrollbar-thumb:hover {
   max-width: fit-content;
   max-height: fit-content;
   border: solid rgba(0, 0, 0, 0.0588235294) 0.5px;
+  text-decoration: none;
+  font-style: none;
+}
+.fullcard__title {
+  text-decoration: none;
+  font-style: none;
 }
 .fullcard__subtitle {
   color: #C4C4C4;
+  text-decoration: none;
+  font-style: none;
 }
 .fullcard__price {
   text-align: left;
