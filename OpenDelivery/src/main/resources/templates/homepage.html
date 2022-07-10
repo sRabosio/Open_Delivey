@@ -35,20 +35,24 @@
                 </div>
                 <div class="nearyoucontainer__cards">
                     <th:block th:each="ristorante:${ristoranti}">
-                        <div th:replace="fragments/restaurantcard :: restaurantCard(id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange()})"></div>
+                        <div th:replace="fragments/restaurantcard :: restaurantcard(
+                            id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange})"></div>
                     </th:block>
                 </div>
                 
                 
             </div>
+            <!-- sezione piatti -->
             <div class="nearyoucontainer" id="piattiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>Altro per te:</h5>
                 </div>
                 <div class="nearyoucontainer__cards">
                     <th:block th:each="consigliato:${consigliati}">
-                        <div th:replace="fragments/platecard :: plateCard(id=${consigliato.getId()}, nome=${consigliato.getNome()},
-                        descrizione=${consigliato.getDescrizione()}, prezzo=${consigliato.getPrezzo()})"></div>
+                        <div th:replace="fragments/platecard :: platecard(
+                            id=${consigliato.getId()}, nome=${consigliato.getNome()}, descrizione=${consigliato.getDescrizione},
+                            prezzo=${consigliato.getPrezzo()}, immagine=${consigliato.getImagePath()}
+                        )"></div>
                     </th:block>
                 </div>
             </div>
