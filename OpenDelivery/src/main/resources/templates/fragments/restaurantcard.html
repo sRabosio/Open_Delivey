@@ -1,0 +1,13 @@
+<th:block th:fragment="restaurantcard(id, nome, priceRange)">
+<a class="fullcard" th:id="'ristorante'+${id}" th:href="@{restaurant(id=${id})}">
+    <img src="assets/images/pizza brutta.jpg" alt="">
+    <h5 class="fullcard__title" th:text="${nome}"></h5>
+
+    <th:block th:unless="${priceRange == null}" th:switch="${priceRange}">
+        <span th:case="'low'" class="currency">$</span>
+        <span th:case="'medium'" class="currency">$</span>
+        <span th:case="'high'" class="currency">$</span>
+    </th:block>
+
+</a>
+</th:block>

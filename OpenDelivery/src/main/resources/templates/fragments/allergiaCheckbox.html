@@ -1,0 +1,4 @@
+<th:block th:fragment="allergiaCheckbox(nome, id)">
+    <label th:for="'allergia'+${id}" th:text="${nome}"></label>
+    <input type="checkbox" th:value="${id}" name="allergieId">
+</th:block>
