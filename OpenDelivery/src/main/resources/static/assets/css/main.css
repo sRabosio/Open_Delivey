@@ -31,7 +31,6 @@ body {
   grid-template-columns: 10% auto 10%;
   grid-template-rows: auto;
   min-height: 100vh;
-  overflow: hidden;
   font-family: "Urbanist";
   /* width */
   /* Track */

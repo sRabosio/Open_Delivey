@@ -1,0 +1,177 @@
+html {
+  color: #333333;
+  font-size: 15px;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+html h1 {
+  font-size: 3.5rem;
+}
+html h2 {
+  font-size: 3rem;
+}
+html h3 {
+  font-size: 2.5rem;
+}
+html h4 {
+  font-size: 2rem;
+}
+html h5 {
+  font-size: 1.5rem;
+}
+
+.container {
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.7);
+  height: 65%;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+.checkbox {
+  margin-top: 12px;
+  display: inline;
+}
+.checkbox .plus-minus {
+  --primary: #BF0DCE;
+  --secondary: #FAFBFF;
+  --duration: .5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 240px;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  border: 2px solid var(--primary);
+  background-size: 300% 300%;
+  transition: transform 0.3s;
+  transform: scale(var(--scale, 1)) translateZ(0);
+  animation: var(--name, unchecked) var(--duration) ease forwards;
+}
+.checkbox .plus-minus:before, .checkbox .plus-minus:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: var(--height, 16px);
+  left: 6px;
+  top: var(--top, 6px);
+  background: var(--background, var(--primary));
+  animation: var(--name-icon-b, var(--name-icon, unchecked-icon)) var(--duration) ease forwards;
+}
+.checkbox .plus-minus:before {
+  clip-path: polygon(0 6px, 6px 6px, 6px 0, 10px 0, 10px 6px, 16px 6px, 16px 10px, 10px 10px, 10px 16px, 6px 16px, 6px 10px, 0 10px);
+}
+.checkbox .plus-minus:after {
+  --height: 4px;
+  --top: 12px;
+  --background: var(--secondary);
+  --name-icon-b: var(--name-icon-a, checked-icon);
+}
+.checkbox .plus-minus:active {
+  --scale: .95;
+}
+.checkbox .plus-minus:checked {
+  --name: checked;
+  --name-icon-b: checked-icon;
+  --name-icon-a: unchecked-icon;
+}
+@keyframes checked-icon {
+  from {
+    transform: translateZ(12px);
+  }
+  to {
+    transform: translateX(16px) rotateY(90deg) translateZ(12px);
+  }
+}
+@keyframes unchecked-icon {
+  from {
+    transform: translateX(-16px) rotateY(-90deg) translateZ(12px);
+  }
+  to {
+    transform: translateZ(12px);
+  }
+}
+@keyframes checked {
+  from {
+    background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+    background-position: 100% 50%;
+  }
+  to {
+    background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+    background-position: 50% 50%;
+  }
+}
+@keyframes unchecked {
+  from {
+    background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+    background-position: 100% 50%;
+  }
+  to {
+    background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+    background-position: 50% 50%;
+  }
+}
+.checkbox html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.checkbox * {
+  box-sizing: inherit;
+}
+.checkbox *:before, .checkbox *:after {
+  box-sizing: inherit;
+}
+.checkbox body {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Roboto", Arial;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #FAFBFF;
+}
+.checkbox body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+.checkbox body .dribbble img {
+  display: block;
+  height: 28px;
+}
+
+.notform {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: #EEE;
+  font-family: "Urbanist";
+  text-align: center;
+}
+.notform .simpleButton {
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+}
