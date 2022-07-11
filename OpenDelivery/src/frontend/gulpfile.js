@@ -18,6 +18,9 @@ const sassList = [
     "./assets/scss/login/*.scss", "./assets/scss/login/**/*.scss",
     //allergie registrazione
     "./assets/scss/allergie-iscrizione/*.scss", "./assets/scss/allergie-iscrizione/**/*.scss",
+    //piatto
+    "./assets/scss/piatto/*.scss", "./assets/scss/piatto/**/*.scss",
+
 ];
 
 const javaDir = "../main/resources/";
@@ -27,6 +30,15 @@ const javaDir = "../main/resources/";
 function commonStyle() {
     //file da convertire
     return gulp.src("./assets/scss/common/main.scss")
+
+    .pipe(sass())
+
+    .pipe(gulp.dest("./assets/css"))
+}
+
+function piattoStyle() {
+    //file da convertire
+    return gulp.src("./assets/scss/piatto/piatto.scss")
 
     .pipe(sass())
 
@@ -100,6 +112,7 @@ function processStyle() {
     moreRestaurantsStyle();
     loginstyle();
     alliscrizione();
+    piattoStyle();
 
     return gulp.src("./assets/css/*.css")
         .pipe(gulp.dest(javaDir + "/static/assets/css"));

@@ -6,13 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix: category filter issue fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/plate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/restaurant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/registrazione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/registrazione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/plate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/restaurant.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
