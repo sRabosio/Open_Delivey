@@ -1,6 +1,6 @@
 <th:block th:fragment="restaurantcard(id, nome, priceRange)">
 <a class="fullcard" th:id="'ristorante'+${id}" th:href="@{/ristorante(id=${id})}">
-    <img src="assets/images/pizza brutta.jpg" alt="">
+    <img src="/assets/images/pizza brutta.jpg" alt="">
     <h5 class="fullcard__title" th:text="${nome}"></h5>
 
     <th:block th:unless="${priceRange == null}" th:switch="${priceRange}">

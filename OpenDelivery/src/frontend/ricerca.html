@@ -30,10 +30,10 @@
                             id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange})"></div>
     </th:block>
 
-    <th:block th:each="consigliato:${consigliati}">
+    <th:block th:each="prodotto:${prodotti}">
         <div th:replace="fragments/platecard :: platecard(
-                            id=${consigliato.getId()}, nome=${consigliato.getNome()}, descrizione=${consigliato.getDescrizione},
-                            prezzo=${consigliato.getPrezzo()}, immagine=${consigliato.getImagePath()}
+                            id=${prodotto.getId()}, nome=${prodotto.getNome()}, descrizione=${prodotto.getDescrizione},
+                            prezzo=${prodotto.getPrezzo()}, immagine=${prodotto.getImagePath()}
                         )"></div>
     </th:block>
     </content>

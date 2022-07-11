@@ -40,8 +40,10 @@ public class IndexController {
     public String Registrazione(
             RegistrationForm form,
             IndirizzoUtente indirizzo,
-            HttpSession session
+            HttpSession session,
+            BindingResult bindingResult
     ) {
+        if(bindingResult.hasErrors()) return "redirect:/registrazione";
 
         //TODO: email confirmation
         //TODO: piantare i dati nel DB
@@ -127,6 +129,7 @@ public class IndexController {
             HttpSession session
 
     ){
+
         //controllo se i dati sono corretti
         Utente dbutente;
         if((dbutente = repoUtente.findByMailAndPassword(mail, password)) == null) return "login";
