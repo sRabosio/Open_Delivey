@@ -2,11 +2,56 @@
     display: flex;
     flex-direction: row;
     //gap: $containergap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 3rem;
 
-    #user{
+    #profile{
         fill: purple;
         stroke: purple;
+        transition: 0.3s;
+
+        &:hover{
+            transition: 0.3s;
+            transform: translate(0, 5px);
+        }
+    }
+
+    #homepage{
+        fill: purple;
+        stroke: purple;
+        transition: 0.3s;
+
+        &:hover{
+            transition: 0.3s;
+            transform: translate(5px, 0);
+        }
+    }
+
+    #search{
+        fill: purple;
+        stroke: purple;
+        transition: 0.3s;
+
+        &:hover{
+            transition: 0.3s;
+            transform: translate(0, -5px);
+        }
+    }
+
+    #cart{
+        fill: purple;
+        stroke: purple;
+        transition: 0.3s;
+
+        &:hover{
+            transition: 0.3s;
+            transform: translate(-5px, 0);
+        }
+    }
+
+    .icon{
+        filter:drop-shadow(0 0.50rem 0.2rem $dark_grey);
     }
 
 }

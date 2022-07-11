@@ -221,11 +221,48 @@ body::-webkit-scrollbar-thumb:hover {
 .uicontainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 3rem;
 }
-.uicontainer #user {
+.uicontainer #profile {
   fill: purple;
   stroke: purple;
+  transition: 0.3s;
+}
+.uicontainer #profile:hover {
+  transition: 0.3s;
+  transform: translate(0, 5px);
+}
+.uicontainer #homepage {
+  fill: purple;
+  stroke: purple;
+  transition: 0.3s;
+}
+.uicontainer #homepage:hover {
+  transition: 0.3s;
+  transform: translate(5px, 0);
+}
+.uicontainer #search {
+  fill: purple;
+  stroke: purple;
+  transition: 0.3s;
+}
+.uicontainer #search:hover {
+  transition: 0.3s;
+  transform: translate(0, -5px);
+}
+.uicontainer #cart {
+  fill: purple;
+  stroke: purple;
+  transition: 0.3s;
+}
+.uicontainer #cart:hover {
+  transition: 0.3s;
+  transform: translate(-5px, 0);
+}
+.uicontainer .icon {
+  filter: drop-shadow(0 0.5rem 0.2rem #C4C4C4);
 }
 
 .currency {
