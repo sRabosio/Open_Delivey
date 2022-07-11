@@ -11,6 +11,12 @@
 </head>
 <body>
     <div class="container">
+        <div class="topui">
+            <a href="/homepage" class="topui__back" >
+                <img src="assets/icons/std-arrow-purple.svg" alt="torna indietro">
+            </a>
+            <h4>PROFILO</h4>
+        </div>
         <content class="profile">
             <div class="proile__top">
 
@@ -24,7 +30,7 @@
                         <td th:text="${utente.getMail()}"></td>
                     </tr>
                     <tr th:unless="${#lists.isEmpty(indirizzi)}" th:each="indirizzo:${indirizzi}">
-                        <td th:text="${indirizzo.getIndirizzo()} + ${indirizzo.getCivico()} + ${indirizzo.getCap()} + ${indirizzo.getCitta()}" ></td>
+                        <td th:text="${indirizzo.getIndirizzo()} +' '+ ${indirizzo.getCivico()} +' '+ ${indirizzo.getCap()} +' '+ ${indirizzo.getCitta()}" ></td>
                     </tr>
                     <tr>
                         <td><a th:text="'vedi allergie'" href="profile/allergie"></a></td>
