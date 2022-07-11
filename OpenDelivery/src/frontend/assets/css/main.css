@@ -32,6 +32,7 @@ body {
   grid-template-rows: auto;
   min-height: 100vh;
   font-family: "Urbanist";
+  background-color: rgb(245, 245, 245);
   /* width */
   /* Track */
   /* Handle */
@@ -57,7 +58,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding-left: 3rem;
   padding-right: 3rem;
   background-color: #BF0DCE;
-  color: #EEE;
+  color: rgb(245, 245, 245);
   border-radius: 10px;
   border: none;
   transition: 0.2s ease-out;
@@ -128,7 +129,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .textbox {
   background-color: #BF0DCE;
-  color: #EEE;
+  color: rgb(245, 245, 245);
   border: none;
   padding: 0.7rem;
   border-radius: 10px;
@@ -293,7 +294,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .logo__name {
   align-self: center;
-  color: #EEE;
+  color: rgb(245, 245, 245);
 }
 
 .simpleForm a {
@@ -315,13 +316,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .titlecontainer p {
-  color: #EEE;
+  color: rgb(245, 245, 245);
   font-weight: bold;
   padding: 0;
   margin: 10px;
 }
 .titlecontainer h1 {
-  color: #EEE;
+  color: rgb(245, 245, 245);
   padding: 0;
   margin: 10px;
 }

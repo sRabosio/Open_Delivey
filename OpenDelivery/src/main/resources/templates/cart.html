@@ -20,45 +20,53 @@
         </div>
         <content class="cart">
             <form class="cart__card" th:unless="${cartEmpty}" th:each="record:${carrello}" method="POST" action="/cart/delete">
+                <img src="">
+                <div class="cart__card__descrizione">
                     <span th:text="${record.getProdotto().getNome()}"></span>
                     <span th:text="${record.getProdotto().getDescrizione()}"></span>
                     <span th:text="${record.getProdotto().getPrezzo()}"></span>
-                    <input type="hidden" th:value="${record.getId()}" name="recordId">
-                    <button class="icon" formaction="/cart/remove">-</button>
-                    <span th:text="${record.getAmount()}"></span>
-                    <button class="icon" formaction="/cart/add">+</button>
-                    <button class="icon">X</button>
-            </form>
-            <div th:if="${cartEmpty && (pagato == null || !pagato)}" class="fragmentcontainer">
-                <div th:replace="fragments/emptyCart :: emptyCart"></div>
-            </div>
-            <div th:if="${pagato == true}" class="fragmentcontainer">
-                <div th:replace="fragments/pagato :: pagato"></div>
-            </div>
-        </content>
+                </div>
+                <div class="cart__card__ui">
+                    <button class="icon cart__card__ui__delete">X</button>
 
-        <div class="buy" th:unless="${cartEmpty}"> <!--method="post" action="/cart"-->
-            <label for="indirizzo"> Indirizzo di spedizione </label>
-            <select id="indirizzo" name="indirizzo" size="1">
-                <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
-                <option>
-                    <button action="">aggiungi indirizzo...</button>
-                </option>
-            </select>
-            <form method="POST" action="/cart/newAddress" >
-                <input class="" type="text" placeholder="indirizzo" name="indirizzo" required>
-                <input class="simpleForm__addresscontainer__number" type="text" placeholder="N° civico" name="civico" required>
-                <input class="" type="text" placeholder="CAP" name="cap" required>
-                <input class="" type="text" placeholder="città" name="citta" required>
-                <button type="submit">aggiungi</button>
+                    <div class="cart__card__ui__amount">
+                        <button class="icon" formaction="/cart/remove">-</button>
+                        <span th:text="${record.getAmount()}"></span>
+                        <button class="icon" formaction="/cart/add">+</button> 
+                    </div>                                       
+                </div>
+                    <input type="hidden" th:value="${record.getId()}" name="recordId">               
+                    
             </form>
-                <div class="buy__description">
-            </div>
-            <span class="buy__price"></span>
-            <form>
-                <button class="simpleButton" formmethod="post" formaction="/cart/buy"> PAY </button>
-            </form>
+            <th:block th:if="${cartEmpty && (pagato == null || !pagato)}">
+                <div th:replace="fragments/emptyCart :: emptyCart"></div>
+            </th:block>
+            <th:block th:if="${pagato == true}">
+                <div th:replace="fragments/pagato :: pagato"></div>
+            </th:block>
+        </content>        
+    </div>
+    <div class="buy" th:unless="${cartEmpty}"> <!--method="post" action="/cart"-->
+        <label for="indirizzo"> Indirizzo di spedizione </label>
+        <select id="indirizzo" name="indirizzo" size="1">
+            <option th:each="indirizzo:${indirizziUtente}" th:text="${indirizzo.getIndirizzo()}+' '+${indirizzo.getCivico()}"></option>
+            <option>
+                <button action="">aggiungi indirizzo...</button>
+            </option>
+        </select>
+        <form method="POST" action="/cart/newAddress" class="buy__addressform">
+            <input class="" type="text" placeholder="indirizzo" name="indirizzo" required>
+            <input class="simpleForm__addresscontainer__number" type="text" placeholder="N° civico" name="civico" required>
+            <input class="" type="text" placeholder="CAP" name="cap" required>
+            <input class="" type="text" placeholder="città" name="citta" required>
+            <button type="submit">aggiungi</button>
+        </form>
+            <div class="buy__description">
         </div>
+        <span class="buy__price"></span>
+        <form>
+            <button class="simpleButton" formmethod="post" formaction="/cart/buy"> PAY </button>
+        </form>
     </div>
 </body>
 </html>

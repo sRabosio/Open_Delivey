@@ -166,7 +166,7 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  color: #EEE;
+  color: rgb(240, 240, 240);
   font-family: "Urbanist";
   text-align: center;
 }

@@ -1,0 +1,10 @@
+.cart{
+    &__card{
+        img{
+            grid-row: 1;
+            max-width: 4rem;
+            max-height: 4rem;
+            position: relative;
+        }
+    }
+}

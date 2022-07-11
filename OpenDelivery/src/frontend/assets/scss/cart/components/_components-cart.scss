@@ -1,0 +1,58 @@
+.cart{
+    grid-row: 1;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+
+    &__card{
+        min-width: 80%;
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        border: solid transparentize($black, 0.3) 1px;
+        background-color: $white;
+        border-radius: $std_border_radius;
+        max-height: 8rem;
+
+
+        &__desc{
+            grid-row: 2;
+            display: flex;
+            direction: column;
+            gap: 0.3rem;
+            min-width: fit-content;
+        }
+
+        &__ui{
+            grid-column: 3;
+            position: relative;
+            display: flex;
+            min-width: fit-content;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            margin-right: 1rem;
+
+            &__delete{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            &__amount{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+        }
+    }
+}
