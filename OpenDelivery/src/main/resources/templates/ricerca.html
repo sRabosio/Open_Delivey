@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
     <link rel="stylesheet" th:href="@{/assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/ricerca.css}">
     <title>Ricerca</title>
 </head>
 
@@ -23,7 +24,6 @@
             <input type="text" name="q" id="q">
             <input type="submit" value="cerca">
         </form>
-    </div>
     <content class="results">
     <th:block th:each="ristorante:${ristoranti}">
         <div th:replace="fragments/restaurantcard :: restaurantcard(
@@ -37,6 +37,7 @@
                         )"></div>
     </th:block>
     </content>
+    </div>
 </body>
 
 </html>
