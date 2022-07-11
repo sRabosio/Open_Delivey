@@ -3,14 +3,15 @@
     min-width: 100%;
     min-height: 100%;
     display: flex;
-    direction: column;
+    flex-direction: column;
     gap: 1.5rem;
     overflow: hidden;
     overflow-y: scroll;
-    justify-content: center;
+    place-items: center;
 
     &__card{
-        min-width: 80%;
+        min-width: 50%;
+        max-width: fit-content;
         overflow: hidden;
 
         display: grid;
@@ -22,11 +23,25 @@
         max-height: 8rem;
 
         &__desc{
-            grid-row: 2;
+            grid-column: 2;
             display: flex;
-            direction: column;
-            gap: 0.3rem;
+            flex-direction: column;
+            gap: 1rem;
             min-width: fit-content;
+            text-align: center;
+
+            &__name{
+                font-weight: bold;                
+            }
+
+            &__d{
+                color: $normal_grey;
+            }
+
+            &__price{
+                color: $purple;
+                float: bottom;
+            }
         }
 
         &__ui{

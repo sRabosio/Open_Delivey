@@ -19,12 +19,12 @@
             <h4>CARRELLO</h4>
         </div>
         <content class="cart">
-            <form class="cart__card" th:unless="${cartEmpty}" th:each="record:${carrello}" method="POST" action="/cart/delete">
+            <form class="cart__card" th:unless="${cartEmpty}" th:each="record:${carrello}" method="POST" >
                 <img src="">
-                <div class="cart__card__descrizione">
-                    <span th:text="${record.getProdotto().getNome()}"></span>
-                    <span th:text="${record.getProdotto().getDescrizione()}"></span>
-                    <span th:text="${record.getProdotto().getPrezzo()}"></span>
+                <div class="cart__card__desc">
+                    <span th:text="${record.getProdotto().getNome()}" class="cart__card__desc__name"></span>
+                    <span th:text="${record.getProdotto().getDescrizione()}" class="cart__card__desc__d"></span>
+                    <span th:text="'$'+${record.getProdotto().getPrezzo()}" class="cart__card__desc__price"></span>
                 </div>
                 <div class="cart__card__ui">
                     <button class="icon cart__card__ui__delete">X</button>

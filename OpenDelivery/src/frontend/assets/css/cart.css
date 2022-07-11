@@ -36,14 +36,15 @@ html h5 {
   min-width: 100%;
   min-height: 100%;
   display: flex;
-  direction: column;
+  flex-direction: column;
   gap: 1.5rem;
   overflow: hidden;
   overflow-y: scroll;
-  justify-content: center;
+  place-items: center;
 }
 .cart__card {
-  min-width: 80%;
+  min-width: 50%;
+  max-width: fit-content;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -53,11 +54,22 @@ html h5 {
   max-height: 8rem;
 }
 .cart__card__desc {
-  grid-row: 2;
+  grid-column: 2;
   display: flex;
-  direction: column;
-  gap: 0.3rem;
+  flex-direction: column;
+  gap: 1rem;
   min-width: fit-content;
+  text-align: center;
+}
+.cart__card__desc__name {
+  font-weight: bold;
+}
+.cart__card__desc__d {
+  color: #E5E5E5;
+}
+.cart__card__desc__price {
+  color: #BF0DCE;
+  float: bottom;
 }
 .cart__card__ui {
   grid-column: 3;
@@ -119,6 +131,7 @@ html h5 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  place-items: center;
 }
 .buy__addressform {
   display: flex;
@@ -131,4 +144,11 @@ html h5 {
   max-width: 4rem;
   max-height: 4rem;
   position: relative;
+  place-self: center;
+}
+
+.buy button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition-duration: 0.2s;
 }
