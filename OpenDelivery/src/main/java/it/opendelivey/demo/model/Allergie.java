@@ -1,7 +1,7 @@
 package it.opendelivey.demo.model;
 
 
-import org.hibernate.annotations.Fetch;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -19,7 +19,7 @@ public class Allergie {
     @Size(min = 3, max = 30)
     private String nome;
 
-    @ManyToMany(mappedBy = "allergie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "allergie", cascade = CascadeType.ALL)
     private Set<Utente> utenti = new HashSet<>();
 
     public Allergie() {

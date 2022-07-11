@@ -18,46 +18,46 @@
     </div>
     <div class="container">
             <div class="categoriescontainer" th:unless="${#lists.isEmpty(categorie)}">
-            <h5 class="categoriescontainer__title">Categorie</h5>
+            <div class="categoriescontainer__title"><h5>Categorie</h5></div>
                 <form th:each="categoria:${categorie}" method="get" action="/homepage/addFilter">
                     <button class="categoriescontainer__category" th:classappend="${filtri.contains(categoria.getId()) ? 'categoriescontainer__category-active':''}">
                         <input type="hidden" th:value="${categoria.getId()}" name="idCategoria">
                         <b th:text="${categoria.getNome()}"></b>
                     </button>
                 </form>
-            </div>
-    </div>
+            </div>    
         <content class="contentcontainer">
             <div class="nearyoucontainer" id="ristorantiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
-                    <h5>I ristoranti più vicini a te:</h5>
-                    <p class="nearyoucontainer__titlecontainer__more">Vedi altro ></p>
+                    <h5> ristoranti più vicini a te:</h5>
+                    <a href="/homepage/altriristoranti" class="nearyoucontainer__titlecontainer__more"><b>Vedi altro ></b></a>
                 </div>
                 <div class="nearyoucontainer__cards">
-                    <a class="fullcard" th:each="ristorante:${ristoranti}" th:id="'ristorante'+${ristorante.getId()}" th:href="@{restaurant(id=${ristorante.getId()})}">
-                        <img src="assets/images/pizza brutta.jpg" alt="">
-                        <h5 class="fullcard__title" th:text="${ristorante.getNome()}"></h5>
-                        <!--span class="fullcard__price" th:text="${ristorante.getPrezzo()}"><span class="currency">$</span></span-->
-                    </a>
+                    <th:block th:each="ristorante:${ristoranti}">
+                        <div th:replace="fragments/restaurantcard :: restaurantcard(
+                            id=${ristorante.getId()}, nome=${ristorante.getNome()}, priceRange=${ristorante.getPriceRange})"></div>
+                    </th:block>
                 </div>
                 
                 
             </div>
+            <!-- sezione piatti -->
             <div class="nearyoucontainer" id="piattiConsigliati" >
                 <div class="nearyoucontainer__titlecontainer">
                     <h5>Altro per te:</h5>
                 </div>
                 <div class="nearyoucontainer__cards">
-                   <a class="fullcard" th:each="consigliato:${consigliati}" th:id="'consigliato'+${consigliato.getId()}" th:href="@{plate(id=${consigliato.getId()})}">
-                        <img src="assets/images/pizza brutta.jpg" alt="">
-                        <h5 class="fullcard__title" th:text="${consigliato.getNome()}"></h5>
-                        <p class="fullcard__subtitle" th:text="${consigliato.getDescrizione()}"></p>
-                        <span class="fullcard__price" th:text="${consigliato.getPrezzo()}"><span class="currency">$</span></span>
-                    </a>
+                    <th:block th:each="consigliato:${consigliati}">
+                        <div th:replace="fragments/platecard :: platecard(
+                            id=${consigliato.getId()}, nome=${consigliato.getNome()}, descrizione=${consigliato.getDescrizione},
+                            prezzo=${consigliato.getPrezzo()}, immagine=${consigliato.getImagePath()}
+                        )"></div>
+                    </th:block>
                 </div>
             </div>
         </content>
         <div th:replace="fragments/navbar :: navbar"></div>
     </div>
+</div>
 </body>
 </html>

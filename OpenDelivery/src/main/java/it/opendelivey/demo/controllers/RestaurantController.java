@@ -2,23 +2,15 @@ package it.opendelivey.demo.controllers;
 
 import it.opendelivey.demo.Repo.*;
 import it.opendelivey.demo.model.*;
-import org.aspectj.weaver.ast.Or;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Set;
 
 @Controller
 public class RestaurantController {
@@ -70,13 +62,14 @@ public class RestaurantController {
     @PostMapping("/piatto/add")
     public String addPiatto(
             @RequestParam("id") Integer id,
-            @RequestParam("q") int quantità,
+            @RequestParam("q") int quantita,
             HttpSession session
     ){
-        if(quantità < 1) return "redirect:/piatto";
+        if(quantita < 1) return "redirect:/piatto";
+
+        Ordine carrello = null;
 
         //prendo utente
-        ArrayList<Tipo> filter = (ArrayList<Tipo>) session.getAttribute("filter");
         Utente utente = (Utente)session.getAttribute("loggedUser");
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
@@ -85,16 +78,15 @@ public class RestaurantController {
         if(prodotto.isEmpty()) return "redirect:/homepage";
 
         //prendo tra gli ordini l'unico non acquistato
-        Ordine carrello = null;
         ArrayList<Ordine> ordini = repoOrdineDao.findByUtenteAndIsBought(utente, false);
-
-        carrello = ordini.get(0);
-
-        //se l'utente non ha ordini o ha solo ordini che ha già acquistato ne creo uno nuovo
-        if(carrello == null) {
+        if((!ordini.isEmpty()))
+            carrello = ordini.get(0);
+        else{
             carrello = new Ordine();
             carrello.setUtente(utente);
+            repoOrdineDao.save(carrello);
         }
+
 
         //prendo i piatti perché se non lo sveglio lui mi odia
         ArrayList<OrdineRecord> piatti = repoOrdineRecordDao.findByOrdine(carrello);
@@ -105,7 +97,7 @@ public class RestaurantController {
         }
         //svolgo le varie operazioni necessarie a carrello
         OrdineRecord record = new OrdineRecord(
-                carrello, prodotto.get(), quantità
+                carrello, prodotto.get(), quantita
         );
 
         //salvo tutto al db

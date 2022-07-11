@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -147,7 +148,8 @@ public class CartController {
             if(temp.equals(indirizzo)) return "redirect:/cart";
         }
 
-        utente.addIndirizzo(indirizzo);
+        indirizziUtente.add(indirizzo);
+        utente.setIndirizzi(new HashSet<>(indirizziUtente));
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", utente);
         return "redirect:/cart";

@@ -1,7 +1,5 @@
 package it.opendelivey.demo.model;
 
-import org.aspectj.weaver.ast.Or;
-
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

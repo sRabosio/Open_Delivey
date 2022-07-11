@@ -68,7 +68,7 @@ html h5 {
   flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
-  min-height: max-content;
+  max-height: min-content;
   position: relative;
   align-items: center;
   place-items: center;
@@ -82,11 +82,12 @@ html h5 {
   display: none;
 }
 .categoriescontainer__title {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   margin: 0;
   padding: 0;
+  margin-bottom: 5rem;
 }
 .categoriescontainer__category {
   padding: 0.7rem;
@@ -96,9 +97,15 @@ html h5 {
   margin: 0;
   border-radius: 11px;
   color: #333333;
+  max-height: min-content;
+  min-width: max-content;
   border: none;
 }
 .categoriescontainer__category-active {
+  background-color: #BF0DCE;
+}
+.categoriescontainer__category:hover {
+  cursor: pointer;
   background-color: #BF0DCE;
 }
 
@@ -151,13 +158,23 @@ body {
   overflow-y: scroll;
   display: grid;
   grid-template-rows: min-content auto;
+  background-color: #EEE;
 }
 
 .fullcard {
-  max-height: 10rem;
-  max-width: 10rem;
-  height: 10rem;
-  width: 8rem;
+  height: 15rem;
+  width: 15rem;
+  min-width: fit-content;
+  max-height: 15rem;
+  margin-bottom: 1rem;
+  color: #333333;
+  filter: drop-shadow(0.8rem 0.8rem 0.2rem #C4C4C4);
+  transition-duration: 0.3s;
+  margin-top: 2rem;
+}
+.fullcard:hover {
+  transform: translate(0, -1rem);
+  transition-duration: 0.3s;
 }
 
 .carouselcontainer__allergies p {

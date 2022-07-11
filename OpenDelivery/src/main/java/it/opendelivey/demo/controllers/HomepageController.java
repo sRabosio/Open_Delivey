@@ -1,5 +1,6 @@
 package it.opendelivey.demo.controllers;
 
+import it.opendelivey.demo.Repo.RepoAllergie;
 import it.opendelivey.demo.Repo.RepoRistorante;
 import it.opendelivey.demo.Repo.RepoTipo;
 import it.opendelivey.demo.model.*;
@@ -24,6 +25,9 @@ public class HomepageController {
     @Autowired
     private RepoTipo repoTipoDao;
 
+    @Autowired
+    private RepoAllergie repoAllergieDao;
+
 
     @RequestMapping("/homepage")
     public String getHomepage(
@@ -33,6 +37,7 @@ public class HomepageController {
         //TODO: algoritmo per scegliere il piatto da visualizzare (da fare nell'apposita classe, ovvero: non qua)
 
         ArrayList<Tipo> filter = (ArrayList<Tipo>) session.getAttribute("filter");
+
         Utente utente = (Utente)session.getAttribute("loggedUser");
         if(utente == null) return "login";
         //uso filter ids per thymeleaf, sempre per il casino degli equals
@@ -52,7 +57,7 @@ public class HomepageController {
         //L'equals sull'oggetto tipo non funziona
         //dio solo sa il motivo
         //la soluzione fa schifo, ma funziona (miracolo)
-        if(filter != null)
+        if(filter!=null)
             for(Tipo i: filter) {
                 ristoranti.removeIf(r -> !(r.hasTipo(i)));
                 filtersId.add(i.getId());
@@ -67,8 +72,10 @@ public class HomepageController {
             consigliati.addAll(piattoList);
         }
 
-        if(utente.getAllergie() != null)
-            for(Allergie a:utente.getAllergie())
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
+
+        if(allergieUtente != null)
+            for(Allergie a:allergieUtente)
                 consigliati.removeIf(c->c.hasAllergia(a));
 
         model.addAttribute("utente", utente);
@@ -86,16 +93,15 @@ public class HomepageController {
             @RequestParam("idCategoria") Integer idCat
     ){
         ArrayList<Tipo> filter = (ArrayList<Tipo>) session.getAttribute("filter");
-        if(filter == null)
-           filter = new ArrayList<>();
 
         Optional<Tipo> tipo = repoTipoDao.findById(idCat);
 
-        if(tipo.isPresent() &&
-                !(filter.removeIf(
-                        t->t.getId().equals(tipo.get().getId())
-                        )))
-            filter.add(tipo.get());
+        if(filter == null) filter = new ArrayList<>();
+
+        //rimuovo il filtro se era presente e lo aggiungo in caso contrario
+            if(tipo.isPresent() && !(filter.removeIf(
+                    t->t.getId().equals(tipo.get().getId()))))
+                filter.add(tipo.get());
 
 
         session.setAttribute("filter", filter);

@@ -19,11 +19,11 @@ public class Ristorante {
     private String nome;
     @NotNull
     private String numero;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany()
     @JoinColumn
     private Set<Piatto> prodotti = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER) @JoinColumn
+    @ManyToMany() @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
     @OneToOne(mappedBy = "ristorante", cascade = CascadeType.ALL)
@@ -130,7 +130,7 @@ public class Ristorante {
         for(Piatto p:prodotti)
             avg += p.getPrezzo();
 
-        avg /= (double) prodotti.size();
+        avg /= prodotti.size();
 
         if(avg <= 10) return "low";
         if(avg <= 20) return "medium";

@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.Registration;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -62,8 +60,11 @@ public class IndexController {
         if(repoUtente.findByMail(form.getMail()) != null)
             return "registrazione";
 
-        repoUtente.save(u);
+
         indirizzo.setUtente(u);
+        //u.addIndirizzo(indirizzo);
+        //repoIndirizzoUtenteDao.save(indirizzo);
+        repoUtente.save(u);
         repoIndirizzoUtenteDao.save(indirizzo);
         session.setAttribute("registrazione", form);
         session.setAttribute("loggedUser",u);

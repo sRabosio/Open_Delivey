@@ -8,13 +8,18 @@
     max-width: fit-content;
     max-height: fit-content;
     border: solid #0000000F 0.5px;
+    text-decoration: none;
+    font-style: none;
 
     &__title{
-        
+        text-decoration: none;
+    font-style: none;
     }
 
     &__subtitle{
         color: $dark_grey;
+        text-decoration: none;
+        font-style: none;
     }
 
     &__price{

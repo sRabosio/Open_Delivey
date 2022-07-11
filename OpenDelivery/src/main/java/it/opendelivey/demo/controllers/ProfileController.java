@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -110,7 +109,7 @@ public class ProfileController {
     ){
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
-        Set<Allergie> allergieUtente = utente.getAllergie();
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
         ArrayList<Allergie> allAllergie = repoAllergieDao.findAll();
 
         for(Allergie allergia: allergieUtente){
@@ -136,7 +135,10 @@ public class ProfileController {
         if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
 
         //essendo un set posso aggiungere tutto e filtrerà da solo i dati che sono già all'interno della lista
-        utente.addAllAllergie(allergie);
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
+        allergieUtente.addAll(allergie);
+        utente.setAllergie(new HashSet<>(allergieUtente));
+
 
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", utente);
@@ -151,16 +153,25 @@ public class ProfileController {
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(!(Utente.validate(utente, repoUtenteDao))) return "redirect:/login";
 
+        ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
+
         //prendo le allergie selezionate
         Set<Allergie> allergie = new HashSet<>(
                 repoAllergieDao.findAllById(Arrays.asList(allergieIds)));
         if(allergie.isEmpty()) return "redirect:/profile/allergie";
 
         //rimozione allergie selezionate
-        utente.getAllergie().removeAll(allergie);
+        allergieUtente.removeAll(allergie);
+        utente.setAllergie(new HashSet<>(allergieUtente));
 
         repoUtenteDao.save(utente);
         session.setAttribute("loggedUser", utente);
         return "redirect:/profile/allergie";
+    }
+
+    @GetMapping("/profile/disconnect")
+    public String disconetti(HttpSession session){
+        session.setAttribute("loggedUser", null);
+        return "redirect:/login";
     }
 }
