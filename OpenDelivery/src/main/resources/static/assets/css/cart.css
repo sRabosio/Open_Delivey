@@ -48,7 +48,7 @@ html h5 {
   display: grid;
   grid-template-columns: auto auto auto;
   border: solid rgba(51, 51, 51, 0.7) 1px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   border-radius: 10px;
   max-height: 8rem;
 }
@@ -72,6 +72,16 @@ html h5 {
   position: absolute;
   top: 0;
   right: 0;
+  border: none;
+  background-color: #C4C4C4;
+  color: rgb(245, 245, 245);
+  font-weight: bolder;
+  transition-duration: 0.2s;
+}
+.cart__card__ui__delete:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition-duration: 0.2s;
 }
 .cart__card__ui__amount {
   position: absolute;
@@ -80,6 +90,14 @@ html h5 {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+}
+.cart__card__ui__amount .icon {
+  border: none;
+  background-color: #BF0DCE;
+  color: rgb(245, 245, 245);
+}
+.cart__card__ui__amount .icon:hover {
+  cursor: pointer;
 }
 
 .uicontainer {
