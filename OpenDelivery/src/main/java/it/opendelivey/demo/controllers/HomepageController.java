@@ -47,21 +47,20 @@ public class HomepageController {
 
 
 
+        ArrayList<Ristorante> ristoranti;
 
-        ArrayList<Ristorante> ristoranti = repoRistoranteDao.findAll();
+        if(filter == null || filter.isEmpty())
+            ristoranti = repoRistoranteDao.findAll();
+        else {
+            ristoranti = repoRistoranteDao.findByTipologieIn(filter);
+            for(Tipo f: filter){
+                filtersId.add(f.getId());
+            }
+        }
 
         ArrayList<Tipo> categorie = repoTipoDao.findAll();
 
         //rimuovo ristoranti e piatti secondo i filtri impostati
-
-        //L'equals sull'oggetto tipo non funziona
-        //dio solo sa il motivo
-        //la soluzione fa schifo, ma funziona (miracolo)
-        if(filter!=null)
-            for(Tipo i: filter) {
-                ristoranti.removeIf(r -> !(r.hasTipo(i)));
-                filtersId.add(i.getId());
-            }
 
 
 
