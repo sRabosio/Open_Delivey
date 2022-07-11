@@ -45,15 +45,15 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 
-		/*Optional<Ristorante> r = repoRistorante.findById(1);
-
+		//Optional<Ristorante> r = repoRistorante.findById(1);
+/*
 		IndirizzoRistorante i = IndirizzoRistorante.indirizzoRistoranteSample();
-		i.setRistorante(r.get());
-		repoIndirizzoRistoranteDao.save(i);
+
 
 		//repoUtenteDao.deleteAll();
 
-		/*Ristorante r = Ristorante.ristoranteSample();
+		Ristorante r = Ristorante.ristoranteSample();
+
 
 		Tipo buffet = new Tipo("buffet");
 		Tipo fastFood = new Tipo("fast food");
@@ -128,7 +128,8 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 		repoAllergieDao.saveAll(Arrays.stream(allergie).toList());
 
 		Ristorante ristorante = Ristorante.ristoranteSample();
-		repoRistoranteDao.save(ristorante);
+		ristorante.setIndirizzo(i);
+		r = repoRistoranteDao.save(ristorante);
 
 		Piatto[] piatti = {
 			new Piatto("margerita", "pizza margherita classica", 4.0, new Allergene[]{
@@ -154,15 +155,22 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 
 		repoPiattoDao.saveAll(Arrays.asList(piatti));
 
-		Optional<Ristorante> r2 = repoRistorante.findById(1);
+		//Optional<Ristorante> r2 = repoRistorante.findById(1);
 
-		ArrayList<Piatto> piatti2 = repoPiattoDao.findAll();
+		//ArrayList<Piatto> piatti2 = repoPiattoDao.findAll();
 
-		for(Piatto p: piatti2){
-			r2.get().addProdotto(p);
+		for(Piatto p: piatti){
+			r.addProdotto(p);
 		}
 
-		repoRistorante.save(r2.get());
+		r = repoRistorante.save(r);
+		i.setRistorante(r);
+		r.addTipologia(
+				repoTipoDao.findByNome("pizzeria").get(0)
+		);
+		r = repoRistorante.save(r);
+		i = repoIndirizzoRistoranteDao.save(i);
+
 		/*Ristorante ristorante2 = repoRistoranteDao.findById(2).get();
 
 		Piatto[] piatti2 = {

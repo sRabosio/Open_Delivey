@@ -13,7 +13,7 @@
     <h1 th:text="${ristorante.getNome()}"></h1>
     <div class="fullcard">
         <img src="assets/images/pizzeria.jpg">
-        <span th:text="${ristorante.getIndirizzo().getCitta()} + ' ' + ${ristorante.getIndirizzo().getCap()} + ', '+${ristorante.getIndirizzo.getIndirizzo()} + ' ' +${ristorante.getIndirizzo().getCivico}"></span>
+        <span th:text="${ristorante.getIndirizzo().getCitta()} + ' ' + ${ristorante.getIndirizzo().getCap()} + ', '+${ristorante.getIndirizzo.getIndirizzo()} + ' ' +${ristorante.getIndirizzo().getCivico()}"></span>
         <span th:text="${ristorante.getNumero()}"></span>
     </div>
     <content class="contentcontainer">
