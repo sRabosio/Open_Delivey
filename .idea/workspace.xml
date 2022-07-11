@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="feat: added some code to init db">
+    <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix: category filter issue fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoRistorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/Repo/RepoRistorante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/OpenDeliveryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoRistorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/Repo/RepoRistorante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/HomepageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/HomepageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fullcard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-fullcard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/allergie-iscrizione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657529779670</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix: category filter issue fix">
+      <created>1657536407467</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1657536407467</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +462,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: fixed empty cart checker issue" />
     <MESSAGE value="feat: added validation method to user to properly handle logins and such" />
     <MESSAGE value="feat: added payment" />
     <MESSAGE value="feat: added successful payment message to cart" />
@@ -478,7 +486,8 @@
     <MESSAGE value="fix: cleaned backend final" />
     <MESSAGE value="fix: forgot to run gulp reverse" />
     <MESSAGE value="feat: added some code to init db" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added some code to init db" />
+    <MESSAGE value="fix: category filter issue fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: category filter issue fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
