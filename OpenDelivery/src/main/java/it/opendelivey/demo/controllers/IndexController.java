@@ -10,6 +10,7 @@ import it.opendelivey.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -68,10 +69,10 @@ public class IndexController {
         repoIndirizzoUtenteDao.save(indirizzo);
         session.setAttribute("registrazione", form);
         session.setAttribute("loggedUser",u);
-        return "redirect:/allergie-iscrizione";
+        return "redirect:/iscrizione/allergie";
     }
 
-    @GetMapping("/allergie-iscrizione")
+    @GetMapping("/iscrizione/allergie")
     public String allergie_iscrizione(HttpSession session, Model model) {
         //controllo se la registrazione è in corso, evito che la gente entri qua a caso
         RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
@@ -85,11 +86,14 @@ public class IndexController {
     }
 
 
-    @PostMapping("/allergie-iscrizione")
+    @PostMapping("/iscrizione/allergie")
     public String allergie_iscrizione(
             HttpSession session,
-            @RequestParam("allergieId") Integer[] allergieIds
+            @RequestParam("allergieId") Set<Integer> allergieIds,
+            BindingResult result
     ){
+        if(result.hasErrors() || allergieIds == null || allergieIds.isEmpty()) return "redirect:/iscrizione/allergie";
+
         //controllo se la registrazione è in corso, evito che la gente entri qua a caso
         RegistrationForm form = (RegistrationForm) session.getAttribute("registrazione");
         if(form == null) return "redirect:/registrazione";
@@ -97,7 +101,7 @@ public class IndexController {
        Utente utente= (Utente) session.getAttribute("loggedUser");
        if (utente==null)return "login";
 
-        ArrayList<Allergie> allergie = repoAllergieDao.findAllById(Arrays.asList(allergieIds));
+        ArrayList<Allergie> allergie = repoAllergieDao.findAllById(allergieIds);
         if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
 
         //essendo un set posso aggiungere tutto e filtrerà da solo i dati che sono già all'interno della lista
