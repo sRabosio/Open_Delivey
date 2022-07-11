@@ -8,17 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-uicontainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-uicontainer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-body.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-body.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-fragmentcontainer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-logo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components-logo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/common/components/_components.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-categoriescontainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/components/_components-categoriescontainer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/elements/_elements-fullcard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/elements/_elements-fullcard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/elements/_elements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/homepage/elements/_elements.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/settings/_settings-colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/scss/settings/_settings-colors.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/platecard.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/fragments/platecard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/static/assets/css/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/templates/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

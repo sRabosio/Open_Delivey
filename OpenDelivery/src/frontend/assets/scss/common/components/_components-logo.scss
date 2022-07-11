@@ -6,9 +6,9 @@
     flex-direction: row;
     overflow: hidden;
     gap: 1rem;
-    background-color: $purple;
+    background-color: $dark_purple;
     border-bottom-left-radius: $std_border_radius;
-    border-bottom-right-radius: $std_border_radius; 
+    border-bottom-right-radius: $std_border_radius;
 
     grid-column-start: 1;
     grid-column-end: 4;

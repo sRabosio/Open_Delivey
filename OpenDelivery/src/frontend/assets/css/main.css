@@ -44,7 +44,7 @@ body::-webkit-scrollbar-track {
   background: transparent;
 }
 body::-webkit-scrollbar-thumb {
-  background: #BF0DCE;
+  background: #7c3382;
   border-radius: 3px;
 }
 body::-webkit-scrollbar-thumb:hover {
@@ -277,7 +277,7 @@ body::-webkit-scrollbar-thumb:hover {
   flex-direction: row;
   overflow: hidden;
   gap: 1rem;
-  background-color: #BF0DCE;
+  background-color: #7c3382;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   grid-column-start: 1;
@@ -289,11 +289,6 @@ body::-webkit-scrollbar-thumb:hover {
 .logo__name {
   align-self: center;
   color: #EEE;
-}
-
-.fragmentcontainer {
-  height: 0;
-  width: 0;
 }
 
 .simpleForm a {

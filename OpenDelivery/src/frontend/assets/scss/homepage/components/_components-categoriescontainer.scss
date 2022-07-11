@@ -42,5 +42,9 @@
         &-active{
             background-color: $purple;
         }
+        &:hover{
+            cursor: pointer;
+            background-color: $purple;
+        }
     }
 }

@@ -104,6 +104,10 @@ html h5 {
 .categoriescontainer__category-active {
   background-color: #BF0DCE;
 }
+.categoriescontainer__category:hover {
+  cursor: pointer;
+  background-color: #BF0DCE;
+}
 
 .nearyoucontainer {
   position: relative;
