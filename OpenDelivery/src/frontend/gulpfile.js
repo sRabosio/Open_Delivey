@@ -18,15 +18,33 @@ const sassList = [
     "./assets/scss/login/*.scss", "./assets/scss/login/**/*.scss",
     //allergie registrazione
     "./assets/scss/allergie-iscrizione/*.scss", "./assets/scss/allergie-iscrizione/**/*.scss",
+    //carrello
+    "./assets/scss/cart/*.scss", "./assets/scss/cart/**/*.scss",
+    //ricerca
+    "./assets/scss/ricerca/*.scss", "./assets/scss/ricerca/**/*.scss",
 ];
 
 const javaDir = "../main/resources/";
 
 //per ogni nuova sezione di scss andrà fatta una funzione che la gestisce e andrà aggiunta a "allStyle"
 
+function searchStyle(){
+    return gulp.src("./assets/scss/ricerca/ricerca.scss")
+    .pipe(sass())
+    .pipe(gulp.dest("./assets/css"));
+}
+
 function commonStyle() {
     //file da convertire
     return gulp.src("./assets/scss/common/main.scss")
+
+    .pipe(sass())
+
+    .pipe(gulp.dest("./assets/css"))
+}
+
+function cartStyle(){
+    return gulp.src("./assets/scss/cart/cart.scss")
 
     .pipe(sass())
 
@@ -100,6 +118,8 @@ function processStyle() {
     moreRestaurantsStyle();
     loginstyle();
     alliscrizione();
+    cartStyle();
+    searchStyle();
 
     return gulp.src("./assets/css/*.css")
         .pipe(gulp.dest(javaDir + "/static/assets/css"));

@@ -47,17 +47,16 @@ public class SearchController {
     ){
         //prendo i dati :)
         Utente utente = (Utente) session.getAttribute("loggedUser");
+        if(utente == null) return "redirect:/login";
         ArrayList<Ristorante> ristoranti = repoRistoranteDao.findByNomeContains(ricerca);
         ArrayList<Piatto> prodotti = repoPiattoDao.findByNomeContains(ricerca);
 
         ArrayList<Allergie> allergieUtente = repoAllergieDao.findByUtenti(utente);
 
         //filtro i prodotti che contengono allergeni che provocano reazioni all'utente
-        if(utente != null){
-            if(utente.getAllergie() != null)
+            if(allergieUtente != null)
                 for(Allergie a:allergieUtente)
                     prodotti.removeIf(c->c.hasAllergia(a));
-        }
 
         model.addAttribute("ristoranti", ristoranti);
         model.addAttribute("prodotti", prodotti);
