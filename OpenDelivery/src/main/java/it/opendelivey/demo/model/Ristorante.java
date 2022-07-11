@@ -19,11 +19,11 @@ public class Ristorante {
     private String nome;
     @NotNull
     private String numero;
-    @ManyToMany()
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn
     private Set<Piatto> prodotti = new HashSet<>();
 
-    @ManyToMany() @JoinColumn
+    @ManyToMany(cascade = CascadeType.MERGE) @JoinColumn
     private Set<Tipo> tipologie = new HashSet<>();
 
     @OneToOne(mappedBy = "ristorante", cascade = CascadeType.ALL)
