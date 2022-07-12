@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="0c7d20e5-5062-4c27-be3c-3e8c968b7626" name="Changes" comment="fix: allergie iscrizione">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/allergie-iscrizione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/allergie-iscrizione.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/ricerca.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/ricerca.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/java/it/opendelivey/demo/controllers/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergie-iscrizione.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/allergie-iscrizione.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/ricerca.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/ricerca.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/target/classes/it/opendelivey/demo/controllers/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/allergie-iscrizione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/registrazione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/registrazione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/ricerca.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/assets/css/ricerca.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/frontend/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/frontend/plate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/registrazione.css" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/static/assets/css/registrazione.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" beforeDir="false" afterPath="$PROJECT_DIR$/OpenDelivery/src/main/resources/templates/plate.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +155,6 @@
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Unnamed (1)" />
       <item itemvalue="Application.OpenDeliveryApplication" />
-      <item itemvalue="Spring Boot.OpenDeliveryApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
