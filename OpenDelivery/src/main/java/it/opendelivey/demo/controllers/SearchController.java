@@ -48,6 +48,7 @@ public class SearchController {
         //prendo i dati :)
         Utente utente = (Utente) session.getAttribute("loggedUser");
         if(utente == null) return "redirect:/login";
+
         ArrayList<Ristorante> ristoranti = repoRistoranteDao.findByNomeContains(ricerca);
         ArrayList<Piatto> prodotti = repoPiattoDao.findByNomeContains(ricerca);
 

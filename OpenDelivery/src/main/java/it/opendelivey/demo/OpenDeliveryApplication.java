@@ -44,13 +44,9 @@ public class OpenDeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-
 		//Optional<Ristorante> r = repoRistorante.findById(1);
 /*
 		IndirizzoRistorante i = IndirizzoRistorante.indirizzoRistoranteSample();
-
-
-		//repoUtenteDao.deleteAll();
 
 		Ristorante r = Ristorante.ristoranteSample();
 

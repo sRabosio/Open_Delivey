@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/moreRestaurants.css">
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/moreRestaurants.css}">
     <title>Open delivery homepage</title>
 </head>
 <body>
   <div class="container">
-    <content class="content">
+      <a th:href="@{/homepage}" class="topui__back" >
+      </a>
+      <img th:src="@{/assets/icons/std-arrow-purple.svg}" alt="torna indietro">
+      <content class="content">
         <div class="restaurants">
             <th:block th:each="ristorante:${ristoranti}">
                 <div th:replace="fragments/restaurantcard :: restaurantcard(

@@ -10,6 +10,9 @@
 
 <body>
 <div class="container">
+    <a th:href="@{/profile}" class="topui__back" >
+        <img th:src="@{/assets/icons/std-arrow-purple.svg}" alt="torna indietro">
+    </a>
         <form th:each="allergiaprofilo:${allergieprofilo}" method="post" action="/profile/allergie/remove">
             <span th:text="${allergiaprofilo.getNome()}"></span>
             <input type="hidden" th:value="${allergiaprofilo.getId()}" name="allergiaId">
