@@ -27,9 +27,9 @@
                     <span th:text="'$'+${record.getProdotto().getPrezzo()}" class="cart__card__desc__price"></span>
                 </div>
                 <div class="cart__card__ui">
-                    <button class="icon cart__card__ui__delete">X</button>
+                    <button class="icon cart__card__ui__delete" formaction="/cart/delete">X</button>
 
-                    <div class="cart__card__ui__amount">
+                    <div class="cart__card__ui__amount" >
                         <button class="icon" formaction="/cart/remove">-</button>
                         <span th:text="${record.getAmount()}"></span>
                         <button class="icon" formaction="/cart/add">+</button> 
