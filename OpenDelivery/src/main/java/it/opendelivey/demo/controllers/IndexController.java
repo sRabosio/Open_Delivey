@@ -101,7 +101,7 @@ public class IndexController {
         if(form == null) return "redirect:/registrazione";
 
        Utente utente= (Utente) session.getAttribute("loggedUser");
-       if (utente==null)return "login";
+       if (utente==null)return "redirect:/registrazione";
 
         ArrayList<Allergie> allergie = repoAllergieDao.findAllById(allergieIds);
         if(allergie == null || allergie.size() < 1) return "redirect:/profile/allergie";
@@ -132,22 +132,22 @@ public class IndexController {
 
         //controllo se i dati sono corretti
         Utente dbutente;
-        if((dbutente = repoUtente.findByMailAndPassword(mail, password)) == null) return "login";
+        if((dbutente = repoUtente.findByMailAndPassword(mail, password)) == null) return "redirect:/login";
         //session ci permette di "mantenere" delle informazioni
         //che vengono prese da delle richieste
         //per venir utilizzate in altre
         session.setAttribute("loggedUser", dbutente);
         //usiamo redirect per "portarci" alla richiesta "/homepage"
         //invece di andare sulla pagina HTML
-        return "redirect:homepage";
+        return "redirect:/homepage";
     }
 
 
     @RequestMapping("/")
     public String index(HttpSession session) {
         Utente utente = (Utente)session.getAttribute("loggedUser");
-        if(utente == null) return "registrazione";
-        return "redirect:homepage";
+        if(utente == null) return "redirect:/registrazione";
+        return "redirect:/homepage";
     }
 
 }
