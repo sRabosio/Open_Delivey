@@ -1,0 +1,9 @@
+.buy{
+    button{
+        &:hover{
+            cursor:pointer;
+            opacity: 0.5;
+            transition-duration: 0.2s;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.buy{
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    place-items: center;
+
+    &__addressform{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
